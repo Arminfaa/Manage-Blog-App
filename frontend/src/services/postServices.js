@@ -2,8 +2,17 @@ import http from "./httpService";
 
 export async function getPostBySlug(slug) {
   try {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+    if (!baseUrl) {
+      console.warn("NEXT_PUBLIC_BASE_URL is not set");
+      return null;
+    }
+
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/post/slug/${slug}`
+      `${baseUrl}/post/slug/${slug}`,
+      {
+        next: { revalidate: 60 } // Cache for 60 seconds
+      }
     );
     
     if (!res.ok) {
@@ -27,14 +36,25 @@ export async function getPostBySlug(slug) {
 
 export async function getPosts(queries = "", options) {
   try {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+    if (!baseUrl) {
+      console.warn("NEXT_PUBLIC_BASE_URL is not set");
+      return { posts: [], totalPages: 0 };
+    }
+
     // ARTIFICIALLY DELAY A REPONSE FOR DEMO PURPOSES
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     const url = queries 
-      ? `${process.env.NEXT_PUBLIC_BASE_URL}/post/list?${queries}`
-      : `${process.env.NEXT_PUBLIC_BASE_URL}/post/list`;
+      ? `${baseUrl}/post/list?${queries}`
+      : `${baseUrl}/post/list`;
     
-    const res = await fetch(url, options);
+    const fetchOptions = {
+      ...options,
+      next: { revalidate: 60 } // Cache for 60 seconds
+    };
+    
+    const res = await fetch(url, fetchOptions);
     
     if (!res.ok) {
       return { posts: [], totalPages: 0 };

@@ -13,17 +13,33 @@ import { toPersianDigits } from "@/utils/numberFormatter";
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const { posts } = await getPosts();
-  const slugs = posts.map((post) => ({ slug: post.slug }));
-  return slugs;
+  try {
+    const { posts } = await getPosts();
+    if (!posts || posts.length === 0) {
+      return [];
+    }
+    const slugs = posts.map((post) => ({ slug: post.slug }));
+    return slugs;
+  } catch (error) {
+    console.error("Error in generateStaticParams:", error);
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }) {
-  const post = await getPostBySlug(await params.slug);
-  return {
-    title: post?.title || "پست",
-    description: post?.briefText || "",
-  };
+  try {
+    const post = await getPostBySlug(await params.slug);
+    return {
+      title: post?.title || "پست",
+      description: post?.briefText || "",
+    };
+  } catch (error) {
+    console.error("Error in generateMetadata:", error);
+    return {
+      title: "پست",
+      description: "",
+    };
+  }
 }
 
 async function SinglePost({ params }) {
