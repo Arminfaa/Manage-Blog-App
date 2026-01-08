@@ -58,9 +58,12 @@ async function setAccessToken(res, user) {
     maxAge: 1000 * 60 * 60 * 24 * 1, // would expire after 1 days
     httpOnly: true, // The cookie only accessible by the web server
     signed: true, // Indicates if the cookie should be signed
-    sameSite: "Lax", // برای development از Lax استفاده کن
-    secure: false, // در development secure را false بگذار
-    // domain را تنظیم نکن برای localhost
+    sameSite: process.env.NODE_ENV === "development" ? "Lax" : "None",
+    secure: process.env.NODE_ENV === "development" ? false : true,
+    // در development domain را تنظیم نکن، در production domain را تنظیم کن
+    ...(process.env.NODE_ENV === "production" && process.env.DOMAIN && process.env.DOMAIN !== 'localhost' && {
+      domain: process.env.DOMAIN
+    }),
   };
   res.cookie(
     "accessToken",
@@ -74,9 +77,12 @@ async function setRefreshToken(res, user) {
     maxAge: 1000 * 60 * 60 * 24 * 365, // would expire after 1 year
     httpOnly: true, // The cookie only accessible by the web server
     signed: true, // Indicates if the cookie should be signed
-    sameSite: "Lax", // برای development از Lax استفاده کن
-    secure: false, // در development secure را false بگذار
-    // domain را تنظیم نکن برای localhost
+    sameSite: process.env.NODE_ENV === "development" ? "Lax" : "None",
+    secure: process.env.NODE_ENV === "development" ? false : true,
+    // در development domain را تنظیم نکن، در production domain را تنظیم کن
+    ...(process.env.NODE_ENV === "production" && process.env.DOMAIN && process.env.DOMAIN !== 'localhost' && {
+      domain: process.env.DOMAIN
+    }),
   };
   res.cookie(
     "refreshToken",
