@@ -10,7 +10,7 @@ import { ClockIcon } from "@heroicons/react/24/outline";
 import { toLocalDateShort } from "@/utils/dateFormatter";
 import { toPersianDigits } from "@/utils/numberFormatter";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   try {

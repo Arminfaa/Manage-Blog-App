@@ -9,7 +9,7 @@ import CommentForm from "./CommentForm";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 
-function PostComment({ post: { comments, _id: postId } }) {
+function PostComment({ post: { comments, _id: postId, slug } }) {
   const [open, setOpen] = useState(false);
   const [parent, setParent] = useState(null);
   const { user } = useAuth();
@@ -36,6 +36,7 @@ function PostComment({ post: { comments, _id: postId } }) {
           onClose={() => setOpen(false)}
           parentId={parent ? parent._id : null}
           postId={postId}
+          slug={slug}
         />
       </Modal>
       <div className="flex flex-col items-center lg:flex-row justify-between gap-y-3 mb-8">

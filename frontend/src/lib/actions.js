@@ -7,9 +7,9 @@ import { cookies } from "next/headers";
 
 // export async function createComment(postId, parentId, formData) {
 
-export async function createComment(prevState, { formData, postId, parentId }) {
+export async function createComment(prevState, { formData, postId, parentId, slug }) {
   const cookieStore = await cookies()
-  const options = setCookieOnReq(cookiesStore);
+  const options = setCookieOnReq(cookieStore);
 
   const rawFormData = {
     postId,
@@ -19,7 +19,7 @@ export async function createComment(prevState, { formData, postId, parentId }) {
 
   try {
     const { message } = await createCommentApi(rawFormData, options);
-    revalidatePath("/blogs/[slug]");
+    revalidatePath(`/blogs/${slug}`);
     return {
       message,
     };

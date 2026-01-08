@@ -11,7 +11,7 @@ const initilaState = {
   message: "",
 };
 
-function CommentForm({ postId, parentId, onClose }) {
+function CommentForm({ postId, parentId, slug, onClose }) {
   const [text, setText] = useState("");
   const [state, formAction] = useActionState(createComment, initilaState); // useFormState in React V 18.
 
@@ -33,7 +33,7 @@ function CommentForm({ postId, parentId, onClose }) {
             className="space-y-7"
             //  action={createComment.bind(null, postId, parentId)}
             action={async (formData) => {
-              await formAction({ formData, postId, parentId });
+              await formAction({ formData, postId, parentId, slug });
             }}
           >
             <TextArea
