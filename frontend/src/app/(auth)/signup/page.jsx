@@ -24,15 +24,15 @@ function Signup() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isLoading },
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
     mode: "onTouched",
   });
 
-  const { signup } = useAuth();
+  const { signup, isLoading } = useAuth();
   const onSubmit = async (values) => {
-    await signup();
+    await signup(values);
   };
 
   return (
