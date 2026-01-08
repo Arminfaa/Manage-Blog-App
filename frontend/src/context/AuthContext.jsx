@@ -66,10 +66,14 @@ export default function AuthProvider({ children }) {
       const response = await singinApi(values);
       const { user, message } = response;
 
-      // ذخیره tokenها در localStorage
+      // ذخیره tokenها در localStorage و کوکی
       if (typeof window !== 'undefined') {
         localStorage.setItem('accessToken', response.accessToken);
         localStorage.setItem('refreshToken', response.refreshToken);
+
+        // ذخیره در کوکی برای middleware
+        document.cookie = `accessToken=${response.accessToken}; path=/; max-age=86400; samesite=lax`;
+        document.cookie = `refreshToken=${response.refreshToken}; path=/; max-age=31536000; samesite=lax`;
       }
 
       dispatch({ type: "signin", payload: user });
@@ -88,10 +92,14 @@ export default function AuthProvider({ children }) {
       const response = await signupApi(values);
       const { user, message } = response;
 
-      // ذخیره tokenها در localStorage
+      // ذخیره tokenها در localStorage و کوکی
       if (typeof window !== 'undefined') {
         localStorage.setItem('accessToken', response.accessToken);
         localStorage.setItem('refreshToken', response.refreshToken);
+
+        // ذخیره در کوکی برای middleware
+        document.cookie = `accessToken=${response.accessToken}; path=/; max-age=86400; samesite=lax`;
+        document.cookie = `refreshToken=${response.refreshToken}; path=/; max-age=31536000; samesite=lax`;
       }
 
       dispatch({ type: "signup", payload: user });
@@ -145,10 +153,14 @@ export default function AuthProvider({ children }) {
     try {
       await logoutApi();
 
-      // پاک کردن tokenها از localStorage
+      // پاک کردن tokenها از localStorage و کوکی
       if (typeof window !== 'undefined') {
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
+
+        // پاک کردن کوکی‌ها
+        document.cookie = 'accessToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; samesite=lax';
+        document.cookie = 'refreshToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; samesite=lax';
       }
 
       dispatch({ type: "logout" });
