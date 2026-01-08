@@ -101,6 +101,16 @@ export default function AuthProvider({ children }) {
     }
   }
 
+  async function updateUser() {
+    try {
+      const { user } = await getUserApi();
+      dispatch({ type: "user/loaded", payload: user });
+    } catch (error) {
+      const errorMsg = error?.response?.data?.message;
+      dispatch({ type: "rejected", payload: errorMsg });
+    }
+  }
+
   async function logout() {
     dispatch({ type: "loading" });
     try {
@@ -124,7 +134,7 @@ export default function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, isAuthenticated, isLoading, signin, signup, logout }}
+      value={{ user, isAuthenticated, isLoading, signin, signup, logout, updateUser }}
     >
       {children}
     </AuthContext.Provider>

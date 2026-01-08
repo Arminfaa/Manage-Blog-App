@@ -19,3 +19,11 @@ export async function getAllUsersApi(options) {
 export async function logoutApi() {
   return http.post("/user/logout").then(({ data }) => data);
 }
+
+export async function updateProfileApi(data) {
+  return http.patch("/user/update", data).then(({ data }) => data.data);
+}
+
+export async function uploadAvatarApi(data) {
+  return http.post("/user/upload-avatar", data).then(({ data }) => data.data);
+}

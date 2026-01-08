@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl" className="light-mode">
-      <body className={`${vazirFont.variable} font-sans min-h-screen flex justify-center items-center w-full`}>
+      <body className={`${vazirFont.variable} font-sans min-h-screen flex flex-col justify-center items-center w-full`}>
         <Toaster />
         <DarkModeProvier>
           <ReactQueryProvider>

@@ -29,8 +29,8 @@ function Header() {
           سلام؛ {user?.name}
         </span>
 
-        <Link href="/profile">
-          <Avatar src={user?.avatarUrl} />
+        <Link href="/profile/settings">
+          <Avatar src={user?.avatarUrl} width={40} />
         </Link>
 
         <Drawer open={isOpenDrawer} onClose={() => setIsOpenDrawer(false)}>

@@ -30,7 +30,6 @@ function FileInput({
           className="sr-only hidden"
           name={name}
           dir={dir}
-          value={value}
           onChange={onChange}
           {...rest}
         />

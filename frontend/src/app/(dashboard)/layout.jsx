@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           <Header />
         </div>
         <main className="grid-cols-12 lg:col-span-9 xl:col-span-10 bg-secondary-100 rounded-tr-3xl p-4 md:p-6 overflow-y-auto">
-          <div className="xl:max-w-screen-xl ">{children}</div>
+          <div className="">{children}</div>
         </main>
       </div>
     </div>
