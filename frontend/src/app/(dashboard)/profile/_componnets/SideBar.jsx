@@ -42,10 +42,10 @@ function SideBar({ onClose }) {
       {/* Sidebar content */}
       <div className="overflow-y-auto flex-auto">
         <SideBarNavs />
-        <div className="flex items-center gap-x-2 rounded-2xl font-medium transition-all duration-200 text-secondary-700 py-3 px-3 mb-2">
+        {/* <div className="flex items-center gap-x-2 rounded-2xl font-medium transition-all duration-200 text-secondary-700 py-3 px-3 mb-2">
           <ThemeToggle />
           <span>تغییر تم</span>
-        </div>
+        </div> */}
         <div
           onClick={handleLogout}
           className="flex items-center gap-x-2 rounded-2xl font-medium transition-all duration-200 text-secondary-700 py-3 hover:text-red-400 cursor-pointer"

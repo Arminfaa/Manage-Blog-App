@@ -171,6 +171,29 @@ class UserAuthController extends Controller {
     const user = await UserModel.findOne({ email });
     return user;
   }
+
+  async debugCookies(req, res) {
+    try {
+      console.log('All cookies:', req.cookies);
+      console.log('Signed cookies:', req.signedCookies);
+      console.log('Cookie header:', req.headers.cookie);
+      const cookieHeader = req.headers.cookie || '';
+      console.log('Cookie header length:', cookieHeader.length);
+
+      return res.status(200).json({
+        statusCode: 200,
+        data: {
+          cookies: req.cookies,
+          signedCookies: req.signedCookies,
+          cookieHeader: req.headers.cookie,
+          cookieHeaderLength: (req.headers.cookie || '').length
+        }
+      });
+    } catch (error) {
+      console.error('Debug error:', error);
+      return res.status(500).json({ error: error.message });
+    }
+  }
   logout(req, res) {
     const cookieOptions = {
       maxAge: 1,

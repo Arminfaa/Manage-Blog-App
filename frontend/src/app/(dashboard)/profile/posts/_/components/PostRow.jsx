@@ -23,8 +23,8 @@ function PostRow({ index, post }) {
     <Table.Row>
       <td>{toPersianDigits(index + 1)}</td>
       <td>{truncateText(title, 30)}</td>
-      <td>{category.title}</td>
-      <td>{author.name}</td>
+      <td>{category?.title || "دسته‌بندی نامشخص"}</td>
+      <td>{author?.name || "نویسنده نامشخص"}</td>
       <td>{toLocalDateShort(createdAt)}</td>
       <td>
         <span className={`badge ${typeStyle[type].className}`}>

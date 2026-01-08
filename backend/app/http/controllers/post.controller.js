@@ -1,18 +1,15 @@
-const createHttpError = require("http-errors");
-const path = require("path");
-const { CategoryModel } = require("../../models/category");
-const { PostModel } = require("../../models/post");
-const {
-  copyObject,
-  deleteInvalidPropertyInObject,
-} = require("../../utils/functions");
-const { validateAddNewPost } = require("../validators/post/post.schema");
-const { CommentController } = require("./comment.controller");
-const Controller = require("./controller");
-const { StatusCodes: HttpStatus } = require("http-status-codes");
-const { UserModel } = require("../../models/user");
-const { transformPost } = require("../../utils/transformPost");
-const { default: mongoose } = require("mongoose");
+const createHttpError = require('http-errors');
+const path = require('path');
+const { CategoryModel } = require('../../models/category');
+const { PostModel } = require('../../models/post');
+const { copyObject, deleteInvalidPropertyInObject } = require('../../utils/functions');
+const { validateAddNewPost } = require('../validators/post/post.schema');
+const { CommentController } = require('./comment.controller');
+const Controller = require('./controller');
+const { StatusCodes: HttpStatus } = require('http-status-codes');
+const { UserModel } = require('../../models/user');
+const { transformPost } = require('../../utils/transformPost');
+const { default: mongoose } = require('mongoose');
 
 class PostController extends Controller {
   constructor() {
@@ -27,13 +24,8 @@ class PostController extends Controller {
     const skip = (page - 1) * limit;
 
     if (search) {
-      const searchTerm = new RegExp(search, "ig");
-      dbQuery["$or"] = [
-        { title: searchTerm },
-        { slug: searchTerm },
-        { briefText: searchTerm },
-        { text: searchTerm },
-      ];
+      const searchTerm = new RegExp(search, 'ig');
+      dbQuery['$or'] = [{ title: searchTerm }, { slug: searchTerm }, { briefText: searchTerm }, { text: searchTerm }];
     }
 
     // if (search) dbQuery["$text"] = { $search: search }; // -> OLD METHOD TO SEARCH BASED ON INDEX
@@ -45,57 +37,38 @@ class PostController extends Controller {
         const { _id } = await CategoryModel.findOne({ slug: item });
         categoryIds.push(_id);
       }
-      dbQuery["category"] = {
+      dbQuery['category'] = {
         $in: categoryIds,
       };
     }
 
     const sortQuery = {};
-    if (!sort) sortQuery["createdAt"] = -1;
+    if (!sort) sortQuery['createdAt'] = -1;
     if (sort) {
-      if (sort === "latest") sortQuery["createdAt"] = -1;
-      if (sort === "earliest") sortQuery["createdAt"] = 1;
-      if (sort === "popular") sortQuery["likes"] = -1;
-      if (sort === "time_desc") sortQuery["readingTime"] = -1;
-      if (sort === "time_asc") sortQuery["readingTime"] = 1;
+      if (sort === 'latest') sortQuery['createdAt'] = -1;
+      if (sort === 'earliest') sortQuery['createdAt'] = 1;
+      if (sort === 'popular') sortQuery['likes'] = -1;
+      if (sort === 'time_desc') sortQuery['readingTime'] = -1;
+      if (sort === 'time_asc') sortQuery['readingTime'] = 1;
     }
     const posts = await PostModel.find(dbQuery, {
       comments: 0,
     })
-      .populate([
-        { path: "category", select: { title: 1, slug: 1 } },
-        { path: "author", select: { name: 1, biography: 1, avatar: 1 } },
-        {
-          path: "related",
-          model: "Post",
-          select: {
-            title: 1,
-            slug: 1,
-            bfireText: 1,
-            coverImage: 1,
-            author: 1,
-          },
-          populate: [
-            {
-              path: "author",
-              model: "User",
-              select: { name: 1, biography: 1, avatar: 1 },
-            },
-            {
-              path: "category",
-              model: "Category",
-              select: { title: 1, slug: 1 },
-            },
-          ],
-        },
-      ])
+      .populate('category', 'title slug')
+      .populate('author', 'name biography avatar')
+      .populate({
+        path: 'related',
+        select: { title: 1, slug: 1, briefText: 1, coverImage: 1, author: 1, category: 1 },
+        populate: [
+          { path: 'author', select: 'name biography avatar' },
+          { path: 'category', select: 'title slug' },
+        ],
+      })
       .limit(limit)
       .skip(skip)
       .sort(sortQuery);
 
-    const totalPages = Math.ceil(
-      Number((await PostModel.find(dbQuery)).length) / limit
-    );
+    const totalPages = Math.ceil(Number((await PostModel.find(dbQuery)).length) / limit);
 
     const transformedPosts = copyObject(posts);
 
@@ -106,7 +79,7 @@ class PostController extends Controller {
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
-        message: "پست های مدنظر شما",
+        message: 'پست های مدنظر شما',
         posts: transformedPosts,
         totalPages,
       },
@@ -117,14 +90,14 @@ class PostController extends Controller {
     const user = req.user;
     const post = await PostModel.findOne({ slug }).populate([
       {
-        path: "author",
-        model: "User",
+        path: 'author',
+        model: 'User',
         select: { name: 1, biography: 1, avatar: 1 },
       },
-      { path: "category", model: "Category", select: { title: 1, slug: 1 } },
+      { path: 'category', model: 'Category', select: { title: 1, slug: 1 } },
       {
-        path: "related",
-        model: "Post",
+        path: 'related',
+        model: 'Post',
         select: {
           title: 1,
           slug: 1,
@@ -134,31 +107,27 @@ class PostController extends Controller {
         },
         populate: [
           {
-            path: "author",
-            model: "User",
+            path: 'author',
+            model: 'User',
             select: { name: 1, biography: 1, avatar: 1 },
           },
           {
-            path: "category",
-            model: "Category",
+            path: 'category',
+            model: 'Category',
             select: { title: 1, slug: 1 },
           },
         ],
       },
     ]);
 
-    if (!post) throw createHttpError.NotFound("پستی با این مشخصات یافت نشد");
+    if (!post) throw createHttpError.NotFound('پستی با این مشخصات یافت نشد');
     const { id: postId } = post;
-    const acceptedCommnets = await CommentController.findAcceptedComments(
-      postId
-    );
+    const acceptedCommnets = await CommentController.findAcceptedComments(postId);
 
     const transformedPost = copyObject(post);
 
     transformedPost.comments = acceptedCommnets;
-    transformedPost.commentsCount =
-      acceptedCommnets.length +
-      acceptedCommnets.reduce((a, c) => a + c.answers.length, 0);
+    transformedPost.commentsCount = acceptedCommnets.length + acceptedCommnets.reduce((a, c) => a + c.answers.length, 0);
 
     await transformPost(transformedPost, user);
 
@@ -172,34 +141,23 @@ class PostController extends Controller {
   async addNewPost(req, res) {
     const { filename, fileUploadPath, ...rest } = req.body;
     await validateAddNewPost(rest);
-    const {
-      title,
-      briefText,
-      slug,
-      type = "free",
-      category,
-      tags = [],
-      text,
-      readingTime,
-      related = [],
-    } = rest;
+    const { title, briefText, slug, type = 'free', category, tags = [], text, readingTime, related = [] } = rest;
 
     const author = req.user._id;
 
     let coverImage;
-    
-    if (process.env.NODE_ENV === "production") {
+
+    if (process.env.NODE_ENV === 'production') {
       // Cloudinary returns the URL directly in req.file.path
       if (!req.file || !req.file.path) {
-        throw createHttpError.InternalServerError("کاور پست را اپلود کنید");
+        throw createHttpError.InternalServerError('کاور پست را اپلود کنید');
       }
       coverImage = req.file.path;
     } else {
       // Local storage
-      if (!fileUploadPath || !filename)
-        throw createHttpError.InternalServerError("کاور پست را اپلود کنید");
+      if (!fileUploadPath || !filename) throw createHttpError.InternalServerError('کاور پست را اپلود کنید');
       const fileAddress = path.join(fileUploadPath, filename);
-      coverImage = fileAddress.replace(/\\/g, "/");
+      coverImage = fileAddress.replace(/\\/g, '/');
     }
 
     const post = await PostModel.create({
@@ -216,12 +174,12 @@ class PostController extends Controller {
       coverImage,
     });
 
-    if (!post?._id) throw createHttpError.InternalServerError("پست ثبت نشد");
+    if (!post?._id) throw createHttpError.InternalServerError('پست ثبت نشد');
 
     return res.status(HttpStatus.CREATED).json({
       statusCode: HttpStatus.CREATED,
       data: {
-        message: "پست با موفقیت ایجاد شد",
+        message: 'پست با موفقیت ایجاد شد',
         post,
       },
     });
@@ -232,12 +190,12 @@ class PostController extends Controller {
 
     const post = await this.findPostById(id);
     const data = copyObject(rest);
-    let blackListFields = ["time", "likes", "comments", "bookmarks", "author"];
+    let blackListFields = ['time', 'likes', 'comments', 'bookmarks', 'author'];
     deleteInvalidPropertyInObject(data, blackListFields);
 
     let coverImage = post.coverImage;
 
-    if (process.env.NODE_ENV === "production") {
+    if (process.env.NODE_ENV === 'production') {
       // Cloudinary returns the URL directly in req.file.path
       if (req.file && req.file.path) {
         coverImage = req.file.path;
@@ -246,7 +204,7 @@ class PostController extends Controller {
       // Local storage
       if (fileUploadPath && filename) {
         const fileAddress = path.join(fileUploadPath, filename);
-        coverImage = fileAddress.replace(/\\/g, "/");
+        coverImage = fileAddress.replace(/\\/g, '/');
       }
     }
 
@@ -257,15 +215,12 @@ class PostController extends Controller {
       }
     );
 
-    if (!updatePostResult.modifiedCount)
-      throw new createHttpError.InternalServerError(
-        "به روزرسانی پست انجام نشد"
-      );
+    if (!updatePostResult.modifiedCount) throw new createHttpError.InternalServerError('به روزرسانی پست انجام نشد');
 
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
-        message: "به روزرسانی پست با موفقیت انجام شد",
+        message: 'به روزرسانی پست با موفقیت انجام شد',
       },
     });
   }
@@ -273,11 +228,11 @@ class PostController extends Controller {
     const { id } = req.params;
     await this.findPostById(id);
     const post = await PostModel.findByIdAndDelete(id);
-    if (!post._id) throw createHttpError.InternalServerError(" پست حذف نشد");
+    if (!post._id) throw createHttpError.InternalServerError(' پست حذف نشد');
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
-        message: "پست با موفقیت حذف شد",
+        message: 'پست با موفقیت حذف شد',
       },
     });
   }
@@ -288,11 +243,10 @@ class PostController extends Controller {
     await this.getPostBySlug(req, res);
   }
   async findPostById(id) {
-    if (!mongoose.isValidObjectId(id))
-      throw createHttpError.BadRequest("شناسه پست نامعتبر است");
+    if (!mongoose.isValidObjectId(id)) throw createHttpError.BadRequest('شناسه پست نامعتبر است');
 
     const post = await PostModel.findById(id);
-    if (!post) throw createHttpError.BadRequest("پست با این مشخصات یافت نشد");
+    if (!post) throw createHttpError.BadRequest('پست با این مشخصات یافت نشد');
     return copyObject(post);
   }
   async likePost(req, res) {
@@ -303,30 +257,19 @@ class PostController extends Controller {
       _id: postId,
       likes: user._id,
     });
-    const updatePostQuery = likedPost
-      ? { $pull: { likes: user._id } }
-      : { $push: { likes: user._id } };
+    const updatePostQuery = likedPost ? { $pull: { likes: user._id } } : { $push: { likes: user._id } };
 
-    const updateUserQuery = likedPost
-      ? { $pull: { likedPosts: post._id } }
-      : { $push: { likedPosts: post._id } };
+    const updateUserQuery = likedPost ? { $pull: { likedPosts: post._id } } : { $push: { likedPosts: post._id } };
 
-    const postUpdate = await PostModel.updateOne(
-      { _id: postId },
-      updatePostQuery
-    );
-    const userUpdate = await UserModel.updateOne(
-      { _id: user._id },
-      updateUserQuery
-    );
+    const postUpdate = await PostModel.updateOne({ _id: postId }, updatePostQuery);
+    const userUpdate = await UserModel.updateOne({ _id: user._id }, updateUserQuery);
 
-    if (postUpdate.modifiedCount === 0 || userUpdate.modifiedCount === 0)
-      throw createHttpError.BadRequest("عملیات ناموفق بود.");
+    if (postUpdate.modifiedCount === 0 || userUpdate.modifiedCount === 0) throw createHttpError.BadRequest('عملیات ناموفق بود.');
 
     let message;
     if (!likedPost) {
-      message = "مرسی بابت لایک تون";
-    } else message = "لایک شما برداشته شد";
+      message = 'مرسی بابت لایک تون';
+    } else message = 'لایک شما برداشته شد';
 
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
@@ -343,30 +286,19 @@ class PostController extends Controller {
       _id: postId,
       bookmarks: user._id,
     });
-    const updatePostQuery = likedPost
-      ? { $pull: { bookmarks: user._id } }
-      : { $push: { bookmarks: user._id } };
+    const updatePostQuery = likedPost ? { $pull: { bookmarks: user._id } } : { $push: { bookmarks: user._id } };
 
-    const updateUserQuery = likedPost
-      ? { $pull: { bookmarkedPosts: post._id } }
-      : { $push: { bookmarkedPosts: post._id } };
+    const updateUserQuery = likedPost ? { $pull: { bookmarkedPosts: post._id } } : { $push: { bookmarkedPosts: post._id } };
 
-    const postUpdate = await PostModel.updateOne(
-      { _id: postId },
-      updatePostQuery
-    );
-    const userUpdate = await UserModel.updateOne(
-      { _id: user._id },
-      updateUserQuery
-    );
+    const postUpdate = await PostModel.updateOne({ _id: postId }, updatePostQuery);
+    const userUpdate = await UserModel.updateOne({ _id: user._id }, updateUserQuery);
 
-    if (postUpdate.modifiedCount === 0 || userUpdate.modifiedCount === 0)
-      throw createHttpError.BadRequest("عملیات ناموفق بود.");
+    if (postUpdate.modifiedCount === 0 || userUpdate.modifiedCount === 0) throw createHttpError.BadRequest('عملیات ناموفق بود.');
 
     let message;
     if (!likedPost) {
-      message = "پست بوکمارک شد";
-    } else message = "پست از بوکمارک برداشته شد";
+      message = 'پست بوکمارک شد';
+    } else message = 'پست از بوکمارک برداشته شد';
 
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,

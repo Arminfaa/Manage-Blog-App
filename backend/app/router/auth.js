@@ -33,6 +33,7 @@ router.get(
   expressAsyncHandler(UserAuthController.getAllUsers)
 );
 router.post("/logout", expressAsyncHandler(UserAuthController.logout));
+router.get("/debug", expressAsyncHandler(UserAuthController.debugCookies));
 
 module.exports = {
   userAuthRoutes: router,
