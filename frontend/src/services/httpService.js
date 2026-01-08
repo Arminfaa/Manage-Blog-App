@@ -18,7 +18,16 @@ const app = axios.create({
 // 3. refresh : EXPIRES => new login =>
 
 app.interceptors.request.use(
-  (res) => res,
+  (config) => {
+    // اضافه کردن token از localStorage به headers
+    if (typeof window !== 'undefined') {
+      const token = localStorage.getItem('accessToken');
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
+    }
+    return config;
+  },
   (err) => Promise.reject(err)
 );
 

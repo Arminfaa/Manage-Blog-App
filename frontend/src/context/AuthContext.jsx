@@ -63,7 +63,15 @@ export default function AuthProvider({ children }) {
   async function signin(values) {
     dispatch({ type: "loading" });
     try {
-      const { user, message } = await singinApi(values);
+      const response = await singinApi(values);
+      const { user, message } = response;
+
+      // ذخیره tokenها در localStorage
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('accessToken', response.accessToken);
+        localStorage.setItem('refreshToken', response.refreshToken);
+      }
+
       dispatch({ type: "signin", payload: user });
       toast.success(message);
       router.push("/profile");
@@ -77,7 +85,15 @@ export default function AuthProvider({ children }) {
   async function signup(values) {
     dispatch({ type: "loading" });
     try {
-      const { user, message } = await signupApi(values);
+      const response = await signupApi(values);
+      const { user, message } = response;
+
+      // ذخیره tokenها در localStorage
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('accessToken', response.accessToken);
+        localStorage.setItem('refreshToken', response.refreshToken);
+      }
+
       dispatch({ type: "signup", payload: user });
       toast.success(message);
       router.push("/profile");
@@ -91,13 +107,26 @@ export default function AuthProvider({ children }) {
   async function getUser() {
     dispatch({ type: "loading" });
     try {
-      //   await new Promise((resolve) => setTimeout(resolve, 3000));
+      // چک کردن وجود token در localStorage
+      if (typeof window !== 'undefined') {
+        const token = localStorage.getItem('accessToken');
+        if (!token) {
+          dispatch({ type: "rejected", payload: "توکن یافت نشد" });
+          return;
+        }
+      }
+
       const { user } = await getUserApi();
       dispatch({ type: "user/loaded", payload: user });
     } catch (error) {
       const errorMsg = error?.response?.data?.message;
       dispatch({ type: "rejected", payload: errorMsg });
-      // toast.error(errorMsg);
+
+      // پاک کردن tokenهای نامعتبر
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+      }
     }
   }
 
@@ -115,6 +144,13 @@ export default function AuthProvider({ children }) {
     dispatch({ type: "loading" });
     try {
       await logoutApi();
+
+      // پاک کردن tokenها از localStorage
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+      }
+
       dispatch({ type: "logout" });
       toast.success("خروج با موفقیت انجام شد");
       router.push("/signin");

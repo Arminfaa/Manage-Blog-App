@@ -1,14 +1,17 @@
 export async function middlewareAuth(req) {
-  // For httpOnly cookies, we can't access them directly in middleware
-  // We need to make a request to the backend which will automatically include the cookies
+  // In Next.js middleware, we can't access localStorage
+  // So we need to check for authorization header or cookies
   try {
+    const authHeader = req.headers.get('authorization');
+    const cookieHeader = req.headers.get('cookie') || '';
+
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_URL}/user/profile`,
       {
         method: "GET",
         headers: {
-          // Forward the cookies from the request
-          cookie: req.headers.get('cookie') || '',
+          ...(authHeader && { authorization: authHeader }),
+          ...(cookieHeader && { cookie: cookieHeader }),
         },
       }
     );

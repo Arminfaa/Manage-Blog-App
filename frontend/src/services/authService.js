@@ -1,11 +1,21 @@
 const { default: http } = require("./httpService");
 
 export async function signupApi(data) {
-  return http.post("/user/signup", data).then(({ data }) => data.data);
+  const response = await http.post("/user/signup", data);
+  return {
+    ...response.data.data,
+    accessToken: response.data.accessToken,
+    refreshToken: response.data.refreshToken,
+  };
 }
 
 export async function singinApi(data) {
-  return http.post("/user/signin", data).then(({ data }) => data.data);
+  const response = await http.post("/user/signin", data);
+  return {
+    ...response.data.data,
+    accessToken: response.data.accessToken,
+    refreshToken: response.data.refreshToken,
+  };
 }
 
 export async function getUserApi() {
