@@ -4,7 +4,16 @@ import ButtonIcon from "@/ui/ButtonIcon";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 
 function ThemeToggle() {
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const { isDarkMode, toggleDarkMode, mounted } = useDarkMode();
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return (
+      <ButtonIcon variant="outline" disabled>
+        <MoonIcon className="w-5 h-5 text-secondary-700" />
+      </ButtonIcon>
+    );
+  }
 
   return (
     <ButtonIcon
