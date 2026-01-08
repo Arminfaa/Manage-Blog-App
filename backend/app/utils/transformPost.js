@@ -9,17 +9,30 @@ async function transformPost(post, user) {
     post._id
   );
   if (post.author?.avatar) {
-    post.author.avatarUrl = `${process.env.SERVER_URL}/${post.author.avatar}`;
+    // If it's already a full URL (Cloudinary), use it directly
+    if (post.author.avatar.startsWith("http")) {
+      post.author.avatarUrl = post.author.avatar;
+    } else {
+      post.author.avatarUrl = `${process.env.SERVER_URL}/${post.author.avatar}`;
+    }
   }
 
   if (post.related.length) {
     post.related = post.related.map((item) => {
+      const coverImageUrl = item.coverImage?.startsWith("http")
+        ? item.coverImage
+        : `${process.env.SERVER_URL}/${item.coverImage}`;
+      
+      const avatarUrl = item.author?.avatar?.startsWith("http")
+        ? item.author.avatar
+        : `${process.env.SERVER_URL}/${item.author.avatar}`;
+      
       return {
         ...item,
-        coverImageUrl: `${process.env.SERVER_URL}/${item.coverImage}`,
+        coverImageUrl,
         author: {
           ...item.author,
-          avatarUrl: `${process.env.SERVER_URL}/${item.author.avatar}`,
+          avatarUrl,
         },
       };
     });

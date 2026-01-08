@@ -38,8 +38,15 @@ const PostSchema = new mongoose.Schema(
 );
 
 PostSchema.virtual("coverImageUrl").get(function () {
-  if (this.coverImage) return `${process.env.SERVER_URL}/${this.coverImage}`;
-  return null;
+  if (!this.coverImage) return null;
+  
+  // If it's already a full URL (Cloudinary), return as is
+  if (this.coverImage.startsWith("http")) {
+    return this.coverImage;
+  }
+  
+  // Otherwise, it's a local path
+  return `${process.env.SERVER_URL}/${this.coverImage}`;
 });
 
 module.exports = {

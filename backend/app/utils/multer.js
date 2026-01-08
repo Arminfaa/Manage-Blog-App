@@ -2,6 +2,9 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const createError = require("http-errors");
+const { createCloudinaryStorage } = require("./cloudinary");
+
+const isProduction = process.env.NODE_ENV === "production";
 
 function createRoute(req, fieldName) {
   const date = new Date();
@@ -18,12 +21,14 @@ function createRoute(req, fieldName) {
     month,
     day
   );
-  req.body.fileUploadPath = path.join("uploads", fieldName, year, month, day);
+
   fs.mkdirSync(directory, { recursive: true });
+  req.body.fileUploadPath = path.join("uploads", fieldName, year, month, day);
   return directory;
 }
 
-const storage = multer.diskStorage({
+// Local storage (for development)
+const localStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     if (file?.originalname) {
       const filePath = createRoute(req, file.fieldname);
@@ -42,6 +47,12 @@ const storage = multer.diskStorage({
     cb(null, null);
   },
 });
+
+// Cloudinary storage (for production)
+const cloudinaryStorage = createCloudinaryStorage("blog-app");
+
+// Choose storage based on environment
+const storage = isProduction ? cloudinaryStorage : localStorage;
 
 function fileFilter(req, file, cb) {
   const ext = path.extname(file.originalname);

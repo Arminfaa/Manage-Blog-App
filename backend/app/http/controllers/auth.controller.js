@@ -100,10 +100,25 @@ class UserAuthController extends Controller {
   }
   async updateAvatar(req, res) {
     const { _id: userId } = req.user;
-    const { fileUploadPath, filename } = req.body;
-    const fileAddress = path.join(fileUploadPath, filename);
-    const avatarAddress = fileAddress.replace(/\\/g, "/");
-    // const avatarUrl = `${process.env.SERVER_URL}/${avatarAddress}`;
+    
+    let avatarAddress;
+    
+    if (process.env.NODE_ENV === "production") {
+      // Cloudinary returns the URL directly in req.file.path
+      if (!req.file || !req.file.path) {
+        throw createError.BadRequest("عکس پروفایل آپلود نشد");
+      }
+      avatarAddress = req.file.path;
+    } else {
+      // Local storage
+      const { fileUploadPath, filename } = req.body;
+      if (!fileUploadPath || !filename) {
+        throw createError.BadRequest("عکس پروفایل آپلود نشد");
+      }
+      const fileAddress = path.join(fileUploadPath, filename);
+      avatarAddress = fileAddress.replace(/\\/g, "/");
+    }
+    
     const updateResult = await UserModel.updateOne(
       { _id: userId },
       {

@@ -21,8 +21,15 @@ const UserSchema = new mongoose.Schema(
 );
 
 UserSchema.virtual("avatarUrl").get(function () {
-  if (this.avatar) return `${process.env.SERVER_URL}/${this.avatar}`;
-  return null;
+  if (!this.avatar) return null;
+  
+  // If it's already a full URL (Cloudinary), return as is
+  if (this.avatar.startsWith("http")) {
+    return this.avatar;
+  }
+  
+  // Otherwise, it's a local path
+  return `${process.env.SERVER_URL}/${this.avatar}`;
 });
 
 UserSchema.methods.toJSON = function () {

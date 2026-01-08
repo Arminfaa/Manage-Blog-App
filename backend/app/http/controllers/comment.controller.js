@@ -375,12 +375,24 @@ class CommentController extends Controller {
       },
     ]);
     const transformed = acceptedComments.map((c) => {
+      // Fix avatarUrl if it's already a full URL (Cloudinary)
+      if (c.user?.avatar && c.user.avatar.startsWith("http")) {
+        c.user.avatarUrl = c.user.avatar;
+      }
+      
+      // Fix avatarUrl for answers
+      if (c.answers && c.answers.length > 0) {
+        c.answers = c.answers.map((answer) => {
+          if (answer.user?.avatar && answer.user.avatar.startsWith("http")) {
+            answer.user.avatarUrl = answer.user.avatar;
+          }
+          return { ...answer, createdAt: calculateDateDuration(answer.createdAt) };
+        });
+      }
+      
       return {
         ...c,
         createdAt: calculateDateDuration(c.createdAt),
-        answers: c.answers.map((c) => {
-          return { ...c, createdAt: calculateDateDuration(c.createdAt) };
-        }),
       };
     });
     return copyObject(transformed);

@@ -185,12 +185,22 @@ class PostController extends Controller {
     } = rest;
 
     const author = req.user._id;
-    // const { fileUploadPath, filename } = req.body;
 
-    if (!fileUploadPath || !filename)
-      throw createHttpError.InternalServerError("کاور پست را اپلود کنید");
-    const fileAddress = path.join(fileUploadPath, filename);
-    const coverImage = fileAddress.replace(/\\/g, "/");
+    let coverImage;
+    
+    if (process.env.NODE_ENV === "production") {
+      // Cloudinary returns the URL directly in req.file.path
+      if (!req.file || !req.file.path) {
+        throw createHttpError.InternalServerError("کاور پست را اپلود کنید");
+      }
+      coverImage = req.file.path;
+    } else {
+      // Local storage
+      if (!fileUploadPath || !filename)
+        throw createHttpError.InternalServerError("کاور پست را اپلود کنید");
+      const fileAddress = path.join(fileUploadPath, filename);
+      coverImage = fileAddress.replace(/\\/g, "/");
+    }
 
     const post = await PostModel.create({
       title,
@@ -227,9 +237,17 @@ class PostController extends Controller {
 
     let coverImage = post.coverImage;
 
-    if (fileUploadPath && filename) {
-      const fileAddress = path.join(fileUploadPath, filename);
-      coverImage = fileAddress.replace(/\\/g, "/");
+    if (process.env.NODE_ENV === "production") {
+      // Cloudinary returns the URL directly in req.file.path
+      if (req.file && req.file.path) {
+        coverImage = req.file.path;
+      }
+    } else {
+      // Local storage
+      if (fileUploadPath && filename) {
+        const fileAddress = path.join(fileUploadPath, filename);
+        coverImage = fileAddress.replace(/\\/g, "/");
+      }
     }
 
     const updatePostResult = await PostModel.updateOne(
