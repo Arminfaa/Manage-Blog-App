@@ -44,9 +44,35 @@ class Application {
     );
   }
   configServer() {
-    this.#app.use(
-      cors({ credentials: true, origin: process.env.ALLOW_CORS_ORIGIN })
-    );
+    const corsOptions = {
+      credentials: true,
+      origin: function (origin, callback) {
+        // Allow requests with no origin (mobile apps, curl, etc.)
+        if (!origin) return callback(null, true);
+
+        // Allow specific origins
+        const allowedOrigins = [
+          process.env.ALLOW_CORS_ORIGIN,
+          'https://manage-blog-app.vercel.app',
+          'https://manage-blog-app-*.vercel.app', // Preview deployments
+        ].filter(Boolean);
+
+        if (allowedOrigins.includes(origin) || allowedOrigins.some(pattern =>
+          new RegExp(pattern.replace('*', '.*')).test(origin)
+        )) {
+          return callback(null, true);
+        }
+
+        // For development, allow localhost
+        if (origin.includes('localhost') || origin.includes('127.0.0.1')) {
+          return callback(null, true);
+        }
+
+        return callback(new Error('Not allowed by CORS'));
+      }
+    };
+
+    this.#app.use(cors(corsOptions));
     this.#app.use(express.json());
     this.#app.use(express.urlencoded({ extended: true }));
     this.#app.use(express.static(path.join(__dirname, "..")));
