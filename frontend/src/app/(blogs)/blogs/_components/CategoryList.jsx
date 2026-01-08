@@ -9,11 +9,11 @@ async function CategoryList() {
 
   return (
     <ul className="space-y-4">
-      <Link href="/blogs">همه</Link>
+      <Link href="/blogs" className="text-secondary-700 hover:text-primary-900 transition-all ease-out">همه</Link>
       {categories.map((category) => {
         return (
           <li key={category._id}>
-            <Link href={`/blogs/category/${category.slug}`}>
+            <Link href={`/blogs/category/${category.slug}`} className="text-secondary-700 hover:text-primary-900 transition-all ease-out">
               {category.title}
             </Link>
           </li>
