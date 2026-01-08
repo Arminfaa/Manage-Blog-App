@@ -2,6 +2,7 @@
 
 import { useAuth } from "@/context/AuthContext";
 import NavLink from "./NavLink";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   {
@@ -37,7 +38,8 @@ function Header() {
               );
             })}
           </div>
-          <li>
+          <li className="flex items-center gap-x-4">
+            <ThemeToggle />
             {user ? (
               <NavLink path="/profile">پروفایل</NavLink>
             ) : (

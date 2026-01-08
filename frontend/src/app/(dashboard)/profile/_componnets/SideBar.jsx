@@ -9,6 +9,7 @@ import Link from "next/link";
 import SideBarNavs from "./SideBarNavs";
 import ButtonIcon from "@/ui/ButtonIcon";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import ThemeToggle from "@/components/ThemeToggle";
 
 function SideBar({ onClose }) {
   const { logout } = useAuth();
@@ -41,6 +42,10 @@ function SideBar({ onClose }) {
       {/* Sidebar content */}
       <div className="overflow-y-auto flex-auto">
         <SideBarNavs />
+        <div className="flex items-center gap-x-2 rounded-2xl font-medium transition-all duration-200 text-secondary-700 py-3 px-3 mb-2">
+          <ThemeToggle />
+          <span>تغییر تم</span>
+        </div>
         <div
           onClick={handleLogout}
           className="flex items-center gap-x-2 rounded-2xl font-medium transition-all duration-200 text-secondary-700 py-3 hover:text-red-400 cursor-pointer"

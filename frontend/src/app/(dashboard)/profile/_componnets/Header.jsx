@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Drawer from "@/ui/Drawer";
 import SideBar from "./SideBar";
+import ThemeToggle from "@/components/ThemeToggle";
 
 function Header() {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
@@ -29,9 +30,12 @@ function Header() {
           سلام؛ {user?.name}
         </span>
 
-        <Link href="/profile/settings">
-          <Avatar src={user?.avatarUrl} width={40} />
-        </Link>
+        <div className="flex items-center gap-x-3">
+          <ThemeToggle />
+          <Link href="/profile/settings">
+            <Avatar src={user?.avatarUrl} width={40} />
+          </Link>
+        </div>
 
         <Drawer open={isOpenDrawer} onClose={() => setIsOpenDrawer(false)}>
           <SideBar onClose={() => setIsOpenDrawer(false)} />
