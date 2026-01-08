@@ -56,14 +56,10 @@ function generateToken(user, expiresIn, secret) {
 async function setAccessToken(res, user) {
   const cookieOptions = {
     maxAge: 1000 * 60 * 60 * 24 * 1, // would expire after 1 days
-    httpOnly: true, // The cookie only accessible by the web server
-    signed: true, // Indicates if the cookie should be signed
-    sameSite: process.env.NODE_ENV === "development" ? "Lax" : "None",
-    secure: process.env.NODE_ENV === "development" ? false : true,
-    // در development domain را تنظیم نکن، در production domain را تنظیم کن
-    ...(process.env.NODE_ENV === "production" && process.env.DOMAIN && process.env.DOMAIN !== 'localhost' && {
-      domain: process.env.DOMAIN
-    }),
+    httpOnly: false, // تغییر به false برای دسترسی از frontend
+    signed: false, // تغییر به false برای سادگی
+    sameSite: "Lax", // همیشه Lax برای همه محیط‌ها
+    secure: false, // همیشه false برای همه محیط‌ها
   };
   res.cookie(
     "accessToken",
@@ -75,14 +71,10 @@ async function setAccessToken(res, user) {
 async function setRefreshToken(res, user) {
   const cookieOptions = {
     maxAge: 1000 * 60 * 60 * 24 * 365, // would expire after 1 year
-    httpOnly: true, // The cookie only accessible by the web server
-    signed: true, // Indicates if the cookie should be signed
-    sameSite: process.env.NODE_ENV === "development" ? "Lax" : "None",
-    secure: process.env.NODE_ENV === "development" ? false : true,
-    // در development domain را تنظیم نکن، در production domain را تنظیم کن
-    ...(process.env.NODE_ENV === "production" && process.env.DOMAIN && process.env.DOMAIN !== 'localhost' && {
-      domain: process.env.DOMAIN
-    }),
+    httpOnly: false, // تغییر به false برای دسترسی از frontend
+    signed: false, // تغییر به false برای سادگی
+    sameSite: "Lax", // همیشه Lax برای همه محیط‌ها
+    secure: false, // همیشه false برای همه محیط‌ها
   };
   res.cookie(
     "refreshToken",
@@ -92,17 +84,13 @@ async function setRefreshToken(res, user) {
 }
 
 function VerifyRefreshToken(req) {
-  const refreshToken = req.signedCookies["refreshToken"];
+  const refreshToken = req.cookies["refreshToken"];
   if (!refreshToken) {
     throw createError.Unauthorized("لطفا وارد حساب کاربری خود شوید.");
   }
-  const token = cookieParser.signedCookie(
-    refreshToken,
-    process.env.COOKIE_PARSER_SECRET_KEY
-  );
   return new Promise((resolve, reject) => {
     JWT.verify(
-      token,
+      refreshToken,
       process.env.REFRESH_TOKEN_SECRET_KEY,
       async (err, payload) => {
         try {

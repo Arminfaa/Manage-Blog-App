@@ -2,6 +2,7 @@ const {
   VerifyRefreshToken,
   setAccessToken,
   setRefreshToken,
+  generateToken,
 } = require("../../utils/functions");
 const Controller = require("./controller");
 const createError = require("http-errors");
@@ -37,6 +38,9 @@ class UserAuthController extends Controller {
       password: hashedPassword,
     });
 
+    const accessToken = await generateToken(user, "1d", process.env.ACCESS_TOKEN_SECRET_KEY);
+    const refreshToken = await generateToken(user, "1y", process.env.REFRESH_TOKEN_SECRET_KEY);
+
     await setAccessToken(res, user);
     await setRefreshToken(res, user);
 
@@ -48,6 +52,8 @@ class UserAuthController extends Controller {
         message: WELLCOME_MESSAGE,
         user,
       },
+      accessToken,
+      refreshToken,
     });
   }
   async signin(req, res) {
@@ -65,6 +71,9 @@ class UserAuthController extends Controller {
     if (!validPass)
       throw createError.BadRequest("ایمیل یا رمز عبور اشتباه است");
 
+    const accessToken = await generateToken(user, "1d", process.env.ACCESS_TOKEN_SECRET_KEY);
+    const refreshToken = await generateToken(user, "1y", process.env.REFRESH_TOKEN_SECRET_KEY);
+
     await setAccessToken(res, user);
     await setRefreshToken(res, user);
     let WELLCOME_MESSAGE = `ورود با موفقیت انجام شد`;
@@ -75,6 +84,8 @@ class UserAuthController extends Controller {
         message: WELLCOME_MESSAGE,
         user,
       },
+      accessToken,
+      refreshToken,
     });
   }
   async updateProfile(req, res) {
@@ -174,19 +185,20 @@ class UserAuthController extends Controller {
 
   async debugCookies(req, res) {
     try {
+      console.log('NODE_ENV:', process.env.NODE_ENV);
+      console.log('DOMAIN:', process.env.DOMAIN);
       console.log('All cookies:', req.cookies);
       console.log('Signed cookies:', req.signedCookies);
       console.log('Cookie header:', req.headers.cookie);
-      const cookieHeader = req.headers.cookie || '';
-      console.log('Cookie header length:', cookieHeader.length);
 
       return res.status(200).json({
         statusCode: 200,
         data: {
+          nodeEnv: process.env.NODE_ENV,
+          domain: process.env.DOMAIN,
           cookies: req.cookies,
           signedCookies: req.signedCookies,
-          cookieHeader: req.headers.cookie,
-          cookieHeaderLength: (req.headers.cookie || '').length
+          cookieHeader: req.headers.cookie
         }
       });
     } catch (error) {
@@ -198,12 +210,11 @@ class UserAuthController extends Controller {
     const cookieOptions = {
       maxAge: 1,
       expires: Date.now(),
-      httpOnly: true,
-      signed: true,
+      httpOnly: false,
+      signed: false,
       sameSite: "Lax",
-      secure: true,
+      secure: false,
       path: "/",
-      domain: process.env.DOMAIN,
     };
     res.cookie("accessToken", null, cookieOptions);
     res.cookie("refreshToken", null, cookieOptions);

@@ -31,21 +31,32 @@ async function isAuthWithCookie(req, res, next) {
 
 async function verifyAccessToken(req, res, next) {
   try {
-    const accessToken = req.signedCookies["accessToken"];
+    let accessToken = req.cookies["accessToken"];
+
+    // اگر توکن در کوکی نبود، از Authorization header چک کن
+    if (!accessToken) {
+      const authHeader = req.headers.authorization;
+      if (authHeader && authHeader.startsWith('Bearer ')) {
+        accessToken = authHeader.substring(7);
+      }
+    }
+
+    console.log('Access token found:', !!accessToken);
+    console.log('Auth header:', req.headers.authorization);
+
     if (!accessToken) {
       throw createHttpError.Unauthorized("لطفا وارد حساب کاربری خود شوید.");
     }
-    const token = cookieParser.signedCookie(
-      accessToken,
-      process.env.COOKIE_PARSER_SECRET_KEY
-    );
+
     JWT.verify(
-      token,
+      accessToken,
       process.env.ACCESS_TOKEN_SECRET_KEY,
       async (err, payload) => {
         try {
+          console.log('JWT verify error:', err);
           if (err) throw createHttpError.Unauthorized("توکن نامعتبر است");
           const { _id } = payload;
+          console.log('User ID from token:', _id);
           const user = await UserModel.findById(_id, {
             password: 0,
             otp: 0,
@@ -54,11 +65,13 @@ async function verifyAccessToken(req, res, next) {
           req.user = user;
           return next();
         } catch (error) {
+          console.error('Error in JWT verify callback:', error);
           next(error);
         }
       }
     );
   } catch (error) {
+    console.error('Error in verifyAccessToken:', error);
     next(error);
   }
 }
@@ -83,8 +96,10 @@ async function verifyRecaptcha(req, res, next) {
 }
 
 function decideAuthMiddleware(req, res, next) {
-  const accessToken = req.signedCookies["accessToken"];
-  if (accessToken) {
+  const accessToken = req.cookies["accessToken"];
+  const authHeader = req.headers.authorization;
+
+  if (accessToken || (authHeader && authHeader.startsWith('Bearer '))) {
     return verifyAccessToken(req, res, next);
   }
   // skip this middleware
