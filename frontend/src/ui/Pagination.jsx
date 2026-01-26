@@ -70,7 +70,7 @@ function PaginationNumber({ page, href, isActive, position }) {
     {
       "rounded-r-md": position === "first" || position === "single",
       "rounded-l-md": position === "last" || position === "single",
-      "z-10 bg-primary-900 !border-primary-900 text-white": isActive,
+      "z-[9] bg-primary-900 !border-primary-900 text-white": isActive,
       "hover:bg-secondary-200": !isActive && position !== "middle",
       "text-secondary-300": position === "middle",
     }

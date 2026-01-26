@@ -154,6 +154,22 @@ body {
   min-height: 100vh;
   user-select: none;
   background-color: rgb(var(--background-app-rgb));
+  scrollbar-color: rgb(var(--color-secondary-50)) transparent;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-secondary-50));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-secondary-50));
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-secondary-50));
 }
 
 button {
@@ -176,7 +192,7 @@ input::-webkit-inner-spin-button {
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield; /* Firefox */
 }
 
@@ -219,7 +235,7 @@ table td {
   position: relative;
 }
 .post-comments .post-comments__answer::before {
-  content: "";
+  content: '';
   display: block;
   height: 100%;
   position: absolute;
@@ -230,7 +246,7 @@ table td {
 }
 
 .post-comments .post-comments__answer .answer-item::before {
-  content: "";
+  content: '';
   display: block;
   height: 3px;
   position: relative;
@@ -242,7 +258,7 @@ table td {
 }
 
 .post-comments .post-comments__answer .last-item:after {
-  content: "";
+  content: '';
   display: block;
   height: calc(100% - 80px);
   position: absolute;

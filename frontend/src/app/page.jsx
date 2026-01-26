@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="flex flex-col items-center justify-center flex-1 h-full">
-        <h1 className="font-bold text-center text-2xl md:text-5xl text-secondary-800 mb-20">
+      <div className="flex flex-col items-center justify-center flex-1 h-full px-4">
+        <h1 className="font-bold text-center text-2xl md:text-5xl text-secondary-800 mb-4 md:mb-20">
           اپلیکیشن مدیریت بلاگ
         </h1>
 
@@ -21,7 +21,7 @@ export default function Home() {
             <br /> بتونی بلاگ بسازی - کامنت بگذاری و در پنلت همه اتفاقات رو رصد
             کنی!
           </p>
-          <div className="flex justify-center gap-x-8 w-full mt-10">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 w-full mt-6 sm:mt-10">
             <Button variant="outline">
               <Link href="/blogs">مطالعه بلاگ ها</Link>
             </Button>

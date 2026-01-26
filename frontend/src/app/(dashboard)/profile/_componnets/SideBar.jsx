@@ -21,7 +21,7 @@ function SideBar({ onClose }) {
   return (
     <div className="overflow-y-auto flex flex-col p-6  h-screen pt-10 lg:pt-8">
       {/* Sidebar header */}
-      <div className="flex items-center justify-between w-full mb-5 pb-2 border-b  border-b-secondary-200 ">
+      <div className="flex items-center justify-between w-full mb-5 pb-4 border-b  border-b-secondary-200 ">
         <Link
           href="/"
           className="flex items-center gap-x-4 justify-center text-secondary-700 lg:flex-1"
@@ -41,7 +41,7 @@ function SideBar({ onClose }) {
 
       {/* Sidebar content */}
       <div className="overflow-y-auto flex-auto">
-        <SideBarNavs />
+        <SideBarNavs onClose={onClose} />
         {/* <div className="flex items-center gap-x-2 rounded-2xl font-medium transition-all duration-200 text-secondary-700 py-3 px-3 mb-2">
           <ThemeToggle />
           <span>تغییر تم</span>

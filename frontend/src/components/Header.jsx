@@ -27,7 +27,7 @@ function Header() {
          ${isLoading ? "blur-sm opacity-70" : "opacity-100 blur-0"}
       `}
     >
-      <nav className="container xl:max-w-screen-xl">
+      <nav className="container !max-w-screen-xl">
         <ul className="flex items-center text-secondary-400 justify-between py-2">
           <div className="flex items-center gap-x-10">
             {navLinks.map((navLink) => {

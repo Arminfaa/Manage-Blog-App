@@ -8,6 +8,7 @@ export const dynamic = 'force-dynamic';
 async function EditPage({ params }) {
   try {
     const { postId } = await params;
+    console.log(postId);
     const data = await getPostById(postId);
     const post = data?.post || data;
 

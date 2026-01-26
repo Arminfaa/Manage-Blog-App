@@ -16,13 +16,13 @@ async function Layout({ children }) {
         <Search />
         <BlogSort />
       </div>
-      <div className="grid grid-cols-12 gap-8">
-        <div className="col-span-12 lg:col-span-4 xl:col-span-3 text-secondary-500 space-y-4 border-l border-l-secondary-300 pl-4">
+      <div className="flex flex-col sm:grid sm:grid-cols-12 gap-8">
+        <div className="sm:col-span-12 lg:col-span-3 text-secondary-500 space-y-4 border-b border-b-secondary-300 pb-4 lg:border-l lg:border-l-secondary-300 lg:pl-4">
           <Suspense fallback={<Spinner />}>
             <CategoryList />
           </Suspense>
         </div>
-        <div className="col-span-12 lg:col-span-4 xl:col-span-9">
+        <div className="sm:col-span-12 lg:col-span-9">
           {children}
         </div>
       </div>

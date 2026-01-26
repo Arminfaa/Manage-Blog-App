@@ -43,7 +43,7 @@ const sidebarNavs = [
   },
 ];
 
-export default function SideBarNavs() {
+export default function SideBarNavs({onClose}) {
   const router = useRouter();
   return (
     <ul className="space-y-2">
@@ -59,6 +59,7 @@ export default function SideBarNavs() {
                     router.pathname === nav.href,
                 }
               )}
+              onClick={onClose}
             >
               {nav.icon}
               {nav.title}
