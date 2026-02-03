@@ -1,76 +1,68 @@
-import http from "./httpService";
+import http from './httpService';
 
 export async function getPostBySlug(slug) {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     if (!baseUrl) {
-      console.warn("NEXT_PUBLIC_BASE_URL is not set");
+      console.warn('NEXT_PUBLIC_BASE_URL is not set');
       return null;
     }
 
-    const res = await fetch(
-      `${baseUrl}/post/slug/${slug}`,
-      {
-        next: { revalidate: 60 } // Cache for 60 seconds
-      }
-    );
-    
+    const res = await fetch(`${baseUrl}/post/slug/${slug}`, {
+      next: { revalidate: 60 }, // Cache for 60 seconds
+    });
+
     if (!res.ok) {
       return null;
     }
-    
-    const contentType = res.headers.get("content-type");
-    if (!contentType || !contentType.includes("application/json")) {
+
+    const contentType = res.headers.get('content-type');
+    if (!contentType || !contentType.includes('application/json')) {
       return null;
     }
-    
+
     const json = await res.json();
     const { data } = json || {};
     const { post } = data || {};
     return post;
   } catch (error) {
-    console.error("Error fetching post by slug:", error);
+    console.error('Error fetching post by slug:', error);
     return null;
   }
 }
 
-export async function getPosts(queries = "", options) {
+export async function getPosts(queries = '', options) {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     if (!baseUrl) {
-      console.warn("NEXT_PUBLIC_BASE_URL is not set");
+      console.warn('NEXT_PUBLIC_BASE_URL is not set');
       return { posts: [], totalPages: 0 };
     }
 
-    // ARTIFICIALLY DELAY A REPONSE FOR DEMO PURPOSES
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const url = queries ? `${baseUrl}/post/list?${queries}` : `${baseUrl}/post/list`;
 
-    const url = queries 
-      ? `${baseUrl}/post/list?${queries}`
-      : `${baseUrl}/post/list`;
-    
     const fetchOptions = {
       ...options,
-      next: { revalidate: 60 } // Cache for 60 seconds
+      next: { revalidate: 60, tags: ['posts'] },
     };
-    
+
     const res = await fetch(url, fetchOptions);
-    
+
     if (!res.ok) {
       return { posts: [], totalPages: 0 };
     }
-    
-    const contentType = res.headers.get("content-type");
-    if (!contentType || !contentType.includes("application/json")) {
+
+    const contentType = res.headers.get('content-type');
+    if (!contentType || !contentType.includes('application/json')) {
       return { posts: [], totalPages: 0 };
     }
-    
+
     const json = await res.json();
     const { data } = json || {};
     const { posts, totalPages } = data || {};
     return { posts: posts || [], totalPages: totalPages || 0 };
   } catch (error) {
-    console.error("Error fetching posts:", error);
+    console.error('Error fetching posts:', error);
     return { posts: [], totalPages: 0 };
   }
 }
@@ -96,7 +88,5 @@ export async function getPostById(id) {
 }
 
 export async function deletePostApi({ id, options }) {
-  return http
-    .delete(`/post/remove/${id}`, options)
-    .then(({ data }) => data.data);
+  return http.delete(`/post/remove/${id}`, options).then(({ data }) => data.data);
 }

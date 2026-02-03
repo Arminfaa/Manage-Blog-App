@@ -2,13 +2,17 @@ import { Suspense } from "react";
 import CommentsTable from "./_/components/CommentsTable";
 import Search from "@/ui/Search";
 import Spinner from "@/ui/Spinner";
-import { getAllCommentsApi } from "@/services/commentService";
-
-export const dynamic = 'force-dynamic';
+import { getCachedCommentsApi } from "@/services/commentService";
+import setCookieOnReq from "@/utils/setCookieOnReq";
+import getCacheKeyFromCookies from "@/utils/getCacheKeyFromCookies";
+import { cookies } from "next/headers";
 
 async function Page() {
   try {
-    const data = await getAllCommentsApi();
+    const cookieStore = await cookies();
+    const options = setCookieOnReq(cookieStore);
+    const cacheKey = getCacheKeyFromCookies(cookieStore);
+    const data = await getCachedCommentsApi(options, cacheKey);
     const comments = data?.comments || [];
 
     return (

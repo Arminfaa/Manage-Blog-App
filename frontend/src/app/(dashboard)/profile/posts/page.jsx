@@ -7,8 +7,6 @@ import queryString from "query-string";
 import { getPosts } from "@/services/postServices";
 import Pagination from "@/ui/Pagination";
 
-export const dynamic = 'force-dynamic';
-
 async function Page({ searchParams }) {
   try {
     const query = queryString.stringify(await searchParams);

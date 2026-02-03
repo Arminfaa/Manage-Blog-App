@@ -2,8 +2,6 @@ import Breadcrumbs from "@/ui/BreadCrumbs";
 import ProfileForm from "./_/ProfileForm";
 import { cookies } from "next/headers";
 
-export const dynamic = 'force-dynamic';
-
 async function Page() {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;

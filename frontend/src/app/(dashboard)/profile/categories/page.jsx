@@ -3,13 +3,17 @@ import CategoriesTable from "./_/components/CategoriesTable";
 import Search from "@/ui/Search";
 import { CreateCategory } from "./_/components/Buttons";
 import Spinner from "@/ui/Spinner";
-import { getCategoriesApi } from "@/services/categoryServie";
-
-export const dynamic = 'force-dynamic';
+import { getCachedCategoriesApi } from "@/services/categoryServie";
+import setCookieOnReq from "@/utils/setCookieOnReq";
+import getCacheKeyFromCookies from "@/utils/getCacheKeyFromCookies";
+import { cookies } from "next/headers";
 
 async function Page() {
   try {
-    const data = await getCategoriesApi();
+    const cookieStore = await cookies();
+    const options = setCookieOnReq(cookieStore);
+    const cacheKey = getCacheKeyFromCookies(cookieStore);
+    const data = await getCachedCategoriesApi(options, cacheKey);
     const categories = data?.categories || [];
 
     return (

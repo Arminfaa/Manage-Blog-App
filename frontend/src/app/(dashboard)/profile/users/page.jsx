@@ -2,15 +2,14 @@ import { Suspense } from "react";
 import UsersTable from "./_/components/UsersTable";
 import Search from "@/ui/Search";
 import Spinner from "@/ui/Spinner";
+import { getCachedUsersApi } from "@/services/authService";
+import setCookieOnReq from "@/utils/setCookieOnReq";
+import getCacheKeyFromCookies from "@/utils/getCacheKeyFromCookies";
 import { cookies } from "next/headers";
-
-export const dynamic = 'force-dynamic';
 
 async function Page() {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-    if (!baseUrl) {
-      console.warn("NEXT_PUBLIC_BASE_URL is not set");
+    if (!process.env.NEXT_PUBLIC_BASE_URL) {
       return (
         <div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-secondary-700 mb-12 items-center">
@@ -25,29 +24,9 @@ async function Page() {
     }
 
     const cookieStore = await cookies();
-    const accessToken = cookieStore.get("accessToken");
-    const refreshToken = cookieStore.get("refreshToken");
-
-    const options = {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        Cookie: `${accessToken?.name}=${accessToken?.value}; ${refreshToken?.name}=${refreshToken?.value}`,
-      },
-    };
-
-    const res = await fetch(`${baseUrl}/user/list`, options);
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch users");
-    }
-
-    const contentType = res.headers.get("content-type");
-    if (!contentType || !contentType.includes("application/json")) {
-      throw new Error("Invalid response format");
-    }
-
-    const { data } = await res.json();
+    const options = setCookieOnReq(cookieStore);
+    const cacheKey = getCacheKeyFromCookies(cookieStore);
+    const data = await getCachedUsersApi(options, cacheKey);
     const users = data?.users || [];
 
     return (

@@ -1,7 +1,7 @@
 import Header from "./profile/_componnets/Header";
 import SideBar from "./profile/_componnets/SideBar";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 export const dynamicParams = true;
 
 export const metadata = {

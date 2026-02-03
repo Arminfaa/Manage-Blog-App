@@ -1,14 +1,18 @@
 import Breadcrumbs from "@/ui/BreadCrumbs";
 import CreateCategoryForm from "../../create/_/CreateCategoryForm";
-import { getCategoriesApi } from "@/services/categoryServie";
+import { getCachedCategoriesApi } from "@/services/categoryServie";
 import { notFound } from "next/navigation";
-
-export const dynamic = 'force-dynamic';
+import setCookieOnReq from "@/utils/setCookieOnReq";
+import getCacheKeyFromCookies from "@/utils/getCacheKeyFromCookies";
+import { cookies } from "next/headers";
 
 async function Page({ params }) {
   try {
     const { categoryId } = await params;
-    const data = await getCategoriesApi();
+    const cookieStore = await cookies();
+    const options = setCookieOnReq(cookieStore);
+    const cacheKey = getCacheKeyFromCookies(cookieStore);
+    const data = await getCachedCategoriesApi(options, cacheKey);
     const categories = data?.categories || [];
     const category = categories.find((cat) => cat._id === categoryId);
 

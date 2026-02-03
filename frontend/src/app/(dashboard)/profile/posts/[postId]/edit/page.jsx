@@ -3,8 +3,6 @@ import Breadcrumbs from "@/ui/BreadCrumbs";
 import { notFound } from "next/navigation";
 import CreatePostForm from "../../create/_/CreatePostForm";
 
-export const dynamic = 'force-dynamic';
-
 async function EditPage({ params }) {
   try {
     const { postId } = await params;
