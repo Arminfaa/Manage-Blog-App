@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <div className="bg-secondary-0 w-full">
-      <div className="flex flex-col lg:grid lg:grid-cols-12 lg:grid-rows-[auto_1fr] h-screen">
+      <div className="flex flex-col lg:grid lg:grid-cols-12 lg:grid-rows-[auto_1fr] h-dvh">
         <aside className="hidden lg:block col-span-3 xl:col-span-2 row-span-2">
           <SideBar />
         </aside>

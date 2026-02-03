@@ -19,7 +19,7 @@ function SideBar({ onClose }) {
   };
 
   return (
-    <div className="overflow-y-auto flex flex-col p-6  h-screen pt-10 lg:pt-8">
+    <div className="overflow-y-auto flex flex-col p-6  h-dvh pt-10 lg:pt-8">
       {/* Sidebar header */}
       <div className="flex items-center justify-between w-full mb-5 pb-4 border-b  border-b-secondary-200 ">
         <Link

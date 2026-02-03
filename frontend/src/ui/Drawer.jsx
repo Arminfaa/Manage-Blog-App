@@ -11,30 +11,28 @@ function Drawer({ open, onClose, children }) {
 
   return domReady
     ? createPortal(
-        <>
-          <div
-            className={`backdrop-blur-sm fixed inset-0 w-full h-screen bg-secondary-800 bg-opacity-30  ${
-              open ? "block" : "pointer-events-none hidden"
+      <>
+        <div
+          className={`backdrop-blur-sm fixed inset-0 w-full h-dvh bg-secondary-800 bg-opacity-30  ${open ? "block" : "pointer-events-none hidden"
             }`}
-            onClick={onClose}
-          ></div>
+          onClick={onClose}
+        ></div>
 
-          <div
-            className={`fixed top-0 right-0 w-[250px] h-full transition-transform transform ${
-              open ? "translate-x-0" : "translate-x-full"
+        <div
+          className={`fixed top-0 right-0 w-[250px] h-full transition-transform transform ${open ? "translate-x-0" : "translate-x-full"
             }`}
-            onClick={(event) => {
-              event.preventDefault();
-              event.stopPropagation();
-            }}
-          >
-            <div className="bg-secondary-0 max-h-full overflow-y-auto">
-              {children}
-            </div>
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+          }}
+        >
+          <div className="bg-secondary-0 max-h-full overflow-y-auto">
+            {children}
           </div>
-        </>,
-        typeof document !== "undefined" && document.body
-      )
+        </div>
+      </>,
+      typeof document !== "undefined" && document.body
+    )
     : null;
 }
 export default Drawer;
