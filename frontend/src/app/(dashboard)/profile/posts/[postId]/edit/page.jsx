@@ -6,7 +6,7 @@ import CreatePostForm from "../../create/_/CreatePostForm";
 async function EditPage({ params }) {
   try {
     const { postId } = await params;
-    console.log(postId);
+    console.log('postId',postId);
     const data = await getPostById(postId);
     const post = data?.post || data;
 
