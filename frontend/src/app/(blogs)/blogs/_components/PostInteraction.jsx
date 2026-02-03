@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { bookmarkPostApi, likePostApi } from "@/services/postServices";
 import ButtonIcon from "@/ui/ButtonIcon";
 import { toPersianDigits } from "@/utils/numberFormatter";
@@ -14,18 +15,26 @@ import {
   HeartIcon as SolidHeartIcon,
   BookmarkIcon as SolidBookmarkIcon,
 } from "@heroicons/react/24/solid";
-import { useRouter } from "next/navigation";
 
 import toast from "react-hot-toast";
 
 function PostInteraction({ post }) {
-  const router = useRouter();
+  const [isLiked, setIsLiked] = useState(post?.isLiked ?? false);
+  const [likesCount, setLikesCount] = useState(post?.likesCount ?? 0);
+  const [isBookmarked, setIsBookmarked] = useState(post?.isBookmarked ?? false);
+
+  useEffect(() => {
+    setIsLiked(post?.isLiked ?? false);
+    setLikesCount(post?.likesCount ?? 0);
+    setIsBookmarked(post?.isBookmarked ?? false);
+  }, [post?._id, post?.isLiked, post?.likesCount, post?.isBookmarked]);
 
   const likeHandler = async (postId) => {
     try {
-      const { message } = await likePostApi(postId);
-      toast.success(message);
-      router.refresh();
+      const data = await likePostApi(postId);
+      toast.success(data.message);
+      setIsLiked(data.isLiked);
+      setLikesCount(data.likesCount);
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }
@@ -33,9 +42,9 @@ function PostInteraction({ post }) {
 
   const bookmarkHandler = async (postId) => {
     try {
-      const { message } = await bookmarkPostApi(postId);
-      toast.success(message);
-      router.refresh();
+      const data = await bookmarkPostApi(postId);
+      toast.success(data.message);
+      setIsBookmarked(data.isBookmarked);
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }
@@ -48,11 +57,11 @@ function PostInteraction({ post }) {
         <span>{toPersianDigits(post.commentsCount)}</span>
       </ButtonIcon>
       <ButtonIcon variant="red" onClick={() => likeHandler(post._id)}>
-        {post.isLiked ? <SolidHeartIcon /> : <HeartIcon />}
-        <span>{toPersianDigits(post.likesCount)}</span>
+        {isLiked ? <SolidHeartIcon /> : <HeartIcon />}
+        <span>{toPersianDigits(likesCount)}</span>
       </ButtonIcon>
       <ButtonIcon variant="primary" onClick={() => bookmarkHandler(post._id)}>
-        {post.isBookmarked ? <SolidBookmarkIcon /> : <BookmarkIcon />}
+        {isBookmarked ? <SolidBookmarkIcon /> : <BookmarkIcon />}
       </ButtonIcon>
     </div>
   );
