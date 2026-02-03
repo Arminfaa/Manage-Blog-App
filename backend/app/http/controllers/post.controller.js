@@ -43,13 +43,31 @@ class PostController extends Controller {
     }
 
     const sortQuery = {};
-    if (!sort) sortQuery['createdAt'] = -1;
+    if (!sort) {
+      sortQuery['createdAt'] = -1;
+      sortQuery['_id'] = -1;
+    }
     if (sort) {
-      if (sort === 'latest') sortQuery['createdAt'] = -1;
-      if (sort === 'earliest') sortQuery['createdAt'] = 1;
-      if (sort === 'popular') sortQuery['likes'] = -1;
-      if (sort === 'time_desc') sortQuery['readingTime'] = -1;
-      if (sort === 'time_asc') sortQuery['readingTime'] = 1;
+      if (sort === 'latest') {
+        sortQuery['createdAt'] = -1;
+        sortQuery['_id'] = -1;
+      }
+      if (sort === 'earliest') {
+        sortQuery['createdAt'] = 1;
+        sortQuery['_id'] = 1;
+      }
+      if (sort === 'popular') {
+        sortQuery['likes'] = -1;
+        sortQuery['_id'] = -1;
+      }
+      if (sort === 'time_desc') {
+        sortQuery['readingTime'] = -1;
+        sortQuery['_id'] = -1;
+      }
+      if (sort === 'time_asc') {
+        sortQuery['readingTime'] = 1;
+        sortQuery['_id'] = 1;
+      }
     }
     const posts = await PostModel.find(dbQuery, {
       comments: 0,
