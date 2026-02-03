@@ -86,7 +86,8 @@ class PostController extends Controller {
       .skip(skip)
       .sort(sortQuery);
 
-    const totalPages = Math.ceil(Number((await PostModel.find(dbQuery)).length) / limit);
+    const totalCount = await PostModel.countDocuments(dbQuery);
+    const totalPages = Math.ceil(totalCount / limit);
 
     const transformedPosts = copyObject(posts);
 
@@ -100,6 +101,7 @@ class PostController extends Controller {
         message: 'پست های مدنظر شما',
         posts: transformedPosts,
         totalPages,
+        totalCount,
       },
     });
   }

@@ -11,10 +11,10 @@ export async function fetchCardData() {
     const options = setCookieOnReq(cookieStore);
     const cacheKey = getCacheKeyFromCookies(cookieStore);
 
-    const data = await Promise.all([getCachedUsersApi(options, cacheKey).catch(() => ({ users: [] })), getCachedCommentsApi(options, cacheKey).catch(() => ({ commentsCount: 0 })), getPosts().catch(() => ({ posts: [] }))]);
+    const data = await Promise.all([getCachedUsersApi(options, cacheKey).catch(() => ({ users: [] })), getCachedCommentsApi(options, cacheKey).catch(() => ({ commentsCount: 0 })), getPosts('limit=1').catch(() => ({ posts: [], totalCount: 0 }))]);
 
     const numberOfUsers = Number(data[0]?.users?.length ?? 0);
-    const numberOfPosts = Number(data[2]?.posts?.length ?? 0);
+    const numberOfPosts = Number(data[2]?.totalCount ?? 0);
     const numberOfComments = Number(data[1]?.commentsCount ?? 0);
 
     return {

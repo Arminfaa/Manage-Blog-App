@@ -59,8 +59,8 @@ export async function getPosts(queries = '', options) {
 
     const json = await res.json();
     const { data } = json || {};
-    const { posts, totalPages } = data || {};
-    return { posts: posts || [], totalPages: totalPages || 0 };
+    const { posts, totalPages, totalCount } = data || {};
+    return { posts: posts || [], totalPages: totalPages || 0, totalCount: totalCount ?? 0 };
   } catch (error) {
     console.error('Error fetching posts:', error);
     return { posts: [], totalPages: 0 };
