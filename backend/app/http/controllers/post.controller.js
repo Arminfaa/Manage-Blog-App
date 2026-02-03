@@ -271,10 +271,15 @@ class PostController extends Controller {
       message = 'مرسی بابت لایک تون';
     } else message = 'لایک شما برداشته شد';
 
+    const likesCount = likedPost ? (post.likes?.length || 1) - 1 : (post.likes?.length || 0) + 1;
+    const isLiked = !likedPost;
+
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
         message,
+        isLiked,
+        likesCount,
       },
     });
   }
@@ -300,10 +305,13 @@ class PostController extends Controller {
       message = 'پست بوکمارک شد';
     } else message = 'پست از بوکمارک برداشته شد';
 
+    const isBookmarked = !likedPost;
+
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
         message,
+        isBookmarked,
       },
     });
   }
