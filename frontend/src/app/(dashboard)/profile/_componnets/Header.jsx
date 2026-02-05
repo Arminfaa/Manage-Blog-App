@@ -26,9 +26,14 @@ function Header() {
           {isOpenDrawer ? <XMarkIcon /> : <Bars3Icon />}
         </ButtonIcon>
 
-        <span className="text-sm lg:text-lg font-bold text-secondary-700">
-          سلام؛ {user?.name}
-        </span>
+        <div className="flex flex-col">
+          <span className="text-sm lg:text-lg font-bold text-secondary-700">
+            {user?.name}
+          </span>
+          <span className="text-sm text-secondary-700">
+            نقش: {user?.role === 'admin' ? 'مدیر' : 'کاربر'}
+          </span>
+        </div>
 
         <div className="flex items-center gap-x-3">
           <ThemeToggle />

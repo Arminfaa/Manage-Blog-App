@@ -19,8 +19,9 @@ export async function singinApi(data) {
   };
 }
 
-export async function getUserApi() {
-  return http.get('/user/profile').then(({ data }) => data.data);
+export async function getUserApi(options) {
+  const request = options ? http.get('/user/profile', options) : http.get('/user/profile');
+  return request.then(({ data }) => data.data);
 }
 
 export async function getAllUsersApi(options) {
@@ -37,6 +38,14 @@ export async function logoutApi() {
 
 export async function updateProfileApi(data) {
   return http.patch('/user/update', data).then(({ data }) => data.data);
+}
+
+export async function updateUserByAdminApi(userId, data) {
+  return http.patch(`/user/${userId}`, data).then(({ data: res }) => res.data);
+}
+
+export async function deleteUserByAdminApi(userId) {
+  return http.delete(`/user/${userId}`).then(({ data }) => data.data);
 }
 
 export async function uploadAvatarApi(data) {

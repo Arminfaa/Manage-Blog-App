@@ -13,6 +13,8 @@ function UsersTable({ users = [] }) {
         <th>ایمیل</th>
         <th>بیوگرافی</th>
         <th>تاریخ عضویت</th>
+        <th>نقش</th>
+        <th>عملیات</th>
       </Table.Header>
       <Table.Body>
         {users.map((user, index) => (

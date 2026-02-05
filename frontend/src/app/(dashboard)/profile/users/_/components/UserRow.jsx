@@ -3,9 +3,12 @@ import Avatar from "@/ui/Avatar";
 import { toPersianDigits } from "@/utils/numberFormatter";
 import { toLocalDateShort } from "@/utils/dateFormatter";
 import truncateText from "@/utils/truncateText";
+import { UpdateUser, DeleteUser } from "./Buttons";
+
+const roleLabel = { admin: "ادمین", user: "کاربر" };
 
 function UserRow({ index, user }) {
-  const { name, email, biography, createdAt, avatarUrl } = user;
+  const { name, email, biography, createdAt, avatarUrl, role } = user;
 
   return (
     <Table.Row>
@@ -26,6 +29,17 @@ function UserRow({ index, user }) {
       </td>
       <td>{truncateText(biography || "-", 40)}</td>
       <td>{toLocalDateShort(createdAt)}</td>
+      <td>
+        <span className="badge badge--secondary">
+          {roleLabel[role] || roleLabel.user}
+        </span>
+      </td>
+      <td>
+        <div className="flex items-center gap-x-3">
+          <UpdateUser user={user} />
+          <DeleteUser user={user} />
+        </div>
+      </td>
     </Table.Row>
   );
 }
