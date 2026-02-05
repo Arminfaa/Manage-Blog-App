@@ -10,6 +10,7 @@ import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
 import useUpdateProfile from "./useUpdateProfile";
 import useUploadAvatar from "./useUploadAvatar";
+import useChangePassword from "./useChangePassword";
 import SpinnerMini from "@/ui/SpinnerMini";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
@@ -32,6 +33,20 @@ const schema = yup
     })
     .required();
 
+const passwordSchema = yup
+    .object({
+        currentPassword: yup.string().required("رمز عبور فعلی الزامی است"),
+        newPassword: yup
+            .string()
+            .min(8, "رمز عبور جدید حداقل ۸ کاراکتر باشد")
+            .required("رمز عبور جدید الزامی است"),
+        confirmNewPassword: yup
+            .string()
+            .oneOf([yup.ref("newPassword")], "رمز عبور جدید با تکرار آن یکسان نیست")
+            .required("تکرار رمز عبور جدید الزامی است"),
+    })
+    .required();
+
 function ProfileForm({ user }) {
     const { name, email, biography, avatarUrl: prevAvatarUrl } = user || {};
     const [avatarUrl, setAvatarUrl] = useState(prevAvatarUrl || null);
@@ -40,6 +55,7 @@ function ProfileForm({ user }) {
 
     const { updateProfile, isUpdating } = useUpdateProfile();
     const { uploadAvatar, isUploading } = useUploadAvatar();
+    const { changePassword, isChanging } = useChangePassword();
 
     const {
         register,
@@ -53,6 +69,21 @@ function ProfileForm({ user }) {
             name: name || "",
             email: email || "",
             biography: biography || "",
+        },
+    });
+
+    const {
+        register: registerPassword,
+        handleSubmit: handleSubmitPassword,
+        formState: { errors: passwordErrors },
+        reset: resetPasswordForm,
+    } = useForm({
+        mode: "onTouched",
+        resolver: yupResolver(passwordSchema),
+        defaultValues: {
+            currentPassword: "",
+            newPassword: "",
+            confirmNewPassword: "",
         },
     });
 
@@ -99,6 +130,15 @@ function ProfileForm({ user }) {
                 }
             );
         }
+    };
+
+    const onPasswordSubmit = (data) => {
+        changePassword(
+            { currentPassword: data.currentPassword, newPassword: data.newPassword },
+            {
+                onSuccess: () => resetPasswordForm(),
+            }
+        );
     };
 
     const isLoading = isUpdating || isUploading;
@@ -180,6 +220,52 @@ function ProfileForm({ user }) {
                     </Button>
                 </div>
             </form>
+
+            {/* تغییر رمز عبور */}
+            <div className="mt-10 pt-8 border-t border-secondary-200">
+                <h2 className="text-lg font-bold text-secondary-500 mb-4">
+                    تغییر رمز عبور
+                </h2>
+                <form
+                    className="form"
+                    onSubmit={handleSubmitPassword(onPasswordSubmit)}
+                >
+                    <RHFTextField
+                        label="رمز عبور فعلی"
+                        name="currentPassword"
+                        type="password"
+                        register={registerPassword}
+                        dir="ltr"
+                        isRequired
+                        errors={passwordErrors}
+                    />
+                    <RHFTextField
+                        label="رمز عبور جدید"
+                        name="newPassword"
+                        type="password"
+                        register={registerPassword}
+                        dir="ltr"
+                        isRequired
+                        errors={passwordErrors}
+                    />
+                    <RHFTextField
+                        label="تکرار رمز عبور جدید"
+                        name="confirmNewPassword"
+                        type="password"
+                        register={registerPassword}
+                        dir="ltr"
+                        isRequired
+                        errors={passwordErrors}
+                    />
+                    {isChanging ? (
+                        <SpinnerMini />
+                    ) : (
+                        <Button type="submit" variant="primary">
+                            تغییر رمز عبور
+                        </Button>
+                    )}
+                </form>
+            </div>
         </div>
     );
 }

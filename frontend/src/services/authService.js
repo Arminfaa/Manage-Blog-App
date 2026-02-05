@@ -40,6 +40,10 @@ export async function updateProfileApi(data) {
   return http.patch('/user/update', data).then(({ data }) => data.data);
 }
 
+export async function changePasswordApi(data) {
+  return http.patch('/user/change-password', data).then(({ data }) => data.data);
+}
+
 export async function updateUserByAdminApi(userId, data) {
   return http.patch(`/user/${userId}`, data).then(({ data: res }) => res.data);
 }
