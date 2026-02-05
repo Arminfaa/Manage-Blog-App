@@ -1,0 +1,1289 @@
+[{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c2c"
+  },
+  "title": "آینده برنامه‌نویسی در سال ۱۴۰۴",
+  "slug": "future-of-programming-1404",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0e"
+  },
+  "type": "free",
+  "briefText": "برنامه‌نویسی چگونه تغییر خواهد کرد؟",
+  "text": "با رشد هوش مصنوعی و ابزارهای کمکی، نقش برنامه‌نویس از نوشتن کد خام به طراحی سیستم و همکاری با AI تغییر می‌کند. در این مقاله به روندهای اصلی و مهارت‌های مورد نیاز می‌پردازیم. یادگیری ماشین، اتوماسیون تست و کدنویسی با کمک AI از موضوعات داغ امسال هستند.",
+  "coverImage": "uploads/coverImage/seed-1.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "readingTime": 8,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.018Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.018Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c2d"
+  },
+  "title": "فواید ورزش صبحگاهی برای ذهن",
+  "slug": "morning-exercise-benefits",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0d"
+  },
+  "type": "free",
+  "briefText": "چرا باید صبح ورزش کنیم؟",
+  "text": "ورزش صبحگاهی نه تنها بدن را آماده می‌کند بلکه تمرکز و خلاقیت را تا پایان روز بالا می‌برد. تحقیقات نشان می‌دهد افرادی که قبل از کار ورزش می‌کنند بهره‌وری بیشتری دارند. در این مطلب به چند حرکت ساده و زمان‌بندی بهینه می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-2.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 5,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.018Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.018Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c2e"
+  },
+  "title": "هوش مصنوعی و اخلاق: چالش‌های جدید",
+  "slug": "ai-ethics-challenges",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c10"
+  },
+  "type": "free",
+  "briefText": "مسئولیت استفاده از AI با کیست؟",
+  "text": "با گسترش مدل‌های زبانی و سیستم‌های خودکار، سوالات اخلاقی زیادی مطرح شده است. از حریم خصوصی و سوگیری تا شفافیت و مسئولیت‌پذیری. در این مقاله چارچوب‌های اخلاقی رایج و پیشنهادهایی برای توسعه مسئولانه را مرور می‌کنیم.",
+  "coverImage": "uploads/coverImage/seed-3.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 10,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.018Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.018Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c2f"
+  },
+  "title": "تاریخ ایران باستان: از ماد تا هخامنشی",
+  "slug": "ancient-iran-history",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c11"
+  },
+  "type": "free",
+  "briefText": "نگاهی به امپراتوری‌های کهن ایران",
+  "text": "ایران باستان یکی از کهن‌ترین تمدن‌های جهان است. از تشکیل پادشاهی ماد تا امپراتوری هخامنشی و دستاوردهای معماری، حقوقی و اداری. در این مطلب به مهم‌ترین رویدادها و شخصیت‌های این دوره می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-4.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [],
+  "readingTime": 12,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.018Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.018Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c30"
+  },
+  "title": "مدیریت زمان برای فریلنسرها",
+  "slug": "time-management-freelancers",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0e"
+  },
+  "type": "free",
+  "briefText": "چگونه زمان را در کار دورکاری مدیریت کنیم؟",
+  "text": "فریلنسرها بدون ساختار اداری معمولاً با چالش زمان‌بندی روبه‌رو هستند. تکنیک پومودورو، بلوک‌بندی روز و تفکیک فضای کار از زندگی از روش‌های موثر هستند. در این مقاله ابزارها و عادت‌های عملی را معرفی می‌کنیم.",
+  "coverImage": "uploads/coverImage/seed-5.jpg",
+  "likes": [],
+  "bookmarks": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "readingTime": 6,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c31"
+  },
+  "title": "کشتی آزاد و فرنگی: تفاوت‌ها و قوانین",
+  "slug": "wrestling-free-greco",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0d"
+  },
+  "type": "free",
+  "briefText": "آشنایی با دو سبک اصلی کشتی",
+  "text": "کشتی آزاد و فرنگی هر دو از ورزش‌های اصیل و محبوب ایران هستند. در کشتی فرنگی گرفتن پا ممنوع است و تاکید بر فنون بالاتنه است؛ در کشتی آزاد استفاده از پا و حمله به پا مجاز است. در این مطلب قوانین و تاریخچه هر دو سبک را می‌خوانید.",
+  "coverImage": "uploads/coverImage/seed-6.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 7,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c32"
+  },
+  "title": "یادگیری React در ۱۴۰۴: از صفر تا پروژه",
+  "slug": "learn-react-1404",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0e"
+  },
+  "type": "free",
+  "briefText": "مسیر یادگیری React به‌روز",
+  "text": "React همچنان یکی از محبوب‌ترین کتابخانه‌های فرانت‌اند است. با ظهور React Server Components و ابزارهای جدید، مسیر یادگیری کمی تغییر کرده است. در این مقاله منابع به‌روز، پروژه‌های تمرینی و بهترین روش‌ها را مرور می‌کنیم.",
+  "coverImage": "uploads/coverImage/seed-7.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [],
+  "readingTime": 9,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c33"
+  },
+  "title": "سبک زندگی مینیمال: کمتر، بهتر",
+  "slug": "minimalist-lifestyle",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0f"
+  },
+  "type": "free",
+  "briefText": "چگونه با کمتر زندگی بهتری داشته باشیم؟",
+  "text": "مینیمالیسم فقط به وسایل محدود نمی‌شود؛ شامل تصمیم‌گیری‌های روزمره، روابط و استفاده از زمان هم هست. در این مطلب اصول سبک زندگی مینیمال و تاثیر آن بر آرامش و بهره‌وری را بررسی می‌کنیم.",
+  "coverImage": "uploads/coverImage/seed-8.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 6,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c34"
+  },
+  "title": "چت‌بات‌ها چطور کار می‌کنند؟",
+  "slug": "how-chatbots-work",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c10"
+  },
+  "type": "free",
+  "briefText": "از پردازش زبان تا پاسخ‌دهی",
+  "text": "چت‌بات‌های مبتنی بر هوش مصنوعی از مدل‌های زبانی بزرگ استفاده می‌کنند. در این مقاله به صورت ساده مراحل دریافت سوال، پردازش و تولید پاسخ را توضیح می‌دهیم و با مفاهیم توکن، context و fine-tuning آشنا می‌شویم.",
+  "coverImage": "uploads/coverImage/seed-9.jpg",
+  "likes": [],
+  "bookmarks": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "readingTime": 8,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c35"
+  },
+  "title": "بهترین روستاهای پلکانی ایران",
+  "slug": "iran-stair-villages",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c14"
+  },
+  "type": "free",
+  "briefText": "سفر به روستاهای دیدنی ایران",
+  "text": "روستاهای پلکانی مثل ماسوله، ابیانه و کندوان از جاذبه‌های منحصربه‌فرد ایران هستند. معماری هم‌ساز با طبیعت و فرهنگ محلی در این روستاها در کنار هم دیده می‌شوند. در این مطلب چند مقصد برتر و نکات سفر را معرفی می‌کنیم.",
+  "coverImage": "uploads/coverImage/seed-10.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [],
+  "readingTime": 7,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c36"
+  },
+  "title": "اقتصاد دورکاری: فرصت‌ها و ریسک‌ها",
+  "slug": "remote-work-economy",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c12"
+  },
+  "type": "free",
+  "briefText": "تاثیر دورکاری بر اقتصاد و بازار کار",
+  "text": "دورکاری نه تنها سبک کار را عوض کرده بلکه بر بازار مسکن، حمل‌ونقل و مصرف محلی هم اثر گذاشته است. در این مقاله به آمارها، فرصت‌های جدید و چالش‌های قانونی و مالی دورکاری می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-11.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 7,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c37"
+  },
+  "title": "فوتبال ایران: گذشته و آینده",
+  "slug": "iran-football-history",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0d"
+  },
+  "type": "free",
+  "briefText": "نگاهی به تاریخچه و چالش‌های فوتبال ایران",
+  "text": "فوتبال ایران در دهه‌های اخیر فراز و نشیب زیادی داشته است. از حضور در جام جهانی تا چالش‌های لیگ داخلی و مدیریت. در این مطلب به مهم‌ترین دوران‌ها و چشم‌انداز آینده می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-12.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 6,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c38"
+  },
+  "title": "پایتون برای داده‌کاوی: از صفر تا مدل",
+  "slug": "python-data-science-intro",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0e"
+  },
+  "type": "free",
+  "briefText": "شروع کار با داده در پایتون",
+  "text": "پایتون با کتابخانه‌هایی مثل Pandas، NumPy و Scikit-learn به زبان اول علم داده تبدیل شده است. در این مقاله محیط کار، خواندن داده، پیش‌پردازش و ساخت یک مدل ساده را گام به گام مرور می‌کنیم.",
+  "coverImage": "uploads/coverImage/seed-13.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "readingTime": 11,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c39"
+  },
+  "title": "خواب و بهره‌وری: علم پشت استراحت",
+  "slug": "sleep-and-productivity",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0f"
+  },
+  "type": "free",
+  "briefText": "چرا خواب کافی برای موفقیت ضروری است؟",
+  "text": "تحقیقات نشان می‌دهد کمبود خواب مستقیم روی تصمیم‌گیری، خلاقیت و سلامت روان اثر می‌گذارد. در این مطلب به چرخه خواب، بهترین زمان بیداری و عادت‌های خواب سالم می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-14.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 5,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c3a"
+  },
+  "title": "مدل‌های زبانی بزرگ (LLM) به زبان ساده",
+  "slug": "llm-explained-simple",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c10"
+  },
+  "type": "free",
+  "briefText": "LLM چیست و چطور کار می‌کند؟",
+  "text": "مدل‌های زبانی بزرگ مثل GPT بر پایه معماری ترنسفورمر و آموزش روی حجم عظیم متن ساخته می‌شوند. در این مقاله بدون فرمول سنگین، مفاهیم توکن، توجه (attention) و تولید متن را توضیح می‌دهیم.",
+  "coverImage": "uploads/coverImage/seed-15.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 9,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c3b"
+  },
+  "title": "جاده ابریشم و نقش ایران",
+  "slug": "silk-road-iran-role",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c11"
+  },
+  "type": "free",
+  "briefText": "ایران در مسیر تجارت جهانی باستان",
+  "text": "جاده ابریشم شبکه‌ای از مسیرهای تجاری بود که شرق و غرب را به هم وصل می‌کرد. ایران به خاطر موقعیت جغرافیایی در قلب این مسیر قرار داشت. در این مطلب به شهرها، کالاها و تاثیر فرهنگی این مسیر می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-16.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [],
+  "readingTime": 8,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c3c"
+  },
+  "title": "استارتاپ‌ها و اشتغال در ایران",
+  "slug": "startups-employment-iran",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c12"
+  },
+  "type": "free",
+  "briefText": "نقش استارتاپ‌ها در بازار کار",
+  "text": "استارتاپ‌ها بخشی از اشتغال و نوآوری را در ایران شکل می‌دهند. در این مقاله به آمارها، چالش‌های حقوقی و مالی و نقش اکوسیستم فناوری در اشتغالزایی می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-17.jpg",
+  "likes": [],
+  "bookmarks": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "readingTime": 6,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c3d"
+  },
+  "title": "سینمای ایران: از موج نو تا امروز",
+  "slug": "iran-cinema-history",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c13"
+  },
+  "type": "free",
+  "briefText": "نگاهی به سینمای هنری و تجاری ایران",
+  "text": "سینمای ایران از موج نو و سینمای روشنفکری تا فیلم‌های پرفروش و سریال‌های اینستاگرامی تحول زیادی داشته است. در این مطلب به دوره‌های مهم و چهره‌های تاثیرگذار می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-18.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 7,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c3e"
+  },
+  "title": "کوهنوردی ایمن: اصول و تجهیزات",
+  "slug": "safe-mountaineering-basics",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c14"
+  },
+  "type": "free",
+  "briefText": "چگونه امن و لذت‌بخش کوه برویم؟",
+  "text": "کوهنوردی بدون رعایت اصول ایمنی می‌تواند خطرناک باشد. در این مقاله به تجهیزات ضروری، نقشه و مسیریابی، آب و هوا و کار گروهی می‌پردازیم تا سفرهای کوهستانی امن و به یادماندنی داشته باشید.",
+  "coverImage": "uploads/coverImage/seed-19.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [],
+  "readingTime": 6,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c3f"
+  },
+  "title": "استرس و راه‌های مقابله با آن",
+  "slug": "stress-coping-methods",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c15"
+  },
+  "type": "free",
+  "briefText": "چگونه استرس روزمره را مدیریت کنیم؟",
+  "text": "استرس بخشی از زندگی مدرن است اما مدیریت نکردن آن به سلامت روان و جسم آسیب می‌زند. در این مطلب تکنیک‌های تنفسی، ورزش، خواب و مرزگذاری در کار و رابطه را مرور می‌کنیم.",
+  "coverImage": "uploads/coverImage/seed-20.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 5,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c40"
+  },
+  "title": "جاوااسکریپت مدرن: ES2024 و بعد",
+  "slug": "modern-javascript-es2024",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0e"
+  },
+  "type": "free",
+  "briefText": "ویژگی‌های جدید JS که باید بدانید",
+  "text": "جاوااسکریپت هر سال با ویژگی‌های جدید غنی‌تر می‌شود. در این مقاله به آخرین اضافات استاندارد، از Record و Tuple تا بهبود Promise و ماژول‌ها می‌پردازیم و نمونه کد عملی می‌بینیم.",
+  "coverImage": "uploads/coverImage/seed-21.jpg",
+  "likes": [],
+  "bookmarks": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "readingTime": 8,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c41"
+  },
+  "title": "ورزش و سلامت روان",
+  "slug": "exercise-mental-health",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0d"
+  },
+  "type": "free",
+  "briefText": "تاثیر ورزش بر اضطراب و افسردگی",
+  "text": "ورزش منظم یکی از موثرترین روش‌های غیردارویی برای بهبود خلق و کاهش اضطراب است. در این مطلب به مکانیزم‌های علمی و نوع ورزش‌های پیشنهادی می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-22.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [],
+  "readingTime": 5,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c42"
+  },
+  "title": "اتوماسیون با RPA و هوش مصنوعی",
+  "slug": "rpa-ai-automation",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c10"
+  },
+  "type": "free",
+  "briefText": "اتوماسیون فرآیندها با ربات و AI",
+  "text": "اتوماسیون فرآیندهای رباتیک (RPA) با ترکیب هوش مصنوعی قدرتمندتر شده است. در این مقاله به تفاوت RPA سنتی و هوشمند، موارد استفاده و ابزارهای رایج می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-23.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 7,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c43"
+  },
+  "title": "شاهنامه و هویت ملی",
+  "slug": "shahnameh-national-identity",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c11"
+  },
+  "type": "free",
+  "briefText": "نقش شاهنامه در فرهنگ ایرانی",
+  "text": "شاهنامه فردوسی تنها یک اثر ادبی نیست؛ نقش مهمی در شکل‌گیری و حفظ هویت ایرانی داشته است. در این مطلب به محتوا، شخصیت‌ها و تاثیر آن بر ادبیات و هنر بعد از خود می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-24.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 9,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c44"
+  },
+  "title": "سرمایه‌گذاری در بورس: مقدمات",
+  "slug": "stock-investment-basics",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c12"
+  },
+  "type": "free",
+  "briefText": "ورود امن به بازار سهام",
+  "text": "سرمایه‌گذاری در بورس نیاز به دانش پایه و صبر دارد. در این مقاله به مفاهیم اولیه، تحلیل بنیادی و تکنیکال، ریسک و تنوع‌بندی می‌پردازیم تا بتوانید تصمیم آگاهانه بگیرید.",
+  "coverImage": "uploads/coverImage/seed-25.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "readingTime": 8,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c45"
+  },
+  "title": "موسیقی سنتی ایران: دستگاه‌ها و گوشه‌ها",
+  "slug": "iranian-traditional-music",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c13"
+  },
+  "type": "free",
+  "briefText": "آشنایی با ساختار موسیقی ایرانی",
+  "text": "موسیقی سنتی ایران بر پایه دستگاه‌ها و گوشه‌ها است. در این مطلب به دستگاه‌های اصلی، سازها و نقش آواز در این موسیقی می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-26.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 6,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c46"
+  },
+  "title": "جزیره قشم: طبیعت و گردشگری",
+  "slug": "qeshm-island-tourism",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c14"
+  },
+  "type": "free",
+  "briefText": "سفر به بزرگترین جزیره ایران",
+  "text": "قشم با جنگل حرا، دره ستاره‌ها و ژئوپارک از مقاصد محبوب گردشگری است. در این مقاله مسیرها، اقامت و بهترین فصل سفر را مرور می‌کنیم.",
+  "coverImage": "uploads/coverImage/seed-27.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 5,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c47"
+  },
+  "title": "تغذیه و تمرکز",
+  "slug": "nutrition-focus",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c15"
+  },
+  "type": "free",
+  "briefText": "چه بخوریم تا بهتر تمرکز کنیم؟",
+  "text": "تغذیه مستقیم روی عملکرد مغز و تمرکز اثر می‌گذارد. در این مطلب به غذاهای مفید، زمان‌بندی وعده‌ها و پرهیز از قند و فرآوری‌شده‌ها می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-28.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [],
+  "readingTime": 5,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c48"
+  },
+  "title": "TypeScript برای پروژه‌های بزرگ",
+  "slug": "typescript-large-projects",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0e"
+  },
+  "type": "free",
+  "briefText": "چرا و چگونه TypeScript استفاده کنیم؟",
+  "text": "TypeScript با نوع‌دهی استاتیک خطاها را زودتر نشان می‌دهد و refactor را امن‌تر می‌کند. در این مقاله به تنظیمات پیشنهادی، بهترین روش‌ها و یکپارچه‌سازی با React و Node می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-29.jpg",
+  "likes": [],
+  "bookmarks": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "readingTime": 10,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c49"
+  },
+  "title": "دوچرخه‌سواری در شهر",
+  "slug": "urban-cycling",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0d"
+  },
+  "type": "free",
+  "briefText": "دوچرخه به عنوان وسیله حمل‌ونقل روزمره",
+  "text": "دوچرخه‌سواری شهری در بسیاری از شهرهای جهان در حال رشد است. در این مطلب به مزایای سلامتی و محیطی، ایمنی و زیرساخت‌های لازم می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-30.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 4,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c4a"
+  },
+  "title": "خلاقیت و هوش مصنوعی",
+  "slug": "creativity-and-ai",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c10"
+  },
+  "type": "free",
+  "briefText": "آیا AI می‌تواند خلاق باشد؟",
+  "text": "تعریف خلاقیت و نقش AI در هنر و ایده‌پردازی موضوع بحث‌های زیادی است. در این مقاله به تعاریف، نمونه‌های عملی و مرز بین کمک و جایگزینی انسان می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-31.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [],
+  "readingTime": 7,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c4b"
+  },
+  "title": "تخت جمشید: معماری و نمادها",
+  "slug": "persepolis-architecture",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c11"
+  },
+  "type": "free",
+  "briefText": "خوانش نمادهای تخت جمشید",
+  "text": "تخت جمشید یکی از شاخص‌ترین آثار معماری هخامنشی است. در این مطلب به طرح کلی، تزیینات و نمادهای سیاسی و مذهبی این مجموعه می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-32.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 8,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c4c"
+  },
+  "title": "فروشگاه‌های اینترنتی و تجربه کاربری",
+  "slug": "ecommerce-ux-iran",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c12"
+  },
+  "type": "free",
+  "briefText": "UX در فروشگاه‌های آنلاین ایران",
+  "text": "تجربه کاربری خوب در فروشگاه آنلاین به افزایش تبدیل و وفاداری کمک می‌کند. در این مقاله به اصول UX، نمونه‌های داخلی و بهبود فرآیند خرید می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-33.jpg",
+  "likes": [],
+  "bookmarks": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "readingTime": 6,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c4d"
+  },
+  "title": "ادبیات معاصر ایران",
+  "slug": "contemporary-iranian-literature",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c13"
+  },
+  "type": "free",
+  "briefText": "از نیما تا امروز",
+  "text": "ادبیات معاصر ایران با شعر نو و داستان نویسی مدرن شکل گرفت. در این مطلب به جریان‌های اصلی و چهره‌های شاخص می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-34.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [],
+  "readingTime": 7,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c4e"
+  },
+  "title": "کویر ایران: سفر مسئولانه",
+  "slug": "iran-desert-travel",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c14"
+  },
+  "type": "free",
+  "briefText": "گردشگری در کویر با حفظ محیط‌زیست",
+  "text": "کویرهای ایران جاذبه منحصربه‌فردی دارند. در این مقاله به مقاصد محبوب، آمادگی و اصول سفر مسئولانه برای حفظ اکوسیستم شکننده کویر می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-35.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 6,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c4f"
+  },
+  "title": "ورزش و سیستم ایمنی",
+  "slug": "exercise-immune-system",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c15"
+  },
+  "type": "free",
+  "briefText": "چگونه ورزش به ایمنی بدن کمک می‌کند؟",
+  "text": "ورزش منظم با تنظیم التهاب و بهبود گردش خون به سیستم ایمنی کمک می‌کند. در این مطلب به نوع و شدت ورزش و زمان‌بندی آن می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-36.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 5,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c50"
+  },
+  "title": "دورکاری و ابزارهای همکاری",
+  "slug": "remote-work-tools",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0c"
+  },
+  "type": "free",
+  "briefText": "بهترین ابزارها برای تیم‌های دورکار",
+  "text": "اسلک، نوتینگ، ویدیوکال و مدیریت پروژه آنلاین از ابزارهای رایج تیم‌های دورکار هستند. در این مقاله به مقایسه و بهترین روش‌های استفاده می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-37.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "readingTime": 6,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c51"
+  },
+  "title": "یوگا برای مبتدیان",
+  "slug": "yoga-for-beginners",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c0d"
+  },
+  "type": "free",
+  "briefText": "شروع تمرین یوگا در خانه",
+  "text": "یوگا با ترکیب تنفس و حرکت به آرامش و انعطاف کمک می‌کند. در این مطلب چند حرکت پایه و نکات ایمنی برای شروع در خانه را معرفی می‌کنیم.",
+  "coverImage": "uploads/coverImage/seed-38.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 5,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c52"
+  },
+  "title": "امنیت در مدل‌های هوش مصنوعی",
+  "slug": "ai-model-security",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c10"
+  },
+  "type": "free",
+  "briefText": "چالش‌های امنیتی LLM و راه‌حل‌ها",
+  "text": "مدل‌های زبانی در معرض حملات تزریق، استخراج داده و سوءاستفاده هستند. در این مقاله به انواع تهدیدها و روش‌های کاهش ریسک می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-39.jpg",
+  "likes": [],
+  "bookmarks": [],
+  "readingTime": 8,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c53"
+  },
+  "title": "زنان در تاریخ ایران",
+  "slug": "women-in-iran-history",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c11"
+  },
+  "type": "free",
+  "briefText": "نقش زنان در دوره‌های مختلف",
+  "text": "زنان در تاریخ ایران در عرصه سیاست، فرهنگ و اقتصاد نقش داشته‌اند. در این مطلب به چهره‌های شاخص و تغییر نقش‌ها در دوره‌های مختلف می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-40.jpg",
+  "likes": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "bookmarks": [],
+  "readingTime": 7,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c54"
+  },
+  "title": "کارآفرینی اجتماعی",
+  "slug": "social-entrepreneurship",
+  "category": {
+    "$oid": "6981bcfff7b4ff28a6b39c12"
+  },
+  "type": "free",
+  "briefText": "کسب‌وکار با هدف حل مسائل اجتماعی",
+  "text": "کارآفرینی اجتماعی ترکیب مدل اقتصادی با تاثیر اجتماعی است. در این مقاله به تعریف، نمونه‌های ایرانی و بین‌المللی و چالش‌ها می‌پردازیم.",
+  "coverImage": "uploads/coverImage/seed-41.jpg",
+  "likes": [],
+  "bookmarks": [
+    {
+      "$oid": "6981bcfff7b4ff28a6b39c21"
+    }
+  ],
+  "readingTime": 6,
+  "tags": [],
+  "author": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "related": [],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.020Z"
+  }
+}]

@@ -1,0 +1,3408 @@
+[{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c7f"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2c"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.031Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.031Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c82"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2c"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.034Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.034Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c85"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2d"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.036Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.036Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c88"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2d"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.037Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.037Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c8b"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2d"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.039Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.039Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c8e"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2e"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.042Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.042Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c91"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2e"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.043Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.043Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c94"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2e"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.045Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.045Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c97"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2e"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.046Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.046Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c9a"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2f"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.048Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.048Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39c9d"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2f"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.049Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.049Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39ca0"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2f"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.050Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.050Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39ca3"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2f"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.051Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.051Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39ca6"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c2f"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.052Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.052Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39ca9"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c30"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.053Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.053Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cac"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c30"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.055Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.055Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39caf"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c31"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.057Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.057Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cb2"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c31"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.058Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.058Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cb5"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c31"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.060Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.060Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cb8"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c32"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.062Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.062Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cbb"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c32"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.063Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.063Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cbe"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c32"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.064Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.064Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cc1"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c32"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.065Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.065Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cc4"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c33"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.067Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.067Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cc7"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c33"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.068Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.068Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cca"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c33"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.069Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.069Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39ccd"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c33"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.070Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.070Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cd0"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c33"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.071Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.071Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cd3"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c34"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.072Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.072Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cd6"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c34"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.074Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.074Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cd9"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c35"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.076Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.076Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cdc"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c35"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.077Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.077Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cdf"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c35"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.079Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.079Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39ce2"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c36"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.080Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.080Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39ce5"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c36"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.081Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.081Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39ce8"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c36"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.082Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.082Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39ceb"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c36"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.083Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.083Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cee"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c37"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.084Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.084Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cf1"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c37"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.085Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.085Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cf4"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c37"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.086Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.086Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cf7"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c37"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.087Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.087Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cfa"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c37"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.088Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.088Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39cfd"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c38"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.090Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.090Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d00"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c38"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.092Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.092Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d03"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c39"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.094Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.094Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d06"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c39"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.095Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.095Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d09"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c39"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.096Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.096Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d0c"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3a"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.097Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.097Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d0f"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3a"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.098Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.098Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d12"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3a"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.099Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.099Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d15"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3a"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.100Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.100Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d18"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3b"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.102Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.102Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d1b"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3b"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.103Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.103Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d1e"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3b"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.104Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.104Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d21"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3b"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.105Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.105Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d24"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3b"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.106Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.106Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d27"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3c"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.108Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.108Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d2a"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3c"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.110Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.110Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d2d"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3d"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.112Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.112Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d30"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3d"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.113Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.113Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d33"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3d"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.114Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.114Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d36"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3e"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.115Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.115Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d39"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3e"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.116Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.116Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d3c"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3e"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.117Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.117Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d3f"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3e"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.119Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.119Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d42"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3f"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.120Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.120Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d45"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3f"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.121Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.121Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d48"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3f"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.122Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.122Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d4b"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3f"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.123Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.123Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d4e"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c3f"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.125Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.125Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d51"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c40"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.126Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.126Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d54"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c40"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.128Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.128Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d57"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c41"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.129Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.129Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d5a"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c41"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.130Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.130Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d5d"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c41"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.131Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.131Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d60"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c42"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.132Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.132Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d63"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c42"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.133Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.133Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d66"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c42"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.134Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.134Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d69"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c42"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.135Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.135Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d6c"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c43"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.136Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.136Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d6f"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c43"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.137Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.137Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d72"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c43"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.138Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.138Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d75"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c43"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.140Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.140Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d78"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c43"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.141Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.141Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d7b"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c44"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.143Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.143Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d7e"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c44"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.144Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.144Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d81"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c45"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.146Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.146Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d84"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c45"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.147Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.147Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d87"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c45"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.148Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.148Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d8a"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c46"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.149Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.149Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d8d"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c46"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.150Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.150Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d90"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c46"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.151Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.151Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d93"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c46"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.152Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.152Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d96"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c47"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.153Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.153Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d99"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c47"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.154Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.154Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d9c"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c47"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.155Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.155Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39d9f"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c47"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.156Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.156Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39da2"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c47"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.158Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.158Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39da5"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c48"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.160Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.160Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39da8"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c48"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.162Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.162Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dab"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c49"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.163Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.163Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dae"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c49"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.164Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.164Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39db1"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c49"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.165Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.165Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39db4"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4a"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.166Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.166Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39db7"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4a"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.168Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.168Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dba"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4a"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.169Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.169Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dbd"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4a"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.170Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.170Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dc0"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4b"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.171Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.171Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dc3"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4b"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.172Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.172Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dc6"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4b"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.174Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.174Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dc9"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4b"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.175Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.175Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dcc"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4b"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.176Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.176Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dcf"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4c"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.177Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.177Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dd2"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4c"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.178Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.178Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dd5"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4d"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.180Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.180Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dd8"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4d"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.181Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.181Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39ddb"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4d"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.183Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.183Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dde"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4e"
+  },
+  "content": {
+    "text": "تجربه شخصی من هم همین را تایید می‌کند."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.184Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.184Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39de1"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4e"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.185Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.185Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39de4"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4e"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.186Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.186Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39de7"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4e"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.187Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.187Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dea"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4f"
+  },
+  "content": {
+    "text": "عالی بود، منتظر پست‌های بعدی هستم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.188Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.188Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39ded"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4f"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.188Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.188Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39df0"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4f"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.190Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.190Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39df3"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4f"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.191Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.191Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39df6"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c4f"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.193Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.193Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39df9"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c50"
+  },
+  "content": {
+    "text": "نکته جالبی بود، قبلا بهش فکر نکرده بودم."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.194Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.194Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dfc"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c50"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.195Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.195Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39dff"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c51"
+  },
+  "content": {
+    "text": "برای مبتدی‌ها خیلی واضح توضیح دادید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.196Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.196Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e02"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c51"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.197Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.197Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e05"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c51"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.198Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.198Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e08"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c52"
+  },
+  "content": {
+    "text": "امیدوارم این روند ادامه داشته باشد."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.199Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.199Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e0b"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c52"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.200Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.200Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e0e"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c52"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.200Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.200Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e11"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c52"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.201Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.201Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e14"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c53"
+  },
+  "content": {
+    "text": "ممنون از زحمتی که کشیدید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.202Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.202Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e17"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c53"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.203Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.203Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e1a"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c23"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c53"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.204Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.204Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e1d"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c24"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c53"
+  },
+  "content": {
+    "text": "کاملاً موافقم، به خصوص بخش آخر."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.205Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.205Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e20"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c25"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c53"
+  },
+  "content": {
+    "text": "لطفاً در مورد این موضوع بیشتر بنویسید."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.206Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.206Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e23"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c21"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c54"
+  },
+  "content": {
+    "text": "مطلب خیلی مفیدی بود، ممنون."
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.208Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.208Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6981bd00f7b4ff28a6b39e26"
+  },
+  "user": {
+    "$oid": "6981bcfff7b4ff28a6b39c22"
+  },
+  "post": {
+    "$oid": "6981bd00f7b4ff28a6b39c54"
+  },
+  "content": {
+    "text": "یک سوال: آیا منبعی برای مطالعه بیشتر دارید؟"
+  },
+  "status": 2,
+  "openToComment": true,
+  "answers": [],
+  "createdAt": {
+    "$date": "2026-02-03T09:16:48.209Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-03T09:16:48.209Z"
+  },
+  "__v": 0
+}]

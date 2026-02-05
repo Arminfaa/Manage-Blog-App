@@ -50,7 +50,7 @@ function SideBar({ onClose }) {
           onClick={handleLogout}
           className="flex items-center gap-x-2 rounded-2xl font-medium transition-all duration-200 text-secondary-700 py-3 hover:text-red-400 cursor-pointer"
         >
-          <ArrowLeftStartOnRectangleIcon className="ml-4 h-5 w-5" />
+          <ArrowLeftStartOnRectangleIcon className="h-5 w-5" />
           <span>خروج</span>
         </div>
       </div>
