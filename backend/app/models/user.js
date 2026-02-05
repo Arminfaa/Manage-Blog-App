@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema(
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    role: { type: String, enum: ['user', 'admin'], default: 'user' },
+    role: { type: String, enum: ['user', 'admin', 'super_admin'], default: 'user' },
     resetLink: { data: String },
     biography: { type: String },
     bookmarkedPosts: [{ type: ObjectId, ref: 'Post' }],

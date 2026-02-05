@@ -135,7 +135,7 @@ class CommentController extends Controller {
   async getAllComments(req, res) {
     const user = req.user;
     let commentQuery = {};
-    if (user && user.role !== 'admin') {
+    if (user && user.role !== 'admin' && user.role !== 'super_admin') {
       const myPostIds = await PostModel.find({ author: user._id }).distinct('_id');
       commentQuery.post = { $in: myPostIds };
     }

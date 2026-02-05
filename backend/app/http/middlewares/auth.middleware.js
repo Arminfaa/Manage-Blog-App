@@ -103,8 +103,18 @@ function requireAdmin(req, res, next) {
   if (!req.user) {
     return next(createHttpError.Unauthorized('لطفا وارد حساب کاربری خود شوید.'));
   }
-  if (req.user.role !== 'admin') {
+  if (req.user.role !== 'admin' && req.user.role !== 'super_admin') {
     return next(createHttpError.Forbidden('فقط ادمین به این بخش دسترسی دارد.'));
+  }
+  next();
+}
+
+function requireSuperAdmin(req, res, next) {
+  if (!req.user) {
+    return next(createHttpError.Unauthorized('لطفا وارد حساب کاربری خود شوید.'));
+  }
+  if (req.user.role !== 'super_admin') {
+    return next(createHttpError.Forbidden('فقط سوپر ادمین به این بخش دسترسی دارد.'));
   }
   next();
 }
@@ -115,4 +125,5 @@ module.exports = {
   verifyAccessToken,
   decideAuthMiddleware,
   requireAdmin,
+  requireSuperAdmin,
 };

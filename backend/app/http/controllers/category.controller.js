@@ -8,7 +8,7 @@ const { addCategorySchema, updateCategorySchema } = require('../validators/categ
 class CategoryController extends Controller {
   async getListOfCategories(req, res) {
     const user = req.user;
-    if (user && user.role !== 'admin') {
+    if (user && user.role !== 'admin' && user.role !== 'super_admin') {
       throw createHttpError.Forbidden('فقط ادمین به دسته بندی ها دسترسی دارد.');
     }
     const query = req.query;

@@ -1,6 +1,6 @@
 const { UserAuthController } = require('../http/controllers/auth.controller');
 const expressAsyncHandler = require('express-async-handler');
-const { verifyAccessToken, requireAdmin } = require('../http/middlewares/auth.middleware');
+const { verifyAccessToken, requireAdmin, requireSuperAdmin } = require('../http/middlewares/auth.middleware');
 const { uploadFile } = require('../utils/multer');
 const router = require('express').Router();
 
@@ -13,8 +13,8 @@ router.patch('/change-password', verifyAccessToken, expressAsyncHandler(UserAuth
 router.post('/upload-avatar', verifyAccessToken, uploadFile.single('avatar'), expressAsyncHandler(UserAuthController.updateAvatar));
 router.get('/profile', verifyAccessToken, expressAsyncHandler(UserAuthController.getUserProfile));
 router.get('/list', verifyAccessToken, requireAdmin, expressAsyncHandler(UserAuthController.getAllUsers));
-router.patch('/:id', verifyAccessToken, requireAdmin, expressAsyncHandler(UserAuthController.updateUserByAdmin));
-router.delete('/:id', verifyAccessToken, requireAdmin, expressAsyncHandler(UserAuthController.deleteUserByAdmin));
+router.patch('/:id', verifyAccessToken, requireSuperAdmin, expressAsyncHandler(UserAuthController.updateUserByAdmin));
+router.delete('/:id', verifyAccessToken, requireSuperAdmin, expressAsyncHandler(UserAuthController.deleteUserByAdmin));
 router.post('/logout', expressAsyncHandler(UserAuthController.logout));
 router.get('/debug', expressAsyncHandler(UserAuthController.debugCookies));
 

@@ -171,7 +171,11 @@ class UserAuthController extends Controller {
     });
   }
   async getAllUsers(req, res) {
-    const users = await UserModel.find({}, { password: 0, resetLink: 0 });
+    const requesterRole = req.user?.role;
+    const noRoleOrUser = { $or: [{ role: 'user' }, { role: null }, { role: { $exists: false } }] };
+    const noRoleOrUserOrAdmin = { $or: [{ role: { $in: ['user', 'admin'] } }, { role: null }, { role: { $exists: false } }] };
+    const roleFilter = requesterRole === 'admin' ? noRoleOrUser : requesterRole === 'super_admin' ? noRoleOrUserOrAdmin : {};
+    const users = await UserModel.find(roleFilter, { password: 0, resetLink: 0 });
 
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
@@ -194,7 +198,7 @@ class UserAuthController extends Controller {
       updateFields.email = normalizedEmail;
     }
     if (role !== undefined) {
-      if (!['user', 'admin'].includes(role)) throw createError.BadRequest('نقش نامعتبر است');
+      if (!['user', 'admin', 'super_admin'].includes(role)) throw createError.BadRequest('نقش نامعتبر است');
       updateFields.role = role;
     }
     if (Object.keys(updateFields).length === 0) throw createError.BadRequest('هیچ فیلدی برای به‌روزرسانی ارسال نشده');

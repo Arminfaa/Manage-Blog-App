@@ -43,7 +43,7 @@ class PostController extends Controller {
     }
 
     const scope = req.query.scope;
-    if (scope === 'dashboard' && user && user.role !== 'admin') {
+    if (scope === 'dashboard' && user && user.role !== 'admin' && user.role !== 'super_admin') {
       dbQuery.author = user._id;
     }
 
@@ -216,7 +216,7 @@ class PostController extends Controller {
 
     const post = await this.findPostById(id);
     const authorId = post.author?._id?.toString() || post.author?.toString();
-    if (user.role !== 'admin' && authorId !== user._id.toString()) {
+    if (user.role !== 'admin' && user.role !== 'super_admin' && authorId !== user._id.toString()) {
       throw createHttpError.Forbidden('فقط نویسنده یا ادمین می‌تواند این پست را ویرایش کند');
     }
     const data = copyObject(rest);
@@ -259,7 +259,7 @@ class PostController extends Controller {
     const user = req.user;
     const post = await this.findPostById(id);
     const authorId = post.author?._id?.toString() || post.author?.toString();
-    if (user.role !== 'admin' && authorId !== user._id.toString()) {
+    if (user.role !== 'admin' && user.role !== 'super_admin' && authorId !== user._id.toString()) {
       throw createHttpError.Forbidden('فقط نویسنده یا ادمین می‌تواند این پست را حذف کند');
     }
     const deleted = await PostModel.findByIdAndDelete(id);
