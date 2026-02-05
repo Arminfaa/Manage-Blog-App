@@ -62,6 +62,10 @@ function ProfileForm({ user }) {
         }
     }, [prevAvatarUrl]);
 
+    const refreshUserAndPage = () => {
+        updateUser().then(() => router.refresh());
+    };
+
     const onSubmit = async (data) => {
         // Upload avatar first if selected
         if (data.avatar) {
@@ -77,10 +81,7 @@ function ProfileForm({ user }) {
                             biography: data.biography || "",
                         },
                         {
-                            onSuccess: () => {
-                                updateUser();
-                                router.refresh();
-                            },
+                            onSuccess: refreshUserAndPage,
                         }
                     );
                 },
@@ -94,10 +95,7 @@ function ProfileForm({ user }) {
                     biography: data.biography || "",
                 },
                 {
-                    onSuccess: () => {
-                        updateUser();
-                        router.refresh();
-                    },
+                    onSuccess: refreshUserAndPage,
                 }
             );
         }
