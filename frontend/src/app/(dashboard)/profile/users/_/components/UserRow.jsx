@@ -5,10 +5,11 @@ import { toLocalDateShort } from "@/utils/dateFormatter";
 import truncateText from "@/utils/truncateText";
 import { UpdateUser, DeleteUser } from "./Buttons";
 
-const roleLabel = { admin: "ادمین", user: "کاربر" };
+const roleLabel = { admin: "ادمین", user: "کاربر", super_admin: "سوپر ادمین" };
 
-function UserRow({ index, user }) {
+function UserRow({ index, user, currentUserRole }) {
   const { name, email, biography, createdAt, avatarUrl, role } = user;
+  const isSuperAdmin = currentUserRole === "super_admin";
 
   return (
     <Table.Row>
@@ -34,12 +35,14 @@ function UserRow({ index, user }) {
           {roleLabel[role] || roleLabel.user}
         </span>
       </td>
-      <td>
-        <div className="flex items-center gap-x-3">
-          <UpdateUser user={user} />
-          <DeleteUser user={user} />
-        </div>
-      </td>
+      {isSuperAdmin && (
+        <td>
+          <div className="flex items-center gap-x-3">
+            <UpdateUser user={user} />
+            <DeleteUser user={user} />
+          </div>
+        </td>
+      )}
     </Table.Row>
   );
 }

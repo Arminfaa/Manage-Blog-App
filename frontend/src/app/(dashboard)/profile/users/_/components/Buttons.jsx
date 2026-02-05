@@ -73,6 +73,7 @@ export function UpdateUser({ user }) {
             >
               <option value="user">کاربر</option>
               <option value="admin">ادمین</option>
+              <option value="super_admin">سوپر ادمین</option>
             </select>
           </div>
           <div className="flex gap-x-3 pt-2">

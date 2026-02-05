@@ -54,8 +54,8 @@ export default function SideBarNavs({ onClose }) {
   const router = useRouter();
   const pathname = usePathname();
   const { user } = useAuth();
-  const isAdmin = user?.role === "admin";
-  const visibleNavs = sidebarNavs.filter((nav) => !nav.adminOnly || isAdmin);
+  const isAdminOrSuperAdmin = user?.role === "admin" || user?.role === "super_admin";
+  const visibleNavs = sidebarNavs.filter((nav) => !nav.adminOnly || isAdminOrSuperAdmin);
 
   return (
     <ul className="space-y-2">

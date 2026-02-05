@@ -15,7 +15,7 @@ function filterUsers(users, query) {
   );
 }
 
-export default function UsersListWithSearch({ users = [] }) {
+export default function UsersListWithSearch({ users = [], currentUserRole }) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredUsers = useMemo(
@@ -54,7 +54,7 @@ export default function UsersListWithSearch({ users = [] }) {
           </p>
         )
       ) : (
-        <UsersTable users={filteredUsers} />
+        <UsersTable users={filteredUsers} currentUserRole={currentUserRole} />
       )}
     </div>
   );
