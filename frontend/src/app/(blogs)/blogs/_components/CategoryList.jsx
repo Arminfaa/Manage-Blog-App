@@ -1,4 +1,4 @@
-import Link from "next/link";
+import CategoryListClient from "./CategoryListClient";
 
 async function CategoryList() {
   try {
@@ -6,9 +6,7 @@ async function CategoryList() {
     if (!baseUrl) {
       console.warn("NEXT_PUBLIC_BASE_URL is not set");
       return (
-        <ul className="space-y-4">
-          <Link href="/blogs" className="text-secondary-700 hover:text-primary-900 transition-all ease-out">همه</Link>
-        </ul>
+        <CategoryListClient categories={[]} />
       );
     }
 
@@ -17,20 +15,12 @@ async function CategoryList() {
     });
 
     if (!res.ok) {
-      return (
-        <ul className="space-y-4">
-          <Link href="/blogs" className="text-secondary-700 hover:text-primary-900 transition-all ease-out">همه</Link>
-        </ul>
-      );
+      return <CategoryListClient categories={[]} />;
     }
 
     const contentType = res.headers.get("content-type");
     if (!contentType || !contentType.includes("application/json")) {
-      return (
-        <ul className="space-y-4">
-          <Link href="/blogs" className="text-secondary-700 hover:text-primary-900 transition-all ease-out">همه</Link>
-        </ul>
-      );
+      return <CategoryListClient categories={[]} />;
     }
 
     const json = await res.json();
@@ -38,35 +28,12 @@ async function CategoryList() {
       data: { categories } = {},
     } = json || {};
 
-    if (!categories || categories.length === 0) {
-      return (
-        <ul className="space-y-4">
-          <Link href="/blogs" className="text-secondary-700 hover:text-primary-900 transition-all ease-out">همه</Link>
-        </ul>
-      );
-    }
-
     return (
-      <ul className="space-y-4">
-        <Link href="/blogs" className="text-secondary-700 hover:text-primary-900 transition-all ease-out">همه</Link>
-        {categories.map((category) => {
-          return (
-            <li key={category._id}>
-              <Link href={`/blogs/category/${category.slug}`} className="text-secondary-700 hover:text-primary-900 transition-all ease-out">
-                {category.title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <CategoryListClient categories={categories || []} />
     );
   } catch (error) {
     console.error("Error fetching categories:", error);
-    return (
-      <ul className="space-y-4">
-        <Link href="/blogs" className="text-secondary-700 hover:text-primary-900 transition-all ease-out">همه</Link>
-      </ul>
-    );
+    return <CategoryListClient categories={[]} />;
   }
 }
 export default CategoryList;

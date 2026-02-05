@@ -22,6 +22,10 @@ export default function Pagination({ totalPages }) {
     return `${pathname}?${params.toString()}`;
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const allPages = generatePagination(currentPage, totalPages);
 
   return (
@@ -30,6 +34,7 @@ export default function Pagination({ totalPages }) {
         direction="right"
         href={createPageURL(currentPage - 1)}
         isDisabled={currentPage <= 1}
+        onNavigate={scrollToTop}
       />
 
       <div className="flex -space-x-px">
@@ -48,6 +53,7 @@ export default function Pagination({ totalPages }) {
               page={page}
               position={position}
               isActive={currentPage === page}
+              onNavigate={scrollToTop}
             />
           );
         })}
@@ -57,6 +63,7 @@ export default function Pagination({ totalPages }) {
         direction="left"
         href={createPageURL(currentPage + 1)}
         isDisabled={currentPage >= totalPages}
+        onNavigate={scrollToTop}
       />
     </div>
   );
@@ -64,7 +71,7 @@ export default function Pagination({ totalPages }) {
 
 // position?: "first" | "last" | "middle" | "single",
 
-function PaginationNumber({ page, href, isActive, position }) {
+function PaginationNumber({ page, href, isActive, position, onNavigate }) {
   const className = classNames(
     "flex h-10 w-10 items-center justify-center text-sm border border-secondary-400 text-secondary-400",
     {
@@ -79,13 +86,13 @@ function PaginationNumber({ page, href, isActive, position }) {
   return isActive || position === "middle" ? (
     <div className={className}>{page}</div>
   ) : (
-    <Link href={href} className={className}>
+    <Link href={href} className={className} onClick={onNavigate}>
       {page}
     </Link>
   );
 }
 
-function PaginationArrow({ href, direction, isDisabled }) {
+function PaginationArrow({ href, direction, isDisabled, onNavigate }) {
   const className = classNames(
     "flex h-10 w-10 items-center justify-center rounded-md border border-secondary-400 text-secondary-400",
     {
@@ -107,7 +114,7 @@ function PaginationArrow({ href, direction, isDisabled }) {
   return isDisabled ? (
     <div className={className}>{icon}</div>
   ) : (
-    <Link className={className} href={href}>
+    <Link className={className} href={href} onClick={onNavigate}>
       {icon}
     </Link>
   );
