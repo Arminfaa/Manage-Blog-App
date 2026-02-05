@@ -31,7 +31,7 @@ function Header() {
             {user?.name}
           </span>
           <span className="text-sm text-secondary-700">
-            نقش: {user?.role === 'super_admin' ? 'سوپر ادمین' : user?.role === 'admin' ? 'مدیر' : 'کاربر'}
+            نقش: {user?.role === 'super_admin' ? 'مدیر ارشد' : user?.role === 'admin' ? 'مدیر' : 'کاربر عادی'}
           </span>
         </div>
 

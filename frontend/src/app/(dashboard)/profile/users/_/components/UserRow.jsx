@@ -5,7 +5,7 @@ import { toLocalDateShort } from "@/utils/dateFormatter";
 import truncateText from "@/utils/truncateText";
 import { UpdateUser, DeleteUser } from "./Buttons";
 
-const roleLabel = { admin: "ادمین", user: "کاربر", super_admin: "سوپر ادمین" };
+const roleLabel = { admin: "مدیر", user: "کاربر عادی", super_admin: "مدیر ارشد" };
 
 function UserRow({ index, user, currentUserRole }) {
   const { name, email, biography, createdAt, avatarUrl, role } = user;

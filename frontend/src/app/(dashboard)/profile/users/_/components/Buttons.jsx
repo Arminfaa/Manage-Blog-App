@@ -71,9 +71,9 @@ export function UpdateUser({ user }) {
               {...register("role", { required: true })}
               className="w-full rounded-lg border border-secondary-200 bg-secondary-0 px-3 py-2 text-secondary-700 focus:border-primary-500 focus:outline-none"
             >
-              <option value="user">کاربر</option>
-              <option value="admin">ادمین</option>
-              <option value="super_admin">سوپر ادمین</option>
+              <option value="user">کاربر عادی</option>
+              <option value="admin">مدیر</option>
+              <option value="super_admin">مدیر ارشد</option>
             </select>
           </div>
           <div className="flex gap-x-3 pt-2">
