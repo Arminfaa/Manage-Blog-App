@@ -6,6 +6,7 @@ export default function RHFTextField({
   register,
   errors,
   isRequired,
+  placeholder,
   validationSchema = {},
   ...rest
 }) {
@@ -29,6 +30,7 @@ export default function RHFTextField({
         }`}
         {...register(name, validationSchema)}
         {...rest}
+        placeholder={placeholder}
       />
       {errors && errors[name] && (
         <span className="text-red-600 block text-xs mt-2">

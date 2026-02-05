@@ -43,6 +43,7 @@ function Signin() {
           register={register}
           dir="ltr"
           isRequired
+          placeholder='test@example.com'
           errors={errors}
         />
         <RHFTextField
@@ -52,6 +53,7 @@ function Signin() {
           type="password"
           dir="ltr"
           isRequired
+          placeholder='12345678'
           errors={errors}
         />
         <>
