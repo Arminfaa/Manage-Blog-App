@@ -2,7 +2,7 @@ const { VerifyRefreshToken, setAccessToken, setRefreshToken, generateToken } = r
 const Controller = require('./controller');
 const createError = require('http-errors');
 const { StatusCodes: HttpStatus } = require('http-status-codes');
-const { validateSignupSchema, validateSigninSchema, validateUpdateProfileSchema } = require('../validators/user/auth.schema');
+const { validateSignupSchema, validateSigninSchema, validateUpdateProfileSchema, validateChangePasswordSchema } = require('../validators/user/auth.schema');
 const path = require('path');
 const { UserModel } = require('../../models/user');
 const bcrypt = require('bcryptjs');
@@ -96,6 +96,29 @@ class UserAuthController extends Controller {
       statusCode: HttpStatus.OK,
       data: {
         message: 'اطلاعات با موفقیت آپدیت شد',
+      },
+    });
+  }
+  async changePassword(req, res) {
+    const { _id: userId } = req.user;
+    await validateChangePasswordSchema(req.body);
+    const { currentPassword, newPassword } = req.body;
+
+    const user = await UserModel.findById(userId);
+    if (!user) throw createError.NotFound('کاربر یافت نشد');
+
+    const validPass = await bcrypt.compare(currentPassword, user.password);
+    if (!validPass) throw createError.BadRequest('رمز عبور فعلی اشتباه است');
+
+    const salt = await bcrypt.genSaltSync(10);
+    const hashedPassword = await bcrypt.hashSync(newPassword, salt);
+
+    await UserModel.updateOne({ _id: userId }, { $set: { password: hashedPassword } });
+
+    return res.status(HttpStatus.OK).json({
+      statusCode: HttpStatus.OK,
+      data: {
+        message: 'رمز عبور با موفقیت تغییر کرد',
       },
     });
   }
