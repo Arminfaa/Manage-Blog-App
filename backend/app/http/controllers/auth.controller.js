@@ -85,15 +85,12 @@ class UserAuthController extends Controller {
   async updateProfile(req, res) {
     const { _id: userId } = req.user;
     await validateUpdateProfileSchema(req.body);
-    const { name, email } = req.body;
+    const { name, email, biography } = req.body;
+    const updateFields = { name, email };
+    if (biography !== undefined) updateFields.biography = biography;
 
-    const updateResult = await UserModel.updateOne(
-      { _id: userId },
-      {
-        $set: { name, email },
-      }
-    );
-    if (!updateResult.modifiedCount === 0) throw createError.BadRequest('اطلاعات ویرایش نشد');
+    const updateResult = await UserModel.updateOne({ _id: userId }, { $set: updateFields });
+    if (updateResult.modifiedCount === 0) throw createError.BadRequest('اطلاعات ویرایش نشد');
 
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
@@ -129,7 +126,7 @@ class UserAuthController extends Controller {
         $set: { avatar: avatarAddress },
       }
     );
-    if (!updateResult.modifiedCount === 0) throw createError.BadRequest('عکس پروفایل آپلود نشد');
+    if (updateResult.modifiedCount === 0) throw createError.BadRequest('عکس پروفایل آپلود نشد');
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
@@ -140,7 +137,7 @@ class UserAuthController extends Controller {
   async getUserProfile(req, res) {
     const { _id: userId } = req.user;
     const user = await UserModel.findById(userId, { otp: 0 });
-    const userObj = user?.toObject ? user.toObject() : user;
+    const userObj = user?.toJSON ? user.toJSON() : user?.toObject ? user.toObject() : user;
     if (userObj && !userObj.role) userObj.role = 'user';
 
     return res.status(HttpStatus.OK).json({
