@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
-import UsersTable from "./_/components/UsersTable";
-import Search from "@/ui/Search";
+import UsersListWithSearch from "./_/components/UsersListWithSearch";
 import Spinner from "@/ui/Spinner";
 import { getCachedUsersApi, getUserApi } from "@/services/authService";
 import setCookieOnReq from "@/utils/setCookieOnReq";
@@ -12,15 +11,9 @@ async function Page() {
   try {
     if (!process.env.NEXT_PUBLIC_BASE_URL) {
       return (
-        <div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-secondary-700 mb-12 items-center">
-            <h1 className="font-bold text-xl">لیست کاربران</h1>
-            <Search />
-          </div>
-          <Suspense fallback={<Spinner />}>
-            <UsersTable users={[]} />
-          </Suspense>
-        </div>
+        <Suspense fallback={<Spinner />}>
+          <UsersListWithSearch users={[]} />
+        </Suspense>
       );
     }
 
@@ -36,29 +29,17 @@ async function Page() {
     const users = data?.users || [];
 
     return (
-      <div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-secondary-700 mb-12 items-center">
-          <h1 className="font-bold text-xl">لیست کاربران</h1>
-          <Search />
-        </div>
-        <Suspense fallback={<Spinner />}>
-          <UsersTable users={users} />
-        </Suspense>
-      </div>
+      <Suspense fallback={<Spinner />}>
+        <UsersListWithSearch users={users} />
+      </Suspense>
     );
   } catch (error) {
     if (error?.digest?.startsWith?.("NEXT_REDIRECT")) throw error;
     console.error("Error fetching users:", error);
     return (
-      <div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-secondary-700 mb-12 items-center">
-          <h1 className="font-bold text-xl">لیست کاربران</h1>
-          <Search />
-        </div>
-        <Suspense fallback={<Spinner />}>
-          <UsersTable users={[]} />
-        </Suspense>
-      </div>
+      <Suspense fallback={<Spinner />}>
+        <UsersListWithSearch users={[]} />
+      </Suspense>
     );
   }
 }
