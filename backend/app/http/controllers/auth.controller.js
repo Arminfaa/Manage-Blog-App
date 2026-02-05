@@ -1,20 +1,11 @@
-const {
-  VerifyRefreshToken,
-  setAccessToken,
-  setRefreshToken,
-  generateToken,
-} = require("../../utils/functions");
-const Controller = require("./controller");
-const createError = require("http-errors");
-const { StatusCodes: HttpStatus } = require("http-status-codes");
-const {
-  validateSignupSchema,
-  validateSigninSchema,
-  validateUpdateProfileSchema,
-} = require("../validators/user/auth.schema");
-const path = require("path");
-const { UserModel } = require("../../models/user");
-const bcrypt = require("bcryptjs");
+const { VerifyRefreshToken, setAccessToken, setRefreshToken, generateToken } = require('../../utils/functions');
+const Controller = require('./controller');
+const createError = require('http-errors');
+const { StatusCodes: HttpStatus } = require('http-status-codes');
+const { validateSignupSchema, validateSigninSchema, validateUpdateProfileSchema } = require('../validators/user/auth.schema');
+const path = require('path');
+const { UserModel } = require('../../models/user');
+const bcrypt = require('bcryptjs');
 class UserAuthController extends Controller {
   constructor() {
     super();
@@ -25,21 +16,22 @@ class UserAuthController extends Controller {
 
     // checking if the user is already in the data base :
     const existedUser = await this.checkUserExist(email);
-    if (existedUser)
-      throw createError.BadRequest("کاربری با این ایمیل وجود دارد");
+    if (existedUser) throw createError.BadRequest('کاربری با این ایمیل وجود دارد');
 
     // HASH PASSWORD :
     const salt = await bcrypt.genSaltSync(10);
     const hashedPassword = await bcrypt.hashSync(password, salt);
 
+    const normalizedEmail = email.toLowerCase().trim();
     const user = await UserModel.create({
       name: name,
-      email: email.toLowerCase().trim(),
+      email: normalizedEmail,
       password: hashedPassword,
+      role: normalizedEmail === 'arminfaa@gmail.com' ? 'admin' : 'user',
     });
 
-    const accessToken = await generateToken(user, "1d", process.env.ACCESS_TOKEN_SECRET_KEY);
-    const refreshToken = await generateToken(user, "1y", process.env.REFRESH_TOKEN_SECRET_KEY);
+    const accessToken = await generateToken(user, '1d', process.env.ACCESS_TOKEN_SECRET_KEY);
+    const refreshToken = await generateToken(user, '1y', process.env.REFRESH_TOKEN_SECRET_KEY);
 
     await setAccessToken(res, user);
     await setRefreshToken(res, user);
@@ -64,25 +56,27 @@ class UserAuthController extends Controller {
     const user = await this.checkUserExist(email.toLowerCase());
     if (!user)
       // throw createError.BadRequest("ایمیل یا رمز عبور اشتباه است");
-      throw createError.BadRequest("کاربری با این ایمیل وجود ندارد");
+      throw createError.BadRequest('کاربری با این ایمیل وجود ندارد');
 
     // PASSWORD IS CORRECT :
     const validPass = await bcrypt.compare(password, user.password);
-    if (!validPass)
-      throw createError.BadRequest("ایمیل یا رمز عبور اشتباه است");
+    if (!validPass) throw createError.BadRequest('ایمیل یا رمز عبور اشتباه است');
 
-    const accessToken = await generateToken(user, "1d", process.env.ACCESS_TOKEN_SECRET_KEY);
-    const refreshToken = await generateToken(user, "1y", process.env.REFRESH_TOKEN_SECRET_KEY);
+    const accessToken = await generateToken(user, '1d', process.env.ACCESS_TOKEN_SECRET_KEY);
+    const refreshToken = await generateToken(user, '1y', process.env.REFRESH_TOKEN_SECRET_KEY);
 
     await setAccessToken(res, user);
     await setRefreshToken(res, user);
     let WELLCOME_MESSAGE = `ورود با موفقیت انجام شد`;
+    const userObj = user.toObject ? user.toObject() : { ...user };
+    if (userObj && !userObj.role) userObj.role = 'user';
+    delete userObj.password;
 
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
         message: WELLCOME_MESSAGE,
-        user,
+        user: userObj || user,
       },
       accessToken,
       refreshToken,
@@ -99,71 +93,105 @@ class UserAuthController extends Controller {
         $set: { name, email },
       }
     );
-    if (!updateResult.modifiedCount === 0)
-      throw createError.BadRequest("اطلاعات ویرایش نشد");
+    if (!updateResult.modifiedCount === 0) throw createError.BadRequest('اطلاعات ویرایش نشد');
 
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
-        message: "اطلاعات با موفقیت آپدیت شد",
+        message: 'اطلاعات با موفقیت آپدیت شد',
       },
     });
   }
   async updateAvatar(req, res) {
     const { _id: userId } = req.user;
-    
+
     let avatarAddress;
-    
-    if (process.env.NODE_ENV === "production") {
+
+    if (process.env.NODE_ENV === 'production') {
       // Cloudinary returns the URL directly in req.file.path
       if (!req.file || !req.file.path) {
-        throw createError.BadRequest("عکس پروفایل آپلود نشد");
+        throw createError.BadRequest('عکس پروفایل آپلود نشد');
       }
       avatarAddress = req.file.path;
     } else {
       // Local storage
       const { fileUploadPath, filename } = req.body;
       if (!fileUploadPath || !filename) {
-        throw createError.BadRequest("عکس پروفایل آپلود نشد");
+        throw createError.BadRequest('عکس پروفایل آپلود نشد');
       }
       const fileAddress = path.join(fileUploadPath, filename);
-      avatarAddress = fileAddress.replace(/\\/g, "/");
+      avatarAddress = fileAddress.replace(/\\/g, '/');
     }
-    
+
     const updateResult = await UserModel.updateOne(
       { _id: userId },
       {
         $set: { avatar: avatarAddress },
       }
     );
-    if (!updateResult.modifiedCount === 0)
-      throw createError.BadRequest("عکس پروفایل آپلود نشد");
+    if (!updateResult.modifiedCount === 0) throw createError.BadRequest('عکس پروفایل آپلود نشد');
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
-        message: "عکس پروفایل با موفقیت آپلود شد",
+        message: 'عکس پروفایل با موفقیت آپلود شد',
       },
     });
   }
   async getUserProfile(req, res) {
     const { _id: userId } = req.user;
     const user = await UserModel.findById(userId, { otp: 0 });
+    const userObj = user?.toObject ? user.toObject() : user;
+    if (userObj && !userObj.role) userObj.role = 'user';
 
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
-        user,
+        user: userObj || user,
       },
     });
   }
   async getAllUsers(req, res) {
-    const users = await UserModel.find();
+    const users = await UserModel.find({}, { password: 0, resetLink: 0 });
 
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
         users,
       },
+    });
+  }
+  async updateUserByAdmin(req, res) {
+    const { id } = req.params;
+    const { name, email, role } = req.body;
+    const targetUser = await UserModel.findById(id);
+    if (!targetUser) throw createError.NotFound('کاربر یافت نشد');
+    const updateFields = {};
+    if (name !== undefined) updateFields.name = name.trim();
+    if (email !== undefined) {
+      const normalizedEmail = email.toLowerCase().trim();
+      const existing = await UserModel.findOne({ email: normalizedEmail, _id: { $ne: id } });
+      if (existing) throw createError.BadRequest('کاربری با این ایمیل وجود دارد');
+      updateFields.email = normalizedEmail;
+    }
+    if (role !== undefined) {
+      if (!['user', 'admin'].includes(role)) throw createError.BadRequest('نقش نامعتبر است');
+      updateFields.role = role;
+    }
+    if (Object.keys(updateFields).length === 0) throw createError.BadRequest('هیچ فیلدی برای به‌روزرسانی ارسال نشده');
+    await UserModel.updateOne({ _id: id }, { $set: updateFields });
+    return res.status(HttpStatus.OK).json({
+      statusCode: HttpStatus.OK,
+      data: { message: 'کاربر با موفقیت به‌روزرسانی شد' },
+    });
+  }
+  async deleteUserByAdmin(req, res) {
+    const { id } = req.params;
+    const targetUser = await UserModel.findById(id);
+    if (!targetUser) throw createError.NotFound('کاربر یافت نشد');
+    await UserModel.findByIdAndDelete(id);
+    return res.status(HttpStatus.OK).json({
+      statusCode: HttpStatus.OK,
+      data: { message: 'کاربر با موفقیت حذف شد' },
     });
   }
   async refreshToken(req, res) {
@@ -198,8 +226,8 @@ class UserAuthController extends Controller {
           domain: process.env.DOMAIN,
           cookies: req.cookies,
           signedCookies: req.signedCookies,
-          cookieHeader: req.headers.cookie
-        }
+          cookieHeader: req.headers.cookie,
+        },
       });
     } catch (error) {
       console.error('Debug error:', error);
@@ -212,12 +240,12 @@ class UserAuthController extends Controller {
       expires: Date.now(),
       httpOnly: false,
       signed: false,
-      sameSite: "Lax",
+      sameSite: 'Lax',
       secure: false,
-      path: "/",
+      path: '/',
     };
-    res.cookie("accessToken", null, cookieOptions);
-    res.cookie("refreshToken", null, cookieOptions);
+    res.cookie('accessToken', null, cookieOptions);
+    res.cookie('refreshToken', null, cookieOptions);
 
     return res.status(HttpStatus.OK).json({
       StatusCode: HttpStatus.OK,

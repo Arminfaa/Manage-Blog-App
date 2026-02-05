@@ -42,6 +42,11 @@ class PostController extends Controller {
       };
     }
 
+    const scope = req.query.scope;
+    if (scope === 'dashboard' && user && user.role !== 'admin') {
+      dbQuery.author = user._id;
+    }
+
     const sortQuery = {};
     if (!sort) {
       sortQuery['createdAt'] = -1;
@@ -206,9 +211,14 @@ class PostController extends Controller {
   }
   async updatePost(req, res) {
     const { id } = req.params;
+    const user = req.user;
     const { filename, fileUploadPath, ...rest } = req.body;
 
     const post = await this.findPostById(id);
+    const authorId = post.author?._id?.toString() || post.author?.toString();
+    if (user.role !== 'admin' && authorId !== user._id.toString()) {
+      throw createHttpError.Forbidden('فقط نویسنده یا ادمین می‌تواند این پست را ویرایش کند');
+    }
     const data = copyObject(rest);
     let blackListFields = ['time', 'likes', 'comments', 'bookmarks', 'author'];
     deleteInvalidPropertyInObject(data, blackListFields);
@@ -246,9 +256,14 @@ class PostController extends Controller {
   }
   async removePost(req, res) {
     const { id } = req.params;
-    await this.findPostById(id);
-    const post = await PostModel.findByIdAndDelete(id);
-    if (!post._id) throw createHttpError.InternalServerError(' پست حذف نشد');
+    const user = req.user;
+    const post = await this.findPostById(id);
+    const authorId = post.author?._id?.toString() || post.author?.toString();
+    if (user.role !== 'admin' && authorId !== user._id.toString()) {
+      throw createHttpError.Forbidden('فقط نویسنده یا ادمین می‌تواند این پست را حذف کند');
+    }
+    const deleted = await PostModel.findByIdAndDelete(id);
+    if (!deleted) throw createHttpError.InternalServerError('پست حذف نشد');
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {

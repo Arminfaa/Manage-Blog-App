@@ -1,11 +1,12 @@
-const createHttpError = require("http-errors");
-const mongoose = require("mongoose");
-const { addNewCommentSchema } = require("../validators/comment/comment.schema");
-const Controller = require("./controller");
-const { StatusCodes: HttpStatus } = require("http-status-codes");
+const createHttpError = require('http-errors');
+const mongoose = require('mongoose');
+const { addNewCommentSchema } = require('../validators/comment/comment.schema');
+const Controller = require('./controller');
+const { StatusCodes: HttpStatus } = require('http-status-codes');
 
-const { CommentModel } = require("../../models/comment");
-const { checkPostExist, copyObject } = require("../../utils/functions");
+const { CommentModel } = require('../../models/comment');
+const { PostModel } = require('../../models/post');
+const { checkPostExist, copyObject } = require('../../utils/functions');
 const ObjectId = mongoose.Types.ObjectId;
 
 class CommentController extends Controller {
@@ -24,8 +25,7 @@ class CommentController extends Controller {
     await checkPostExist(postId);
     if (parentId && mongoose.isValidObjectId(parentId)) {
       const parentComment = await this.findCommentById(parentId);
-      if (parentComment && !parentComment?.openToComment)
-        throw createHttpError.BadRequest("ثبت پاسخ برای این کامنت مجاز نیست");
+      if (parentComment && !parentComment?.openToComment) throw createHttpError.BadRequest('ثبت پاسخ برای این کامنت مجاز نیست');
 
       const createAnswerResult = await CommentModel.updateOne(
         { _id: parentId },
@@ -41,13 +41,12 @@ class CommentController extends Controller {
           },
         }
       );
-      if (!createAnswerResult.matchedCount && !createAnswerResult.modifiedCount)
-        throw createHttpError.InternalServerError("ثبت پاسخ انجام نشد");
+      if (!createAnswerResult.matchedCount && !createAnswerResult.modifiedCount) throw createHttpError.InternalServerError('ثبت پاسخ انجام نشد');
 
       return res.status(HttpStatus.CREATED).json({
         statusCode: HttpStatus.CREATED,
         data: {
-          message: "پاسخ شما با موفقیت ثبت شد، پس از تایید قابل مشاهده است",
+          message: 'پاسخ شما با موفقیت ثبت شد، پس از تایید قابل مشاهده است',
         },
       });
     } else {
@@ -58,12 +57,11 @@ class CommentController extends Controller {
         status,
         openToComment: true,
       });
-      if (!newComment)
-        throw createHttpError.InternalServerError("ثبت نطر انجام نشد");
+      if (!newComment) throw createHttpError.InternalServerError('ثبت نطر انجام نشد');
       return res.status(HttpStatus.CREATED).json({
         statusCode: HttpStatus.CREATED,
         data: {
-          message: "نظر شما با موفقیت ثبت شد، پس از تایید قابل مشاهده است",
+          message: 'نظر شما با موفقیت ثبت شد، پس از تایید قابل مشاهده است',
         },
       });
     }
@@ -81,29 +79,27 @@ class CommentController extends Controller {
           $set: { status },
         }
       );
-      if (updateResult.modifiedCount == 0)
-        throw new createHttpError.InternalServerError("آپدیت کامنت انجام نشد");
+      if (updateResult.modifiedCount == 0) throw new createHttpError.InternalServerError('آپدیت کامنت انجام نشد');
       return res.status(HttpStatus.OK).json({
         statusCode: HttpStatus.OK,
         data: {
-          message: "کامنت با موفقیت آپدیت شد",
+          message: 'کامنت با موفقیت آپدیت شد',
         },
       });
     } else {
       const updateResult = await CommentModel.updateOne(
-        { "answers._id": id },
+        { 'answers._id': id },
         {
           $set: {
-            "answers.$.status": status,
+            'answers.$.status': status,
           },
         }
       );
-      if (updateResult.modifiedCount == 0)
-        throw new createHttpError.InternalServerError("آپدیت کامنت انجام نشد");
+      if (updateResult.modifiedCount == 0) throw new createHttpError.InternalServerError('آپدیت کامنت انجام نشد');
       return res.status(HttpStatus.OK).json({
         statusCode: HttpStatus.OK,
         data: {
-          message: "کامنت با موفقیت آپدیت شد",
+          message: 'کامنت با موفقیت آپدیت شد',
         },
       });
     }
@@ -113,49 +109,51 @@ class CommentController extends Controller {
     const comment = await this.findCommentById(id);
     if (comment && comment.openToComment) {
       const commentToDelete = await CommentModel.findOneAndDelete({ _id: id });
-      if (!commentToDelete)
-        throw new createHttpError.InternalServerError("کامنت حذف نشد");
+      if (!commentToDelete) throw new createHttpError.InternalServerError('کامنت حذف نشد');
       return res.status(HttpStatus.OK).json({
         statusCode: HttpStatus.OK,
         data: {
-          message: "کامنت با موفقیت حذف شد",
+          message: 'کامنت با موفقیت حذف شد',
         },
       });
     } else {
       const updateResult = await CommentModel.updateOne(
-        { "answers._id": id },
+        { 'answers._id': id },
         {
           $pull: { answers: { _id: id } },
         }
       );
-      if (updateResult.modifiedCount === 0)
-        throw new createHttpError.InternalServerError("کامنت حذف نشد");
+      if (updateResult.modifiedCount === 0) throw new createHttpError.InternalServerError('کامنت حذف نشد');
       return res.status(HttpStatus.OK).json({
         statusCode: HttpStatus.OK,
         data: {
-          message: "کامنت با موفقیت حذف شد",
+          message: 'کامنت با موفقیت حذف شد',
         },
       });
     }
   }
   async getAllComments(req, res) {
-    // const { commentsType = "course" } = req.body; // course or post
-    const comments = await CommentModel.find({})
+    const user = req.user;
+    let commentQuery = {};
+    if (user && user.role !== 'admin') {
+      const myPostIds = await PostModel.find({ author: user._id }).distinct('_id');
+      commentQuery.post = { $in: myPostIds };
+    }
+    const comments = await CommentModel.find(commentQuery)
       .populate([
         {
-          path: "user",
-          model: "User",
+          path: 'user',
+          model: 'User',
           select: { name: 1 },
         },
         {
-          path: "answers.user",
-          model: "User",
+          path: 'answers.user',
+          model: 'User',
           select: { name: 1 },
         },
       ])
       .sort({ createdAt: -1 });
-    const commentsCount =
-      comments.length + comments.reduce((a, c) => a + c.answers.length, 0);
+    const commentsCount = comments.length + comments.reduce((a, c) => a + c.answers.length, 0);
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
@@ -170,13 +168,13 @@ class CommentController extends Controller {
     const comment = await CommentModel.findById(id)
       .populate([
         {
-          path: "user",
-          model: "User",
+          path: 'user',
+          model: 'User',
           select: { name: 1 },
         },
         {
-          path: "answers.user",
-          model: "User",
+          path: 'answers.user',
+          model: 'User',
           select: { name: 1 },
         },
       ])
@@ -195,13 +193,13 @@ class CommentController extends Controller {
         $project: {
           answers: {
             $concatArrays: [
-              "$answers",
+              '$answers',
               [
                 {
-                  _id: "$_id",
-                  openToComment: "$openToComment",
-                  content: "$content",
-                  status: "$status",
+                  _id: '$_id',
+                  openToComment: '$openToComment',
+                  content: '$content',
+                  status: '$status',
                 },
               ],
             ],
@@ -210,12 +208,12 @@ class CommentController extends Controller {
       },
       {
         $unwind: {
-          path: "$answers",
+          path: '$answers',
         },
       },
       {
         $replaceRoot: {
-          newRoot: "$answers",
+          newRoot: '$answers',
         },
       },
       {
@@ -225,15 +223,11 @@ class CommentController extends Controller {
       },
     ]);
     const comment = copyObject(commentFindResult);
-    if (!comment?.[0])
-      throw createHttpError.NotFound("کامنتی با این مشخصات یافت نشد");
+    if (!comment?.[0]) throw createHttpError.NotFound('کامنتی با این مشخصات یافت نشد');
     return comment?.[0];
   }
   async findAcceptedComments(id, status = 2) {
-    const {
-      copyObject,
-      calculateDateDuration,
-    } = require("../../utils/functions");
+    const { copyObject, calculateDateDuration } = require('../../utils/functions');
     const acceptedComments = await CommentModel.aggregate([
       {
         $match: {
@@ -251,10 +245,10 @@ class CommentController extends Controller {
           createdAt: 1,
           answers: {
             $filter: {
-              input: "$answers",
-              as: "answer",
+              input: '$answers',
+              as: 'answer',
               cond: {
-                $eq: ["$$answer.status", status],
+                $eq: ['$$answer.status', status],
               },
             },
           },
@@ -262,10 +256,10 @@ class CommentController extends Controller {
       },
       {
         $lookup: {
-          from: "users",
-          localField: "user",
-          foreignField: "_id",
-          as: "user",
+          from: 'users',
+          localField: 'user',
+          foreignField: '_id',
+          as: 'user',
           pipeline: [
             {
               $project: { name: 1, biography: 1, avatar: 1 },
@@ -277,14 +271,14 @@ class CommentController extends Controller {
         $addFields: {
           user: {
             $map: {
-              input: "$user",
-              as: "item",
+              input: '$user',
+              as: 'item',
               in: {
                 $mergeObjects: [
-                  "$$item",
+                  '$$item',
                   {
                     avatarUrl: {
-                      $concat: [process.env.SERVER_URL, "/", "$$item.avatar"],
+                      $concat: [process.env.SERVER_URL, '/', '$$item.avatar'],
                     },
                   },
                 ],
@@ -295,15 +289,15 @@ class CommentController extends Controller {
       },
       {
         $unwind: {
-          path: "$user",
+          path: '$user',
         },
       },
       {
         $lookup: {
-          from: "users",
-          localField: "answers.user",
-          foreignField: "_id",
-          as: "answerWriter",
+          from: 'users',
+          localField: 'answers.user',
+          foreignField: '_id',
+          as: 'answerWriter',
           pipeline: [
             {
               $project: { name: 1, biography: 1, avatar: 1 },
@@ -315,14 +309,14 @@ class CommentController extends Controller {
         $addFields: {
           answerWriter: {
             $map: {
-              input: "$answerWriter",
-              as: "item",
+              input: '$answerWriter',
+              as: 'item',
               in: {
                 $mergeObjects: [
-                  "$$item",
+                  '$$item',
                   {
                     avatarUrl: {
-                      $concat: [process.env.SERVER_URL, "/", "$$item.avatar"],
+                      $concat: [process.env.SERVER_URL, '/', '$$item.avatar'],
                     },
                   },
                 ],
@@ -341,22 +335,22 @@ class CommentController extends Controller {
           _id: 1,
           answers: {
             $map: {
-              input: "$answers",
-              as: "item",
+              input: '$answers',
+              as: 'item',
               in: {
-                content: "$$item.content",
-                status: "$$item.status",
-                openToComment: "$$item.openToComment",
-                createdAt: "$$item.createdAt",
-                _id: "$$item._id",
+                content: '$$item.content',
+                status: '$$item.status',
+                openToComment: '$$item.openToComment',
+                createdAt: '$$item.createdAt',
+                _id: '$$item._id',
                 user: {
                   $arrayElemAt: [
                     {
                       $filter: {
-                        input: "$answerWriter",
-                        as: "writer",
+                        input: '$answerWriter',
+                        as: 'writer',
                         cond: {
-                          $eq: ["$$writer._id", "$$item.user"],
+                          $eq: ['$$writer._id', '$$item.user'],
                         },
                       },
                     },
@@ -376,20 +370,20 @@ class CommentController extends Controller {
     ]);
     const transformed = acceptedComments.map((c) => {
       // Fix avatarUrl if it's already a full URL (Cloudinary)
-      if (c.user?.avatar && c.user.avatar.startsWith("http")) {
+      if (c.user?.avatar && c.user.avatar.startsWith('http')) {
         c.user.avatarUrl = c.user.avatar;
       }
-      
+
       // Fix avatarUrl for answers
       if (c.answers && c.answers.length > 0) {
         c.answers = c.answers.map((answer) => {
-          if (answer.user?.avatar && answer.user.avatar.startsWith("http")) {
+          if (answer.user?.avatar && answer.user.avatar.startsWith('http')) {
             answer.user.avatarUrl = answer.user.avatar;
           }
           return { ...answer, createdAt: calculateDateDuration(answer.createdAt) };
         });
       }
-      
+
       return {
         ...c,
         createdAt: calculateDateDuration(c.createdAt),

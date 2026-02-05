@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const UserSchema = new mongoose.Schema(
@@ -6,10 +6,11 @@ const UserSchema = new mongoose.Schema(
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    role: { type: String, enum: ['user', 'admin'], default: 'user' },
     resetLink: { data: String },
     biography: { type: String },
-    bookmarkedPosts: [{ type: ObjectId, ref: "Post" }],
-    likedPosts: [{ type: ObjectId, ref: "Post" }],
+    bookmarkedPosts: [{ type: ObjectId, ref: 'Post' }],
+    likedPosts: [{ type: ObjectId, ref: 'Post' }],
     avatar: { type: String, default: null },
   },
   {
@@ -20,14 +21,14 @@ const UserSchema = new mongoose.Schema(
   }
 );
 
-UserSchema.virtual("avatarUrl").get(function () {
+UserSchema.virtual('avatarUrl').get(function () {
   if (!this.avatar) return null;
-  
+
   // If it's already a full URL (Cloudinary), return as is
-  if (this.avatar.startsWith("http")) {
+  if (this.avatar.startsWith('http')) {
     return this.avatar;
   }
-  
+
   // Otherwise, it's a local path
   return `${process.env.SERVER_URL}/${this.avatar}`;
 });
@@ -40,5 +41,5 @@ UserSchema.methods.toJSON = function () {
 };
 
 module.exports = {
-  UserModel: mongoose.model("User", UserSchema),
+  UserModel: mongoose.model('User', UserSchema),
 };
