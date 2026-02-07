@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  BookmarkIcon,
   ChatBubbleBottomCenterIcon,
   DocumentTextIcon,
   RectangleGroupIcon,
@@ -29,20 +30,27 @@ const sidebarNavs = [
   },
   {
     id: 3,
+    title: "ذخیره‌ها",
+    icon: <BookmarkIcon className="w-5 h-5" />,
+    href: "/profile/bookmarks",
+    adminOnly: false,
+  },
+  {
+    id: 4,
     title: "نظرات",
     icon: <ChatBubbleBottomCenterIcon className="w-5 h-5" />,
     href: "/profile/comments",
     adminOnly: false,
   },
   {
-    id: 4,
+    id: 5,
     title: "دسته بندی ها",
     icon: <Squares2X2Icon className="w-5 h-5" />,
     href: "/profile/categories",
     adminOnly: true,
   },
   {
-    id: 5,
+    id: 6,
     title: "کاربران",
     icon: <UsersIcon className="w-5 h-5" />,
     href: "/profile/users",

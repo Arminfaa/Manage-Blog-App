@@ -1,6 +1,6 @@
 import http from './httpService';
 
-export async function getPostBySlug(slug) {
+export async function getPostBySlug(slug, options) {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     if (!baseUrl) {
@@ -8,9 +8,12 @@ export async function getPostBySlug(slug) {
       return null;
     }
 
-    const res = await fetch(`${baseUrl}/post/slug/${slug}`, {
+    const fetchOptions = {
+      ...options,
       next: { revalidate: 60 }, // Cache for 60 seconds
-    });
+    };
+
+    const res = await fetch(`${baseUrl}/post/slug/${slug}`, fetchOptions);
 
     if (!res.ok) {
       return null;

@@ -1,6 +1,8 @@
 import { getPostBySlug, getPosts } from "@/services/postServices";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
+import setCookieOnReq from "@/utils/setCookieOnReq";
 import RelatedPost from "../_components/RelatedPost";
 import PostComment from "../_components/comment/PostComment";
 import Author from "../_components/Author";
@@ -43,7 +45,9 @@ export async function generateMetadata({ params }) {
 }
 
 async function SinglePost({ params }) {
-  const post = await getPostBySlug(await params.slug);
+  const cookieStore = await cookies();
+  const options = setCookieOnReq(cookieStore);
+  const post = await getPostBySlug(await params.slug, options);
 
   if (!post) notFound();
 
