@@ -1,42 +1,55 @@
 import { Suspense } from "react";
 import CommentsTable from "./_/components/CommentsTable";
+import CommentStatusFilter from "./_/components/CommentStatusFilter";
 import Search from "@/ui/Search";
 import Spinner from "@/ui/Spinner";
-import { getCachedCommentsApi } from "@/services/commentService";
+import Pagination from "@/ui/Pagination";
+import { getComments } from "@/services/commentService";
 import setCookieOnReq from "@/utils/setCookieOnReq";
-import getCacheKeyFromCookies from "@/utils/getCacheKeyFromCookies";
+import queryString from "query-string";
 import { cookies } from "next/headers";
 
-async function Page() {
+async function Page({ searchParams }) {
   try {
+    const params = await searchParams;
+    const query = queryString.stringify(params);
+
     const cookieStore = await cookies();
     const options = setCookieOnReq(cookieStore);
-    const cacheKey = getCacheKeyFromCookies(cookieStore);
-    const data = await getCachedCommentsApi(options, cacheKey);
-    const comments = data?.comments || [];
+    const { totalPages } = await getComments(query, options);
 
     return (
       <div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-secondary-700 mb-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-secondary-700 mb-12 items-center">
           <h1 className="font-bold text-xl">لیست نظرات</h1>
           <Search />
+          <CommentStatusFilter />
         </div>
-        <Suspense fallback={<Spinner />}>
-          <CommentsTable comments={comments} />
+        <Suspense fallback={<Spinner />} key={query}>
+          <CommentsTable query={query} options={options} />
         </Suspense>
+        <div className="mt-5 flex w-full justify-center">
+          <Pagination totalPages={totalPages || 0} />
+        </div>
       </div>
     );
   } catch (error) {
     console.error("Error fetching comments:", error);
+    const cookieStore = await cookies();
+    const options = setCookieOnReq(cookieStore);
     return (
       <div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-secondary-700 mb-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-secondary-700 mb-12 items-center">
           <h1 className="font-bold text-xl">لیست نظرات</h1>
           <Search />
+          <CommentStatusFilter />
         </div>
         <Suspense fallback={<Spinner />}>
-          <CommentsTable comments={[]} />
+          <CommentsTable query="" options={options} />
         </Suspense>
+        <div className="mt-5 flex w-full justify-center">
+          <Pagination totalPages={0} />
+        </div>
       </div>
     );
   }

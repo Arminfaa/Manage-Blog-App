@@ -1,8 +1,10 @@
+import { getComments } from "@/services/commentService";
 import Empty from "@/ui/Empty";
 import Table from "@/ui/Table";
 import CommentRow from "./CommentRow";
 
-function CommentsTable({ comments = [] }) {
+async function CommentsTable({ query = "", options }) {
+  const { comments = [] } = await getComments(query, options);
   // Flatten comments and answers into a single array
   const allComments = [];
   comments.forEach((comment) => {
