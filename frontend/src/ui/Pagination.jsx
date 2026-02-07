@@ -8,12 +8,11 @@ import Link from "next/link";
 
 import { usePathname, useSearchParams } from "next/navigation";
 
-export default function Pagination({ totalPages }) {
-  // const totalPages = Math.ceil(Number(length) / itemsPerPage);
+export default function Pagination({ totalPages, defaultLimit }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
-  const itemsPerPage = Number(searchParams.get("limit")) || 6;
+  const itemsPerPage = Number(searchParams.get("limit")) || defaultLimit || 6;
 
   const createPageURL = (pageNumber) => {
     const params = new URLSearchParams(searchParams);

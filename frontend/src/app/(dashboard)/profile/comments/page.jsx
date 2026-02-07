@@ -12,7 +12,7 @@ import { cookies } from "next/headers";
 async function Page({ searchParams }) {
   try {
     const params = await searchParams;
-    const query = queryString.stringify(params);
+    const query = queryString.stringify({ ...params, limit: params.limit ?? "10" });
 
     const cookieStore = await cookies();
     const options = setCookieOnReq(cookieStore);
@@ -29,7 +29,7 @@ async function Page({ searchParams }) {
           <CommentsTable query={query} options={options} />
         </Suspense>
         <div className="mt-5 flex w-full justify-center">
-          <Pagination totalPages={totalPages || 0} />
+          <Pagination totalPages={totalPages || 0} defaultLimit={10} />
         </div>
       </div>
     );
@@ -45,10 +45,10 @@ async function Page({ searchParams }) {
           <CommentStatusFilter />
         </div>
         <Suspense fallback={<Spinner />}>
-          <CommentsTable query="" options={options} />
+          <CommentsTable query="limit=10" options={options} />
         </Suspense>
         <div className="mt-5 flex w-full justify-center">
-          <Pagination totalPages={0} />
+          <Pagination totalPages={0} defaultLimit={10} />
         </div>
       </div>
     );
