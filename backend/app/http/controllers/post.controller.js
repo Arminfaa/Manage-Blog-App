@@ -46,6 +46,15 @@ class PostController extends Controller {
     if (scope === 'dashboard' && user && user.role !== 'admin' && user.role !== 'super_admin') {
       dbQuery.author = user._id;
     }
+    if (scope === 'bookmarks') {
+      if (!user) {
+        return res.status(HttpStatus.OK).json({
+          statusCode: HttpStatus.OK,
+          data: { message: 'پست های ذخیره شده', posts: [], totalPages: 0, totalCount: 0 },
+        });
+      }
+      dbQuery.bookmarks = user._id;
+    }
 
     const sortQuery = {};
     if (!sort) {
