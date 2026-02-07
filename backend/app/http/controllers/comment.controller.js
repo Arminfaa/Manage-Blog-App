@@ -6,6 +6,7 @@ const { StatusCodes: HttpStatus } = require('http-status-codes');
 
 const { CommentModel } = require('../../models/comment');
 const { PostModel } = require('../../models/post');
+const { UserModel } = require('../../models/user');
 const { checkPostExist, copyObject } = require('../../utils/functions');
 const ObjectId = mongoose.Types.ObjectId;
 
@@ -139,26 +140,57 @@ class CommentController extends Controller {
       const myPostIds = await PostModel.find({ author: user._id }).distinct('_id');
       commentQuery.post = { $in: myPostIds };
     }
-    const comments = await CommentModel.find(commentQuery)
-      .populate([
-        {
-          path: 'user',
-          model: 'User',
-          select: { name: 1 },
-        },
-        {
-          path: 'answers.user',
-          model: 'User',
-          select: { name: 1 },
-        },
-      ])
-      .sort({ createdAt: -1 });
-    const commentsCount = comments.length + comments.reduce((a, c) => a + c.answers.length, 0);
+
+    const { search, status, page, limit } = req.query;
+    const pageNum = Math.max(1, Number(page) || 1);
+    const limitNum = Math.min(50, Math.max(1, Number(limit) || 6));
+    const skip = (pageNum - 1) * limitNum;
+
+    if (status !== undefined && status !== '' && status !== 'all') {
+      const statusNum = Number(status);
+      if ([0, 1, 2].includes(statusNum)) {
+        commentQuery.status = statusNum;
+      }
+    }
+
+    if (search && typeof search === 'string' && search.trim()) {
+      const searchTerm = search.trim();
+      const searchRegex = new RegExp(searchTerm, 'i');
+      const searchConditions = [
+        { 'content.text': searchRegex },
+        { 'answers.content.text': searchRegex },
+      ];
+      const matchingUserIds = await UserModel.find({ name: searchRegex }).distinct('_id');
+      if (matchingUserIds.length) {
+        searchConditions.push({ user: { $in: matchingUserIds } });
+        searchConditions.push({ 'answers.user': { $in: matchingUserIds } });
+      }
+      commentQuery.$or = searchConditions;
+    }
+
+    const [comments, totalCount] = await Promise.all([
+      CommentModel.find(commentQuery)
+        .populate([
+          { path: 'user', model: 'User', select: { name: 1 } },
+          { path: 'answers.user', model: 'User', select: { name: 1 } },
+        ])
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(limitNum)
+        .lean(),
+      CommentModel.countDocuments(commentQuery),
+    ]);
+
+    const totalPages = Math.ceil(totalCount / limitNum);
+    const commentsCount = comments.length + comments.reduce((a, c) => a + (c.answers?.length || 0), 0);
+
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
-        comments: comments,
+        comments,
         commentsCount,
+        totalPages,
+        totalCount,
       },
     });
   }
