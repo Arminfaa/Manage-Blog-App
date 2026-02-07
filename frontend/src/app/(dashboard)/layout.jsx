@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         <div className="grid-cols-12 lg:col-span-9 xl:col-span-10 row-span-1">
           <Header />
         </div>
-        <main className="grid-cols-12 lg:col-span-9 xl:col-span-10 bg-secondary-100 rounded-tr-3xl p-4 md:p-6 overflow-y-auto">
+        <main className="grid-cols-12 lg:col-span-9 xl:col-span-10 bg-secondary-100 rounded-tr-3xl p-4 md:p-6 overflow-y-auto flex-1 h-full">
           <div className="">{children}</div>
         </main>
       </div>
