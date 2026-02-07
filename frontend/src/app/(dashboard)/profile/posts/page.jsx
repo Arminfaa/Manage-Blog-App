@@ -12,7 +12,11 @@ import setCookieOnReq from "@/utils/setCookieOnReq";
 async function Page({ searchParams }) {
   try {
     const search = await searchParams;
-    const query = queryString.stringify({ ...search, scope: "dashboard" });
+    const query = queryString.stringify({
+      ...search,
+      scope: "dashboard",
+      limit: search.limit ?? "10",
+    });
     const cookieStore = await cookies();
     const options = setCookieOnReq(cookieStore);
     const { totalPages } = await getPosts(query, options);
@@ -28,7 +32,7 @@ async function Page({ searchParams }) {
           <PostsTable query={query} options={options} />
         </Suspense>
         <div className="mt-5 flex w-full justify-center">
-          <Pagination totalPages={totalPages || 0} />
+          <Pagination totalPages={totalPages || 0} defaultLimit={10} />
         </div>
       </div>
     );
@@ -44,10 +48,10 @@ async function Page({ searchParams }) {
           <CreatePost />
         </div>
         <Suspense fallback={<Spinner />}>
-          <PostsTable query="scope=dashboard" options={options} />
+          <PostsTable query="scope=dashboard&limit=10" options={options} />
         </Suspense>
         <div className="mt-5 flex w-full justify-center">
-          <Pagination totalPages={0} />
+          <Pagination totalPages={0} defaultLimit={10} />
         </div>
       </div>
     );

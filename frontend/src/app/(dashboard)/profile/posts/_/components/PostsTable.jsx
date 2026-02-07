@@ -11,7 +11,7 @@ async function PostsTable({ query = "", options }) {
 
   const params = queryString.parse(query);
   const page = Math.max(1, Number(params.page) || 1);
-  const limit = Math.max(1, Number(params.limit) || 6);
+  const limit = Math.max(1, Number(params.limit) || 10);
   const startIndex = (page - 1) * limit;
 
   return (
