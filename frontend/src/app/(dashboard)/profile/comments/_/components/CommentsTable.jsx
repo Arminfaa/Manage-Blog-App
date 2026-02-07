@@ -2,6 +2,7 @@ import { getComments } from "@/services/commentService";
 import Empty from "@/ui/Empty";
 import Table from "@/ui/Table";
 import CommentRow from "./CommentRow";
+import queryString from "query-string";
 
 async function CommentsTable({ query = "", options }) {
   const { comments = [] } = await getComments(query, options);
@@ -20,6 +21,11 @@ async function CommentsTable({ query = "", options }) {
 
   if (!allComments.length) return <Empty resourceName="نظری" />;
 
+  const params = queryString.parse(query);
+  const page = Math.max(1, Number(params.page) || 1);
+  const limit = Math.max(1, Number(params.limit) || 6);
+  const startIndex = (page - 1) * limit;
+
   return (
     <Table>
       <Table.Header>
@@ -32,7 +38,7 @@ async function CommentsTable({ query = "", options }) {
       </Table.Header>
       <Table.Body>
         {allComments.map((comment, index) => (
-          <CommentRow key={comment._id} comment={comment} index={index} />
+          <CommentRow key={comment._id} comment={comment} index={startIndex + index} />
         ))}
       </Table.Body>
     </Table>
