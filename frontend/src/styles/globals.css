@@ -156,6 +156,7 @@ body {
   background-color: rgb(var(--background-app-rgb));
   scrollbar-color: rgb(var(--color-secondary-50)) transparent;
   scrollbar-width: thin;
+  overscroll-behavior: none;
 }
 
 ::-webkit-scrollbar {
