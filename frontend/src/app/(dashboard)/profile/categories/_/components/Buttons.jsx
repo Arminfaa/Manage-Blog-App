@@ -13,9 +13,9 @@ export function CreateCategory() {
     <Link
       href="/profile/categories/create"
       className="justify-self-end flex gap-x-4 py-3 items-center rounded-lg bg-primary-900 px-4 text-sm font-medium text-secondary-0 
-      transition-colors hover:bg-primary-700"
+      transition-colors hover:bg-primary-700 max-[400px]:w-full max-[400px]:justify-center max-[400px]:gap-2"
     >
-      <span className="hidden md:block">ایجاد دسته بندی</span>{" "}
+      <span className="block">ایجاد دسته بندی</span>{" "}
       <PlusIcon className="w-5" />
     </Link>
   );
