@@ -13,7 +13,7 @@ async function Page({ params }) {
     const cookieStore = await cookies();
     const options = setCookieOnReq(cookieStore);
     const { user } = await getUserApi(options).catch(() => ({ user: null }));
-    if (!user || user.role !== "admin") {
+    if (!user || (user.role !== "admin" && user.role !== "super_admin")) {
       redirect("/profile");
     }
     const cacheKey = getCacheKeyFromCookies(cookieStore);
