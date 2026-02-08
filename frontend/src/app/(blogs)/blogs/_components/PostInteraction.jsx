@@ -20,7 +20,7 @@ import {
 
 import toast from "react-hot-toast";
 
-function PostInteraction({ post }) {
+function PostInteraction({ post, showBookmarkInRow = false }) {
   const router = useRouter();
   const [isLiked, setIsLiked] = useState(post?.isLiked ?? false);
   const [likesCount, setLikesCount] = useState(post?.likesCount ?? 0);
@@ -72,15 +72,16 @@ function PostInteraction({ post }) {
         {isLiked ? <SolidHeartIcon /> : <HeartIcon />}
         <span>{toPersianDigits(likesCount)}</span>
       </ButtonIcon>
-      <ButtonIcon
-        className='absolute top-2.5 left-2.5'
-        variant="primary"
-        size="touch"
-        onClick={() => bookmarkHandler(post._id)}
-        aria-label={isBookmarked ? "حذف از ذخیره" : "ذخیره"}
-      >
-        {isBookmarked ? <SolidBookmarkIcon /> : <BookmarkIcon />}
-      </ButtonIcon>
+      {showBookmarkInRow && (
+        <ButtonIcon
+          variant="primary"
+          size="touch"
+          onClick={() => bookmarkHandler(post._id)}
+          aria-label={isBookmarked ? "حذف از ذخیره" : "ذخیره"}
+        >
+          {isBookmarked ? <SolidBookmarkIcon /> : <BookmarkIcon />}
+        </ButtonIcon>
+      )}
     </div>
   );
 }

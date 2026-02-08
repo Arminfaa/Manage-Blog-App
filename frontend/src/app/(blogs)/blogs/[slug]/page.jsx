@@ -117,7 +117,7 @@ async function SinglePost({ params }) {
 
       {/* Post Interactions */}
       <div className="border-t border-b border-secondary-200 py-6 mb-10">
-        <PostInteraction post={post} />
+        <PostInteraction post={post} showBookmarkInRow />
       </div>
 
       {/* Related Posts */}

@@ -1,4 +1,5 @@
 import CoverImage from "./CoverImage";
+import BookmarkOnImage from "./BookmarkOnImage";
 import Link from "next/link";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import Author from "./Author";
@@ -12,7 +13,10 @@ async function PostList({ posts }) {
           key={post._id}
           className="relative sm:col-span-6 lg:col-span-4 border border-secondary-300 p-2 rounded-lg"
         >
-          <CoverImage {...post} />
+          <div className="relative">
+            <CoverImage {...post} />
+            <BookmarkOnImage post={post} />
+          </div>
           {/* post content */}
           <div>
             <Link href={`/blogs/${post.slug}`}>
