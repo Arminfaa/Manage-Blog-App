@@ -81,7 +81,7 @@ export default function Pagination({ totalPages, defaultLimit }) {
           onNavigate={scrollToTop}
         />
 
-        <div className="flex -space-x-px">
+        <div className="flex items-center gap-1.5">
           {allPages.map((page, index) => {
             let position;
             if (index === 0) position = "first";
@@ -118,14 +118,12 @@ export default function Pagination({ totalPages, defaultLimit }) {
 
 function PaginationNumber({ page, href, isActive, position, onNavigate, totalPages }) {
   const className = classNames(
-    "flex h-10 w-10 items-center justify-center text-sm border border-secondary-400 text-secondary-400",
+    "flex h-10 w-10 items-center justify-center text-sm rounded-lg transition-all duration-200",
+    "bg-secondary-0 dark:bg-secondary-0/60 shadow-sm shadow-secondary-900/5 dark:shadow-none",
     {
-      "rounded-r-md": position === "first" || position === "single",
-      "rounded-l-md": position === "last" || position === "single",
-      "border-l-0": position === "first" && totalPages > 1,
-      "z-[9] bg-primary-900 !border-primary-900 text-white": isActive,
-      "hover:bg-secondary-200": !isActive && position !== "middle",
-      "text-secondary-300": position === "middle",
+      "z-[9] !bg-primary-900 text-white shadow-md shadow-primary-900/25 dark:shadow-[0_2px_12px_rgba(74,109,255,0.4)]": isActive,
+      "text-secondary-500 hover:bg-secondary-100 dark:hover:bg-secondary-200/50 dark:hover:shadow-[0_2px_12px_rgba(0,0,0,0.25)]": !isActive && position !== "middle",
+      "text-secondary-400 cursor-default": position === "middle",
     }
   );
 
@@ -140,13 +138,14 @@ function PaginationNumber({ page, href, isActive, position, onNavigate, totalPag
 
 function PaginationArrow({ href, direction, isDisabled, onNavigate, size, variant }) {
   const className = classNames(
-    "flex items-center justify-center rounded-md border border-secondary-400 text-secondary-400 shrink-0 touch-manipulation",
+    "flex items-center justify-center rounded-lg shrink-0 touch-manipulation transition-all duration-200",
+    "bg-secondary-0 dark:bg-secondary-0/60 shadow-sm shadow-secondary-900/5 dark:shadow-none",
     {
       "h-9 w-9 min-w-9": size === "sm",
       "h-10 w-10": !size || size !== "sm",
-      "pointer-events-none text-secondary-200 !border-secondary-200":
+      "pointer-events-none text-secondary-300 dark:text-secondary-600 opacity-70":
         isDisabled,
-      "hover:bg-secondary-200 active:bg-secondary-300": !isDisabled,
+      "text-secondary-600 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-200/50 dark:hover:shadow-[0_2px_12px_rgba(0,0,0,0.25)] active:scale-95": !isDisabled,
       "mr-2 md:mr-4": direction === "left" && size !== "sm",
       "ml-2 md:ml-4": direction === "right" && size !== "sm",
       "mr-0.5": direction === "left" && size === "sm",
