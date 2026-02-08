@@ -31,9 +31,13 @@ export async function createComment(prevState, { formData, postId, parentId, slu
   }
 }
 
-export async function revalidateBookmarks() {
+export async function revalidatePostsList() {
   revalidateTag("posts");
+  revalidatePath("/blogs", "layout");
+}
+
+export async function revalidateBookmarks() {
+  revalidatePostsList();
   revalidatePath("/profile");
   revalidatePath("/profile/bookmarks");
-  revalidatePath("/blogs", "layout");
 }

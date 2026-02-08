@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { bookmarkPostApi, likePostApi } from "@/services/postServices";
-import { revalidateBookmarks } from "@/lib/actions";
+import { revalidateBookmarks, revalidatePostsList } from "@/lib/actions";
 import ButtonIcon from "@/ui/ButtonIcon";
 import { toPersianDigits } from "@/utils/numberFormatter";
 
@@ -38,6 +38,8 @@ function PostInteraction({ post }) {
       toast.success(data.message);
       setIsLiked(data.isLiked);
       setLikesCount(data.likesCount);
+      await revalidatePostsList();
+      router.refresh();
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }
