@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { createCommentApi } from "@/services/commentService";
 import setCookieOnReq from "@/utils/setCookieOnReq";
 import { cookies } from "next/headers";
@@ -32,6 +32,7 @@ export async function createComment(prevState, { formData, postId, parentId, slu
 }
 
 export async function revalidateBookmarks() {
+  revalidateTag("posts");
   revalidatePath("/profile");
   revalidatePath("/profile/bookmarks");
   revalidatePath("/blogs", "layout");
