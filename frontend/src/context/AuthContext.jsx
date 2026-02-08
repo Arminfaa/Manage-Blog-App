@@ -29,13 +29,19 @@ const authReducer = (state, action) => {
       };
     case "signin":
       return {
+        ...state,
         user: action.payload,
         isAuthenticated: true,
+        isLoading: false,
+        error: null,
       };
     case "signup":
       return {
+        ...state,
         user: action.payload,
         isAuthenticated: true,
+        isLoading: false,
+        error: null,
       };
     case "user/loaded":
       return {
@@ -78,7 +84,7 @@ export default function AuthProvider({ children }) {
 
       dispatch({ type: "signin", payload: user });
       toast.success(message);
-      router.push("/profile");
+      window.location.assign("/profile");
     } catch (error) {
       const errorMsg = error?.response?.data?.message;
       dispatch({ type: "rejected", payload: errorMsg });
@@ -104,7 +110,7 @@ export default function AuthProvider({ children }) {
 
       dispatch({ type: "signup", payload: user });
       toast.success(message);
-      router.push("/profile");
+      window.location.assign("/profile");
     } catch (error) {
       const errorMsg = error?.response?.data?.message;
       dispatch({ type: "rejected", payload: errorMsg });
