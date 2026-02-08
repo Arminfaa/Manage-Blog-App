@@ -36,7 +36,7 @@ function BookmarkOnImage({ post }) {
       type="button"
       onClick={bookmarkHandler}
       aria-label={isBookmarked ? "حذف از ذخیره" : "ذخیره"}
-      className="absolute top-1 left-1 z-10 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-600 text-white shadow-xl ring-2 ring-white/30 backdrop-blur-sm transition-all hover:bg-primary-700 hover:shadow-2xl hover:scale-105 active:scale-95 min-[440px]:h-11 min-[440px]:w-11 [&>svg]:h-5 [&>svg]:w-5 min-[440px]:[&>svg]:h-6 min-[440px]:[&>svg]:w-6"
+      className="absolute top-1 left-1 z-[1] flex h-10 w-10 items-center justify-center rounded-xl bg-primary-600 text-white shadow-xl ring-2 ring-white/30 backdrop-blur-sm transition-all hover:bg-primary-700 hover:shadow-2xl hover:scale-105 active:scale-95 min-[440px]:h-11 min-[440px]:w-11 [&>svg]:h-5 [&>svg]:w-5 min-[440px]:[&>svg]:h-6 min-[440px]:[&>svg]:w-6"
     >
       {isBookmarked ? (
         <SolidBookmarkIcon className="text-white" />
