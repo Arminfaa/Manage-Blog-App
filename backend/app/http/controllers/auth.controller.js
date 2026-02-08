@@ -37,12 +37,13 @@ class UserAuthController extends Controller {
     await setRefreshToken(res, user);
 
     let WELLCOME_MESSAGE = `ثبت نام با موفقیت انجام شد`;
+    const userObj = user?.toJSON ? user.toJSON() : user?.toObject ? user.toObject() : user;
 
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
       data: {
         message: WELLCOME_MESSAGE,
-        user,
+        user: userObj || user,
       },
       accessToken,
       refreshToken,
@@ -68,9 +69,8 @@ class UserAuthController extends Controller {
     await setAccessToken(res, user);
     await setRefreshToken(res, user);
     let WELLCOME_MESSAGE = `ورود با موفقیت انجام شد`;
-    const userObj = user.toObject ? user.toObject() : { ...user };
+    const userObj = user?.toJSON ? user.toJSON() : user?.toObject ? user.toObject() : { ...user };
     if (userObj && !userObj.role) userObj.role = 'user';
-    delete userObj.password;
 
     return res.status(HttpStatus.OK).json({
       statusCode: HttpStatus.OK,
