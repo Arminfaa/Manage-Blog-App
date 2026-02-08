@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { bookmarkPostApi, likePostApi } from "@/services/postServices";
+import { revalidateBookmarks } from "@/lib/actions";
 import ButtonIcon from "@/ui/ButtonIcon";
 import { toPersianDigits } from "@/utils/numberFormatter";
 
@@ -19,6 +21,7 @@ import {
 import toast from "react-hot-toast";
 
 function PostInteraction({ post }) {
+  const router = useRouter();
   const [isLiked, setIsLiked] = useState(post?.isLiked ?? false);
   const [likesCount, setLikesCount] = useState(post?.likesCount ?? 0);
   const [isBookmarked, setIsBookmarked] = useState(post?.isBookmarked ?? false);
@@ -45,6 +48,8 @@ function PostInteraction({ post }) {
       const data = await bookmarkPostApi(postId);
       toast.success(data.message);
       setIsBookmarked(data.isBookmarked);
+      await revalidateBookmarks();
+      router.refresh();
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }
