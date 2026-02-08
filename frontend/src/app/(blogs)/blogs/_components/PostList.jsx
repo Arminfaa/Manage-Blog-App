@@ -10,7 +10,7 @@ async function PostList({ posts }) {
       {posts.map((post) => (
         <div
           key={post._id}
-          className="sm:col-span-6 lg:col-span-4 border border-secondary-300 p-2 rounded-lg"
+          className="relative sm:col-span-6 lg:col-span-4 border border-secondary-300 p-2 rounded-lg"
         >
           <CoverImage {...post} />
           {/* post content */}

@@ -58,16 +58,27 @@ function PostInteraction({ post }) {
   };
 
   return (
-    <div className="flex items-center gap-x-4">
-      <ButtonIcon variant="secondary">
+    <div className="flex items-center gap-x-2 sm:gap-x-4">
+      <ButtonIcon variant="secondary" size="touch">
         <ChatBubbleOvalLeftEllipsisIcon />
         <span>{toPersianDigits(post.commentsCount)}</span>
       </ButtonIcon>
-      <ButtonIcon variant="red" onClick={() => likeHandler(post._id)}>
+      <ButtonIcon
+        variant="red"
+        size="touch"
+        onClick={() => likeHandler(post._id)}
+        aria-label={isLiked ? "لغو لایک" : "لایک"}
+      >
         {isLiked ? <SolidHeartIcon /> : <HeartIcon />}
         <span>{toPersianDigits(likesCount)}</span>
       </ButtonIcon>
-      <ButtonIcon variant="primary" onClick={() => bookmarkHandler(post._id)}>
+      <ButtonIcon
+        className='absolute top-2.5 left-2.5'
+        variant="primary"
+        size="touch"
+        onClick={() => bookmarkHandler(post._id)}
+        aria-label={isBookmarked ? "حذف از ذخیره" : "ذخیره"}
+      >
         {isBookmarked ? <SolidBookmarkIcon /> : <BookmarkIcon />}
       </ButtonIcon>
     </div>
