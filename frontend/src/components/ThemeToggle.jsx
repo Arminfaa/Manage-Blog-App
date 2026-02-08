@@ -10,7 +10,7 @@ function ThemeToggle() {
   if (!mounted) {
     return (
       <ButtonIcon variant="outline" disabled>
-        <MoonIcon className="w-5 h-5 text-secondary-700" />
+        <MoonIcon className="!w-5 !h-5 text-secondary-700" />
       </ButtonIcon>
     );
   }
@@ -22,9 +22,9 @@ function ThemeToggle() {
       title={isDarkMode ? "تغییر به تم روشن" : "تغییر به تم تاریک"}
     >
       {isDarkMode ? (
-        <SunIcon className="w-5 h-5 text-warning" />
+        <SunIcon className="!w-5 !h-5 text-warning" />
       ) : (
-        <MoonIcon className="w-5 h-5 text-secondary-700" />
+        <MoonIcon className="!w-5 !h-5 text-secondary-700" />
       )}
     </ButtonIcon>
   );
