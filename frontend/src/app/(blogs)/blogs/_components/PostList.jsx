@@ -11,7 +11,7 @@ async function PostList({ posts }) {
       {posts.map((post) => (
         <div
           key={post._id}
-          className="relative sm:col-span-6 lg:col-span-4 border border-secondary-300 p-2 rounded-lg"
+          className="group relative sm:col-span-6 lg:col-span-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl transition-all duration-300 ease-out overflow-hidden bg-secondary-0 shadow-sm shadow-secondary-900/5 hover:shadow-xl hover:shadow-secondary-900/10 dark:bg-secondary-0/80 dark:shadow-none dark:hover:shadow-[0_7px_20px_0_rgba(0,0,0,0.35)]"
         >
           <div className="relative">
             <CoverImage {...post} />
