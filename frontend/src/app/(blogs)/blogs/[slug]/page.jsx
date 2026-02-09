@@ -12,6 +12,7 @@ import Link from "next/link";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { toLocalDateShort } from "@/utils/dateFormatter";
 import { toPersianDigits } from "@/utils/numberFormatter";
+import SafeHtmlContent from "@/ui/SafeHtmlContent";
 
 export const dynamicParams = true;
 
@@ -99,9 +100,10 @@ async function SinglePost({ params }) {
 
       {/* Post Content */}
       <div className="prose prose-lg max-w-none mb-10">
-        <div className="text-secondary-700 leading-8 whitespace-pre-line">
-          {post.text}
-        </div>
+        <SafeHtmlContent
+          html={post.text}
+          className="text-secondary-700 leading-8 prose-headings:text-secondary-800 prose-p:my-3 prose-ul:my-3 prose-ol:my-3 prose-li:my-1"
+        />
       </div>
 
       {/* Tags */}

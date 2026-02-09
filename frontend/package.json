@@ -15,12 +15,14 @@
     "@tanstack/react-query-devtools": "^5.59.14",
     "axios": "^1.7.5",
     "classnames": "^2.5.1",
+    "dompurify": "^3.3.1",
     "next": "^15.5.9",
     "query-string": "^9.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.53.0",
     "react-hot-toast": "^2.4.1",
+    "react-quill-new": "^3.8.3",
     "yup": "^1.4.0"
   },
   "devDependencies": {
