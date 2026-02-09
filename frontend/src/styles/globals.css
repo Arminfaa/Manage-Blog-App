@@ -362,7 +362,7 @@ table td {
 
 /* Rich text editor content (blog post body) */
 .prose-content {
-  @apply text-secondary-700 leading-8;
+  @apply text-secondary-700 leading-8 max-w-full min-w-0 overflow-x-hidden break-words;
 }
 .prose-content h1 { @apply text-3xl font-bold mt-6 mb-3 text-secondary-800; }
 .prose-content h2 { @apply text-2xl font-bold mt-5 mb-2 text-secondary-800; }

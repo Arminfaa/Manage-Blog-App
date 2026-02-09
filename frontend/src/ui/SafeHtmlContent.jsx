@@ -17,8 +17,9 @@ export default function SafeHtmlContent({ html, className = "" }) {
       setSanitized("");
       return;
     }
+    const withNormalSpaces = html.replace(/&nbsp;/g, " ");
     setSanitized(
-      DOMPurify.sanitize(html, {
+      DOMPurify.sanitize(withNormalSpaces, {
         ALLOWED_TAGS,
         ALLOWED_ATTR,
         ADD_ATTR: ["target"],
