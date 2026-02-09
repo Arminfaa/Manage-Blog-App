@@ -80,7 +80,7 @@ async function SinglePost({ params }) {
         </div>
 
         {/* Brief Text */}
-        <p className="text-lg text-secondary-600 leading-relaxed mb-6">
+        <p className="text-lg text-secondary-600 leading-relaxed text-justify mb-6">
           {post.briefText}
         </p>
       </header>
