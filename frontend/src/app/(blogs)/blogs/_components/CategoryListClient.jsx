@@ -40,7 +40,7 @@ function CategoryListClient({ categories = [] }) {
             className={`block px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
               !categorySlug
                 ? "bg-primary-100 dark:bg-primary-900/30 text-primary-900 dark:text-primary-300"
-                : "text-secondary-600 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-200/50 hover:text-secondary-800 dark:hover:text-secondary-200"
+                : "text-secondary-600 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-200/50 hover:text-secondary-800"
             }`}
           >
             همه
@@ -55,7 +55,7 @@ function CategoryListClient({ categories = [] }) {
                 className={`block px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive
                     ? "bg-primary-100 dark:bg-primary-900/30 text-primary-900 dark:text-primary-300"
-                    : "text-secondary-600 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-200/50 hover:text-secondary-800 dark:hover:text-secondary-200"
+                    : "text-secondary-600 dark:text-secondary-400 hover:bg-secondary-100 dark:hover:bg-secondary-200/50 hover:text-secondary-800"
                 }`}
               >
                 {category.title}

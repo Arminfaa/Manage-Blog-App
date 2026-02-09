@@ -17,13 +17,13 @@ function Header() {
     <header
       className={`bg-secondary-0 ${isLoading ? "bg-opacity-30 blur-md" : ""}`}
     >
-      <div className="flex items-center justify-between py-5 px-4 lg:px-8">
+      <div className="flex items-center justify-between lg:py-5 py-3 px-4 lg:px-8">
         <ButtonIcon
           className="block lg:hidden border-none"
           variant="outline"
           onClick={() => setIsOpenDrawer(!isOpenDrawer)}
         >
-          {isOpenDrawer ? <XMarkIcon /> : <Bars3Icon />}
+          {isOpenDrawer ? <XMarkIcon className="!w-6 !h-6" /> : <Bars3Icon className="!w-6 !h-6" />}
         </ButtonIcon>
 
         <div className="flex flex-col">

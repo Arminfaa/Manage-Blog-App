@@ -13,7 +13,7 @@ function withOpacity(variableName) {
 
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: ["class", "[.dark-mode]"],
+  darkMode: ["variant", ".dark-mode &"],
   theme: {
     extend: {
       colors: {
@@ -47,6 +47,11 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-vazir)", ...fontFamily.sans],
+      },
+      boxShadow: {
+        "card": "0 1px 3px 0 rgba(0,0,0,0.04)",
+        "card-hover": "0 10px 30px 0 rgba(0,0,0,0.08)",
+        "card-dark-hover": "0 10px 30px 0 rgba(0,0,0,0.25)",
       },
       container: {
         center: true,

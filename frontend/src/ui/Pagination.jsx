@@ -119,7 +119,7 @@ export default function Pagination({ totalPages, defaultLimit }) {
 function PaginationNumber({ page, href, isActive, position, onNavigate, totalPages }) {
   const className = classNames(
     "flex h-10 w-10 items-center justify-center text-sm rounded-lg transition-all duration-200",
-    "bg-secondary-0 dark:bg-secondary-0/60 shadow-sm shadow-secondary-900/5 dark:shadow-none",
+    "bg-secondary-0 dark:bg-secondary-0/60 shadow-md shadow-secondary-900/5 dark:shadow-none",
     {
       "z-[9] !bg-primary-900 text-white shadow-md shadow-primary-900/25 dark:shadow-[0_2px_12px_rgba(74,109,255,0.4)]": isActive,
       "text-secondary-500 hover:bg-secondary-100 dark:hover:bg-secondary-200/50 dark:hover:shadow-[0_2px_12px_rgba(0,0,0,0.25)]": !isActive && position !== "middle",
@@ -139,7 +139,7 @@ function PaginationNumber({ page, href, isActive, position, onNavigate, totalPag
 function PaginationArrow({ href, direction, isDisabled, onNavigate, size, variant }) {
   const className = classNames(
     "flex items-center justify-center rounded-lg shrink-0 touch-manipulation transition-all duration-200",
-    "bg-secondary-0 dark:bg-secondary-0/60 shadow-sm shadow-secondary-900/5 dark:shadow-none",
+    "bg-secondary-0 dark:bg-secondary-0/60 shadow-md shadow-secondary-900/5 dark:shadow-none",
     {
       "h-9 w-9 min-w-9": size === "sm",
       "h-10 w-10": !size || size !== "sm",

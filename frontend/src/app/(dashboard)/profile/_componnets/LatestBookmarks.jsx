@@ -9,11 +9,11 @@ async function LatestBookmarks() {
   const query = "scope=bookmarks&sort=latest&limit=5";
   return (
     <div>
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center mb-6 flex-wrap gap-4">
         <h2 className="text-xl text-secondary-700">آخرین پست های ذخیره شده</h2>
         <Link
           href="/profile/bookmarks"
-          className="text-primary-900 hover:text-primary-700 text-sm font-medium"
+          className="text-primary-900 hover:text-primary-700 text-sm font-medium underline transition-all"
         >
           مشاهده همه
         </Link>

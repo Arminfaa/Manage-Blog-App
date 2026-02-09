@@ -31,8 +31,8 @@ function Header() {
       `}
     >
       <nav className="container !max-w-screen-xl">
-        <ul className="flex items-center text-secondary-400 justify-between py-2">
-          <div className="flex items-center gap-x-10">
+        <ul className="flex items-center text-secondary-500 justify-between py-3 lg:py-2">
+          <div className="flex items-center gap-x-6 lg:gap-x-10">
             {navLinks.map((navLink) => {
               return (
                 <li key={navLink.id}>
