@@ -2,8 +2,8 @@ import PostList from "../_components/PostList";
 import { cookies } from "next/headers";
 import setCookieOnReq from "@/utils/setCookieOnReq";
 import { getPosts } from "@/services/postServices";
-import queryString from "query-string";
 import Pagination from "@/ui/Pagination";
+import BlogLimit from "../_components/BlogLimit";
 import { toPersianDigits } from "@/utils/numberFormatter";
 
 // export const experimental_ppr = true; // STATIC + DYNAMIC => PPR
@@ -14,12 +14,15 @@ async function BlogPage({ searchParams }) {
   const queries = params.toString();
   const cookieStore = await cookies();
   const options = setCookieOnReq(cookieStore);
-  const { posts, totalPages } = await getPosts(queries, options);
+  const { posts, totalPages, totalCount } = await getPosts(queries, options);
 
   const search = params.get("search");
 
   return (
     <>
+      <div className="mb-4 flex justify-end lg:hidden">
+        <BlogLimit totalCount={totalCount} />
+      </div>
       {search ? (
         <p className="mb-4 text-secondary-700">
           {posts.length === 0
