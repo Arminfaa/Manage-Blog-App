@@ -17,7 +17,7 @@ async function Layout({ children }) {
         <BlogSort />
       </div>
       <div className="flex flex-col sm:grid sm:grid-cols-12 gap-4 lg:gap-8 max-lg:pb-6 max-lg:mt-2.5">
-        <div className="sticky top-[75px] sm:col-span-12 lg:col-span-3 max-lg:pb-4 lg:self-start lg:rounded-xl lg:p-4 lg:bg-secondary-0 lg:shadow-sm lg:shadow-secondary-900/5 lg:dark:bg-secondary-0/80 lg:dark:shadow-none">
+        <div className="lg:sticky lg:top-[75px] sm:col-span-12 lg:col-span-3 max-lg:pb-4 lg:self-start lg:rounded-xl lg:p-4 lg:bg-secondary-0 lg:shadow-sm lg:shadow-secondary-900/5 lg:dark:bg-secondary-0/80 lg:dark:shadow-none">
           <Suspense fallback={<Spinner />}>
             <CategoryList />
           </Suspense>
