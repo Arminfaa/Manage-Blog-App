@@ -7,6 +7,7 @@ import RelatedPost from "../_components/RelatedPost";
 import PostComment from "../_components/comment/PostComment";
 import Author from "../_components/Author";
 import PostInteraction from "../_components/PostInteraction";
+import ImagePreviewer from "../_components/ImagePreviewer";
 import Link from "next/link";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { toLocalDateShort } from "@/utils/dateFormatter";
@@ -85,13 +86,15 @@ async function SinglePost({ params }) {
 
       {/* Cover Image */}
       <div className="relative aspect-video overflow-hidden rounded-lg mb-10">
-        <Image
-          className="object-cover object-center hover:scale-110 transition-all ease-out duration-300"
-          fill
-          src={post.coverImageUrl}
-          alt={post.title}
-          priority
-        />
+        <ImagePreviewer src={post.coverImageUrl} alt={post.title}>
+          <Image
+            className="object-cover object-center hover:scale-110 transition-all ease-out duration-300"
+            fill
+            src={post.coverImageUrl}
+            alt={post.title}
+            priority
+          />
+        </ImagePreviewer>
       </div>
 
       {/* Post Content */}
