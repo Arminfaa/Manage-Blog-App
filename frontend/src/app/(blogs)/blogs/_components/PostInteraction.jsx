@@ -59,7 +59,7 @@ function PostInteraction({ post, showBookmarkInRow = false }) {
 
   return (
     <div className="flex items-center gap-x-2 sm:gap-x-4">
-      <ButtonIcon variant="secondary" size="touch">
+      <ButtonIcon variant="secondary" size="touch" className="dark:hover:bg-primary-300 hover:bg-primary-400">
         <ChatBubbleOvalLeftEllipsisIcon />
         <span>{toPersianDigits(post.commentsCount)}</span>
       </ButtonIcon>
