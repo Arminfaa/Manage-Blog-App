@@ -40,7 +40,7 @@ function Signup() {
       <h1 className="text-xl font-bold text-secondary-500 text-center mb-6">
         ثبت نام
       </h1>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <RHFTextField
           label="نام و نام خانوادگی"
           name="name"
@@ -65,15 +65,15 @@ function Signup() {
           isRequired
           errors={errors}
         />
-        <div>
+        <>
           {isLoading ? (
             <SpinnerMini />
           ) : (
-            <Button type="submit" variant="primary" className="w-full">
+            <Button type="submit" variant="primary" className="w-full !mt-10">
               تایید
             </Button>
           )}
-        </div>
+        </>
       </form>
       <Link href="/signin" className="text-secondary-500 mt-6 text-center">
         ورود

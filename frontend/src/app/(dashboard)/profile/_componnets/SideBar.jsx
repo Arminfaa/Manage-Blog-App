@@ -24,10 +24,10 @@ function SideBar({ onClose }) {
       <div className="flex items-center justify-between w-full mb-5 pb-4 border-b  border-b-secondary-200 ">
         <Link
           href="/"
-          className="flex items-center gap-x-4 justify-center text-secondary-700 lg:flex-1"
+          className="flex items-center gap-x-2.5 justify-center text-secondary-700 lg:flex-1"
         >
           <HomeIcon className="w-6 h-6" />
-          <span> نکست بلاگ</span>
+          <span>صفحه اصلی</span>
         </Link>
 
         <ButtonIcon

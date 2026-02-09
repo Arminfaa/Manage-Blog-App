@@ -36,7 +36,7 @@ function Signin() {
       <h1 className="text-xl font-bold text-secondary-500 text-center mb-6">
         ورود
       </h1>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <RHFTextField
           label="ایمیل"
           name="email"
@@ -60,7 +60,7 @@ function Signin() {
           {isLoading ? (
             <SpinnerMini />
           ) : (
-            <Button type="submit" variant="primary" className="w-full">
+            <Button type="submit" variant="primary" className="w-full !mt-10">
               تایید
             </Button>
           )}
