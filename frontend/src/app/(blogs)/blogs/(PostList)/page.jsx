@@ -9,12 +9,14 @@ import { toPersianDigits } from "@/utils/numberFormatter";
 // export const experimental_ppr = true; // STATIC + DYNAMIC => PPR
 
 async function BlogPage({ searchParams }) {
-  const queries = queryString.stringify(await searchParams);
+  const params = new URLSearchParams(await searchParams);
+  if (!params.has("limit")) params.set("limit", "9");
+  const queries = params.toString();
   const cookieStore = await cookies();
   const options = setCookieOnReq(cookieStore);
   const { posts, totalPages } = await getPosts(queries, options);
 
-  const { search } = await searchParams;
+  const search = params.get("search");
 
   return (
     <>
@@ -28,7 +30,7 @@ async function BlogPage({ searchParams }) {
       ) : null}
       <PostList posts={posts} />
       <div className="flex w-full justify-center my-8">
-        <Pagination totalPages={totalPages} />
+        <Pagination totalPages={totalPages} defaultLimit={9} />
       </div>
     </>
   );
