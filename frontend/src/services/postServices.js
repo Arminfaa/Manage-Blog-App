@@ -39,7 +39,7 @@ export async function getPosts(queries = '', options) {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     if (!baseUrl) {
       console.warn('NEXT_PUBLIC_BASE_URL is not set');
-      return { posts: [], totalPages: 0 };
+      return { posts: [], totalPages: 0, totalCount: 0 };
     }
 
     const url = queries ? `${baseUrl}/post/list?${queries}` : `${baseUrl}/post/list`;
@@ -52,12 +52,12 @@ export async function getPosts(queries = '', options) {
     const res = await fetch(url, fetchOptions);
 
     if (!res.ok) {
-      return { posts: [], totalPages: 0 };
+      return { posts: [], totalPages: 0, totalCount: 0 };
     }
 
     const contentType = res.headers.get('content-type');
     if (!contentType || !contentType.includes('application/json')) {
-      return { posts: [], totalPages: 0 };
+      return { posts: [], totalPages: 0, totalCount: 0 };
     }
 
     const json = await res.json();
@@ -66,7 +66,7 @@ export async function getPosts(queries = '', options) {
     return { posts: posts || [], totalPages: totalPages || 0, totalCount: totalCount ?? 0 };
   } catch (error) {
     console.error('Error fetching posts:', error);
-    return { posts: [], totalPages: 0 };
+    return { posts: [], totalPages: 0, totalCount: 0 };
   }
 }
 
