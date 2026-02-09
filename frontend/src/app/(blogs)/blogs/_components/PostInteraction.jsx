@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { bookmarkPostApi, likePostApi } from "@/services/postServices";
-import { revalidateBookmarks, revalidatePostsList } from "@/lib/actions";
+import { revalidateBookmarks, revalidatePostsList, revalidatePostBySlug } from "@/lib/actions";
 import ButtonIcon from "@/ui/ButtonIcon";
 import { toPersianDigits } from "@/utils/numberFormatter";
 
@@ -38,6 +38,7 @@ function PostInteraction({ post, showBookmarkInRow = false }) {
       toast.success(data.message);
       setIsLiked(data.isLiked);
       setLikesCount(data.likesCount);
+      if (post?.slug) await revalidatePostBySlug(post.slug);
       await revalidatePostsList();
       router.refresh();
     } catch (error) {
@@ -50,6 +51,7 @@ function PostInteraction({ post, showBookmarkInRow = false }) {
       const data = await bookmarkPostApi(postId);
       toast.success(data.message);
       setIsBookmarked(data.isBookmarked);
+      if (post?.slug) await revalidatePostBySlug(post.slug);
       await revalidateBookmarks();
       router.refresh();
     } catch (error) {

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { bookmarkPostApi } from "@/services/postServices";
-import { revalidateBookmarks, revalidatePostsList } from "@/lib/actions";
+import { revalidateBookmarks, revalidatePostsList, revalidatePostBySlug } from "@/lib/actions";
 import { BookmarkIcon } from "@heroicons/react/24/outline";
 import { BookmarkIcon as SolidBookmarkIcon } from "@heroicons/react/24/solid";
 import toast from "react-hot-toast";
@@ -23,6 +23,7 @@ function BookmarkOnImage({ post }) {
       const data = await bookmarkPostApi(post._id);
       toast.success(data.message);
       setIsBookmarked(data.isBookmarked);
+      if (post?.slug) await revalidatePostBySlug(post.slug);
       await revalidateBookmarks();
       await revalidatePostsList();
       router.refresh();
