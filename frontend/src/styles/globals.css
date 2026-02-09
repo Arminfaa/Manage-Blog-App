@@ -364,11 +364,11 @@ table td {
 .prose-content {
   @apply text-secondary-700 leading-8;
 }
-.prose-content h1 { @apply text-2xl font-bold mt-6 mb-3 text-secondary-800; }
-.prose-content h2 { @apply text-xl font-bold mt-5 mb-2 text-secondary-800; }
-.prose-content h3 { @apply text-lg font-bold mt-4 mb-2 text-secondary-800; }
-.prose-content h4 { @apply text-base font-bold mt-4 mb-2 text-secondary-800; }
-.prose-content h5 { @apply text-sm font-bold mt-3 mb-1 text-secondary-800; }
+.prose-content h1 { @apply text-3xl font-bold mt-6 mb-3 text-secondary-800; }
+.prose-content h2 { @apply text-2xl font-bold mt-5 mb-2 text-secondary-800; }
+.prose-content h3 { @apply text-xl font-bold mt-4 mb-2 text-secondary-800; }
+.prose-content h4 { @apply text-lg font-bold mt-4 mb-2 text-secondary-800; }
+.prose-content h5 { @apply text-base font-bold mt-3 mb-1 text-secondary-800; }
 .prose-content h6 { @apply text-sm font-bold mt-3 mb-1 text-secondary-800; }
 .prose-content p { @apply my-3; }
 .prose-content ul { @apply list-disc list-inside my-3 mr-4 space-y-1; }
@@ -379,3 +379,59 @@ table td {
 .prose-content code { @apply bg-secondary-100 px-1.5 py-0.5 rounded text-sm; }
 .prose-content pre { @apply bg-secondary-100 p-4 rounded-lg overflow-x-auto my-3; direction: ltr; text-align: left; }
 .prose-content pre code { @apply bg-transparent p-0; direction: ltr; }
+/* Quill size: متن عادی (inside p, etc.) */
+.prose-content .ql-size-small { font-size: 0.75rem; }
+.prose-content .ql-size-normal { font-size: 1rem; }
+.prose-content .ql-size-large { font-size: 1.25rem; }
+.prose-content .ql-size-huge { font-size: 1.5rem; }
+
+/* Quill size روی هدینگ‌ها: normal = پایه (مثل text-3xl برای h1)، small/large/huge نسبت به آن */
+/* کلاس روی فرزند (span) یا روی خود هدینگ */
+.prose-content h1 .ql-size-small,
+.prose-content h1.ql-size-small { font-size: 1.5rem; }
+.prose-content h1 .ql-size-normal,
+.prose-content h1.ql-size-normal { font-size: 1.875rem; }
+.prose-content h1 .ql-size-large,
+.prose-content h1.ql-size-large { font-size: 2.25rem; }
+.prose-content h1 .ql-size-huge,
+.prose-content h1.ql-size-huge { font-size: 2.8125rem; }
+.prose-content h2 .ql-size-small,
+.prose-content h2.ql-size-small { font-size: 1.2rem; }
+.prose-content h2 .ql-size-normal,
+.prose-content h2.ql-size-normal { font-size: 1.5rem; }
+.prose-content h2 .ql-size-large,
+.prose-content h2.ql-size-large { font-size: 1.875rem; }
+.prose-content h2 .ql-size-huge,
+.prose-content h2.ql-size-huge { font-size: 2.25rem; }
+.prose-content h3 .ql-size-small,
+.prose-content h3.ql-size-small { font-size: 1rem; }
+.prose-content h3 .ql-size-normal,
+.prose-content h3.ql-size-normal { font-size: 1.25rem; }
+.prose-content h3 .ql-size-large,
+.prose-content h3.ql-size-large { font-size: 1.5625rem; }
+.prose-content h3 .ql-size-huge,
+.prose-content h3.ql-size-huge { font-size: 1.875rem; }
+.prose-content h4 .ql-size-small,
+.prose-content h4.ql-size-small { font-size: 0.9rem; }
+.prose-content h4 .ql-size-normal,
+.prose-content h4.ql-size-normal { font-size: 1.125rem; }
+.prose-content h4 .ql-size-large,
+.prose-content h4.ql-size-large { font-size: 1.40625rem; }
+.prose-content h4 .ql-size-huge,
+.prose-content h4.ql-size-huge { font-size: 1.6875rem; }
+.prose-content h5 .ql-size-small,
+.prose-content h5.ql-size-small { font-size: 0.7rem; }
+.prose-content h5 .ql-size-normal,
+.prose-content h5.ql-size-normal { font-size: 0.875rem; }
+.prose-content h5 .ql-size-large,
+.prose-content h5.ql-size-large { font-size: 1.09375rem; }
+.prose-content h5 .ql-size-huge,
+.prose-content h5.ql-size-huge { font-size: 1.3125rem; }
+.prose-content h6 .ql-size-small,
+.prose-content h6.ql-size-small { font-size: 0.7rem; }
+.prose-content h6 .ql-size-normal,
+.prose-content h6.ql-size-normal { font-size: 0.875rem; }
+.prose-content h6 .ql-size-large,
+.prose-content h6.ql-size-large { font-size: 1.09375rem; }
+.prose-content h6 .ql-size-huge,
+.prose-content h6.ql-size-huge { font-size: 1.3125rem; }
