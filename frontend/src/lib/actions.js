@@ -36,6 +36,12 @@ export async function revalidatePostsList() {
   revalidatePath("/blogs", "layout");
 }
 
+export async function revalidatePostBySlug(slug) {
+  if (!slug) return;
+  revalidateTag(`post-${slug}`);
+  revalidatePath(`/blogs/${slug}`);
+}
+
 export async function revalidateBookmarks() {
   revalidatePostsList();
   revalidatePath("/profile");

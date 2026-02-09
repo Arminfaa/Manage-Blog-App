@@ -110,7 +110,7 @@ function CreatePostForm({ postToEdit = {} }) {
 
     if (isEditSession) {
       editPost(
-        { id: editId, data: formData },
+        { id: editId, data: formData, slug: postToEdit?.slug },
         {
           onSuccess: () => {
             reset();

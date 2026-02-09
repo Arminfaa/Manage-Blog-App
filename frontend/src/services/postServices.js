@@ -10,7 +10,7 @@ export async function getPostBySlug(slug, options) {
 
     const fetchOptions = {
       ...options,
-      next: { revalidate: 60 }, // Cache for 60 seconds
+      next: { revalidate: 60, tags: [`post-${slug}`] },
     };
 
     const res = await fetch(`${baseUrl}/post/slug/${slug}`, fetchOptions);
