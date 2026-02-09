@@ -4,7 +4,7 @@ const btnType = {
   secondary:
     "bg-secondary-200  text-secondary-500 hover:bg-secondary-500 hover:text-secondary-0 active:scale-95",
   outline:
-    "border border-secondary-200 text-secondary-500 hover:bg-secondary-200 active:scale-95",
+    "border border-secondary-200 text-secondary-500 hover:bg-secondary-50 hover:border-secondary-900 hover:text-secondary-900 dark:hover:bg-transparent dark:hover:text-white dark:hover:border-white active:scale-95",
   red: "bg-red-100  text-red-500 hover:bg-red-500 hover:text-white active:scale-95",
   danger: "border border-red-100 text-red-500",
 };

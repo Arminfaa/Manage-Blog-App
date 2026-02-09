@@ -22,8 +22,8 @@ export default function Home() {
             کنی!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 w-full mt-6 sm:mt-10">
-            <Button variant="outline">
-              <Link href="/blogs">مطالعه بلاگ ها</Link>
+            <Button variant="outline" className="group border-secondary-500 p-0">
+              <Link href="/blogs" className="text-secondary-500 group-hover:text-secondary-900 transition-all px-4 py-3">مطالعه بلاگ ها</Link>
             </Button>
             <Button variant="primary">
               <Link href="/profile">مدیریت بلاگ ها</Link>
