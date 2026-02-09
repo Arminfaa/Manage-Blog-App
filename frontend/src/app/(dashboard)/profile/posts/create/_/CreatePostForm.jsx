@@ -250,7 +250,7 @@ function CreatePostForm({ postToEdit = {} }) {
             type="submit"
             className="w-full md:w-auto px-6 py-2.5 md:min-w-[250px]"
           >
-            تایید
+            {isEditSession ? "ویرایش پست" : "ایجاد پست"}
           </Button>
         )}
       </div>
